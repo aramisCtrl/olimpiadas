@@ -1,0 +1,20 @@
+F:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csprojResolveAssemblyReference.cache
+F:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.MainForm.resources
+F:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csproj.GenerateResource.Cache
+F:\Olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.exe
+F:\Olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.pdb
+F:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.exe
+F:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb
+F:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormGrilla.resources
+F:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormDatos.resources
+E:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csprojResolveAssemblyReference.cache
+E:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormDatos.resources
+E:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormGrilla.resources
+E:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormSuceso.resources
+E:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.MainForm.resources
+E:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csproj.GenerateResource.Cache
+E:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.exe
+E:\Olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.exe
+E:\Olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.pdb
+E:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb
+F:\Olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormSuceso.resources
