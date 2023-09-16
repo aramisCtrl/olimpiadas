@@ -14,7 +14,7 @@ namespace Codigo_Azul
 		
 		void MainFormLoad(object sender, EventArgs e)
 		{
-		
+			
 		}
 		
 		void FormGrillaLoad(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace Codigo_Azul
 			miConexion.LLenarGrid(ref dataGridView1, "exec sp_ObtenerSucesosGrilla");
 			
 			//cargar la grilla con un select, se le pasa como 1er parametro el datagridview y como 2do parametro la consulta con la que queremos llenar ese grid
-//			miConexion.LLenarGrid(ref dataGridView1, "select * from suceso");	
+//			miConexion.LLenarGrid(ref dataGridView1, "select * from suceso");
 			timer1.Start();
 		}
 		
@@ -39,7 +39,8 @@ namespace Codigo_Azul
 
 		void Button1Click(object sender, EventArgs e)
 		{
-				FormSuceso form = new FormSuceso();
+			FormSuceso form = new FormSuceso();
+			form.miconexion = this.miConexion;
 			form.Show();
 		}
 	}

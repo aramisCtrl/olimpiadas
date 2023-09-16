@@ -49,9 +49,9 @@ namespace Codigo_Azul
 			this.comboBox4 = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.comboBox3 = new System.Windows.Forms.ComboBox();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.cbxTipo = new System.Windows.Forms.ComboBox();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBox2 = new System.Windows.Forms.TextBox();
@@ -128,9 +128,9 @@ namespace Codigo_Azul
 			this.panel3.Controls.Add(this.comboBox4);
 			this.panel3.Controls.Add(this.label3);
 			this.panel3.Controls.Add(this.comboBox3);
-			this.panel3.Controls.Add(this.dateTimePicker1);
+			this.panel3.Controls.Add(this.dtp_fecha);
 			this.panel3.Controls.Add(this.comboBox2);
-			this.panel3.Controls.Add(this.comboBox1);
+			this.panel3.Controls.Add(this.cbxTipo);
 			this.panel3.Controls.Add(this.button2);
 			this.panel3.Controls.Add(this.button1);
 			this.panel3.Controls.Add(this.textBox2);
@@ -212,13 +212,13 @@ namespace Codigo_Azul
 			this.comboBox3.Size = new System.Drawing.Size(203, 21);
 			this.comboBox3.TabIndex = 54;
 			// 
-			// dateTimePicker1
+			// dtp_fecha
 			// 
-			this.dateTimePicker1.Enabled = false;
-			this.dateTimePicker1.Location = new System.Drawing.Point(193, 36);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(163, 20);
-			this.dateTimePicker1.TabIndex = 53;
+			this.dtp_fecha.Enabled = false;
+			this.dtp_fecha.Location = new System.Drawing.Point(193, 36);
+			this.dtp_fecha.Name = "dtp_fecha";
+			this.dtp_fecha.Size = new System.Drawing.Size(163, 20);
+			this.dtp_fecha.TabIndex = 53;
 			// 
 			// comboBox2
 			// 
@@ -229,14 +229,14 @@ namespace Codigo_Azul
 			this.comboBox2.Size = new System.Drawing.Size(298, 21);
 			this.comboBox2.TabIndex = 52;
 			// 
-			// comboBox1
+			// cbxTipo
 			// 
-			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(193, 78);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(298, 21);
-			this.comboBox1.TabIndex = 51;
+			this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxTipo.FormattingEnabled = true;
+			this.cbxTipo.Location = new System.Drawing.Point(193, 78);
+			this.cbxTipo.Name = "cbxTipo";
+			this.cbxTipo.Size = new System.Drawing.Size(298, 21);
+			this.cbxTipo.TabIndex = 51;
 			// 
 			// button2
 			// 
@@ -371,6 +371,7 @@ namespace Codigo_Azul
 			this.Name = "FormSuceso";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FormSuceso";
+			this.Load += new System.EventHandler(this.FormSucesoLoad);
 			this.panel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
@@ -384,9 +385,9 @@ namespace Codigo_Azul
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox cbxTipo;
 		private System.Windows.Forms.ComboBox comboBox2;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.DateTimePicker dtp_fecha;
 		private System.Windows.Forms.ComboBox comboBox3;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ComboBox comboBox4;
