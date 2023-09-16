@@ -13,13 +13,24 @@ namespace Codigo_Azul
 			InitializeComponent();
 		}
 		
-		void Btn_ingresarClick(object sender, EventArgs e)
+		private void Btn_ingresarClick(object sender, EventArgs e)
 		{
-//			if(){
-				FormGrilla form = new FormGrilla();
-				form.Show();
-//			}
+		    string nombreUsuario = txt_usuario.Text;
+		    string contraseña = txt_contraseña.Text;
+		
+		    // Validar el usuario en la base de datos
+		    ClassConexionSQL conexionSQL = new ClassConexionSQL();
+		    if (conexionSQL.CrearConexion("codigo_azul") && conexionSQL.ValidarUsuario(nombreUsuario, contraseña))
+		    {
+		        FormGrilla form = new FormGrilla();
+		        form.Show();
+		    }
+		    else
+		    {
+		        MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
+		    }
 		}
+
 	}
 }
 

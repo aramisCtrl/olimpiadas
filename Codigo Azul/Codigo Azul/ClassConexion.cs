@@ -52,7 +52,7 @@ public class ClassConexionSQL
 	{
 		try
 		{
-			//          string strConexion = String.Format("Server=localhost;Database={0}; integrated security = true", BaseDatos);
+//			string strConexion = String.Format("Server=localhost;Database={0}; integrated security = true", BaseDatos);
 			string strConexion = String.Format("Data Source=192.168.1.103;Initial Catalog= codigo_azul; User id=sa;Password=123456", BaseDatos);
 			conexion = new SqlConnection(strConexion);
 			return true;
@@ -163,6 +163,27 @@ public class ClassConexionSQL
 			this.Desconectar();
 		}
 	}
-
 	
+	public bool ValidarUsuario(string nombreUsuario, string contraseña){
+	    try
+	    {
+	        string query = "EXEC sp_ValidarUsuario @NombreUsuario, @Contraseña";
+	        using (SqlCommand cmd = new SqlCommand(query, conexion))
+	        {
+	            cmd.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+	            cmd.Parameters.AddWithValue("@Contraseña", contraseña);
+	
+	            conexion.Open();
+	            int resultado = (int)cmd.ExecuteScalar();
+	            conexion.Close();
+	
+	            return resultado != 0;
+	        }
+	    }
+	    catch (Exception ex)
+	    {
+	        MessageBox.Show("Error al validar usuario: " + ex.Message);
+	        return false;
+	    }
+	}
 }

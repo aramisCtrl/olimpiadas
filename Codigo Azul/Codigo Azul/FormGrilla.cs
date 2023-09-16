@@ -20,11 +20,11 @@ namespace Codigo_Azul
 		void FormGrillaLoad(object sender, EventArgs e)
 		{
 //			//crear el objeto conexion
-//			miConexion = new ClassConexionSQL();
+			miConexion = new ClassConexionSQL();
 //			
 //			//crear la conexion indicando el nombre de la base de datos que vamos a usar
-//			miConexion.CrearConexion("codigo_azul");
-//			miConexion.LLenarGrid(ref dataGridView1, "exec sp_ObtenerSucesosGrilla");
+			miConexion.CrearConexion("codigo_azul");
+			miConexion.LLenarGrid(ref dataGridView1, "exec sp_ObtenerSucesosGrilla");
 			
 			//cargar la grilla con un select, se le pasa como 1er parametro el datagridview y como 2do parametro la consulta con la que queremos llenar ese grid
 //			miConexion.LLenarGrid(ref dataGridView1, "select * from suceso");
@@ -33,7 +33,7 @@ namespace Codigo_Azul
 		
 		void Timer1Tick(object sender, EventArgs e)
 		{
-//			miConexion.LLenarGrid(ref dataGridView1, "exec sp_ObtenerSucesosGrilla");
+			miConexion.LLenarGrid(ref dataGridView1, "exec sp_ObtenerSucesosGrilla");
 		}
 		
 
@@ -46,7 +46,7 @@ namespace Codigo_Azul
 		
 		void Btn_reportesClick(object sender, EventArgs e)
 		{
-			System.Diagnostics.Process.Start("www.google.com") ;
+			System.Diagnostics.Process.Start("192-168.1.103:3000") ;
 		}
 	}
 }
