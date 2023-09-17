@@ -53,7 +53,7 @@ public class ClassConexionSQL
 		try
 		{
 //			string strConexion = String.Format("Server=localhost;Database={0}; integrated security = true", BaseDatos);
-			string strConexion = String.Format("Data Source=192.168.1.103;Initial Catalog= codigo_azul; User id=sa;Password=123456", BaseDatos);
+			string strConexion = String.Format("Data Source=localhost;Initial Catalog= codigo_azul; User id=sa;Password=123456", BaseDatos);
 			conexion = new SqlConnection(strConexion);
 			return true;
 		}
@@ -99,30 +99,6 @@ public class ClassConexionSQL
 		}
 	}
 	
-	public DataSet EjecutarSentencia(string query)
-    {
-        DataSet dataSet = new DataSet();
-
-        using (conexion)
-        {
-            try
-            {
-                conexion.Open();
-
-                using (SqlDataAdapter adapter = new SqlDataAdapter(query, conexion))
-                {
-                    adapter.Fill(dataSet);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Maneja cualquier excepción que ocurra durante la ejecución de la consulta.
-                Console.WriteLine("Error al ejecutar la consulta: " + ex.Message);
-            }
-        }
-
-        return dataSet;
-	}
 
 	public DataRow ObtenerData(String Consulta)
 	{
@@ -165,25 +141,57 @@ public class ClassConexionSQL
 	}
 	
 	public bool ValidarUsuario(string nombreUsuario, string contraseña){
-	    try
-	    {
-	        string query = "EXEC sp_ValidarUsuario @NombreUsuario, @Contraseña";
-	        using (SqlCommand cmd = new SqlCommand(query, conexion))
-	        {
-	            cmd.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
-	            cmd.Parameters.AddWithValue("@Contraseña", contraseña);
-	
-	            conexion.Open();
-	            int resultado = (int)cmd.ExecuteScalar();
-	            conexion.Close();
-	
-	            return resultado != 0;
-	        }
-	    }
-	    catch (Exception ex)
-	    {
-	        MessageBox.Show("Error al validar usuario: " + ex.Message);
-	        return false;
-	    }
+		try
+		{
+			string query = "EXEC sp_ValidarUsuario @NombreUsuario, @Contraseña";
+			using (SqlCommand cmd = new SqlCommand(query, conexion))
+			{
+				cmd.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
+				cmd.Parameters.AddWithValue("@Contraseña", contraseña);
+				
+				conexion.Open();
+				int resultado = (int)cmd.ExecuteScalar();
+				conexion.Close();
+				
+				return resultado != 0;
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show("Error al validar usuario: " + ex.Message);
+			return false;
+		}
 	}
+	public DataSet EjecutarSentencia(string consulta)
+	{
+		try
+		{
+			if (this.Conectar())
+			{
+				// Se crea un SqlDataAdapter para obtener los datos de la base
+				SqlDataAdapter adaptadorDatos = new SqlDataAdapter(consulta, conexion);
+
+				// Se crea un DataSet para almacenar el resultado de la consulta
+				DataSet dsResultado = new DataSet();
+
+				// Llena el DataSet con los datos obtenidos de la consulta
+				adaptadorDatos.Fill(dsResultado);
+
+				// Cierra la conexión a la base de datos
+				this.Desconectar();
+
+				return dsResultado;
+			}
+			else
+			{
+				return null;
+			}
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show("Error al ejecutar sentencia: " + ex.Message);
+			return null;
+		}
+	}
+
 }

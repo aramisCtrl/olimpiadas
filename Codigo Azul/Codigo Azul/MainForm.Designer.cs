@@ -21,6 +21,7 @@
 			this.btn_ingresar = new System.Windows.Forms.Button();
 			this.lbl_usuario = new System.Windows.Forms.Label();
 			this.lbl_contraseña = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pic_fondo)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -88,6 +89,16 @@
 			this.lbl_contraseña.Text = "Contraseña:";
 			this.lbl_contraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(316, 324);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 9;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,6 +106,7 @@
 			this.BackColor = System.Drawing.SystemColors.MenuHighlight;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(517, 398);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.lbl_contraseña);
 			this.Controls.Add(this.lbl_usuario);
 			this.Controls.Add(this.txt_usuario);
@@ -107,6 +119,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pic_fondo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+
 		}
 		private System.Windows.Forms.Label lbl_contraseña;
 		private System.Windows.Forms.Label lbl_usuario;
@@ -114,5 +127,6 @@
 		private System.Windows.Forms.TextBox txt_usuario;
 		private System.Windows.Forms.TextBox txt_contraseña;
 		private System.Windows.Forms.Button btn_ingresar;
+		private System.Windows.Forms.Button button1;
 	}
 }

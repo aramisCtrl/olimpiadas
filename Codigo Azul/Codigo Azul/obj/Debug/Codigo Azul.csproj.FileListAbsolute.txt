@@ -38,3 +38,13 @@ D:\Descargas\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.MainForm.r
 D:\Descargas\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csproj.GenerateResource.Cache
 D:\Descargas\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.exe
 D:\Descargas\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csprojResolveAssemblyReference.cache
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormDatos.resources
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormGrilla.resources
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormSuceso.resources
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.MainForm.resources
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csproj.GenerateResource.Cache
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.exe
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.exe
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.pdb
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb

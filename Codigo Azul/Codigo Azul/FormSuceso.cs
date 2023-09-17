@@ -17,10 +17,16 @@ namespace Codigo_Azul
 		
 		void FormSucesoLoad(object sender, EventArgs e)
 		{
-			DataSet ds = miconexion.EjecutarSentencia("select * from suceso_tipo");
-			cbxTipo.DataSource = ds;
-			cbxTipo.DisplayMember = "suti_descripcion";
-			cbxTipo.ValueMember ="suti_id";
+			DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM suceso_tipo");
+			
+			if (ds != null && ds.Tables.Count > 0)
+			{
+				cbxTipo.DataSource = ds.Tables[0];
+				cbxTipo.DisplayMember = "suti_descripcion";
+				cbxTipo.ValueMember = "suti_id";
+				// establecer el valor seleccionado inicial
+				// cbxTipo.SelectedValue = valorInicial;
+			}
 			
 		}
 	}
