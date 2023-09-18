@@ -52,10 +52,10 @@ namespace Codigo_Azul
 			this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.cbxTipo = new System.Windows.Forms.ComboBox();
-			this.button2 = new System.Windows.Forms.Button();
+			this.btnBuscarPaciente = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtPaciente = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -131,10 +131,10 @@ namespace Codigo_Azul
 			this.panel3.Controls.Add(this.dtp_fecha);
 			this.panel3.Controls.Add(this.comboBox2);
 			this.panel3.Controls.Add(this.cbxTipo);
-			this.panel3.Controls.Add(this.button2);
+			this.panel3.Controls.Add(this.btnBuscarPaciente);
 			this.panel3.Controls.Add(this.button1);
 			this.panel3.Controls.Add(this.textBox2);
-			this.panel3.Controls.Add(this.textBox1);
+			this.panel3.Controls.Add(this.txtPaciente);
 			this.panel3.Controls.Add(this.label1);
 			this.panel3.Controls.Add(this.label2);
 			this.panel3.Controls.Add(this.richTextBox1);
@@ -214,7 +214,8 @@ namespace Codigo_Azul
 			// 
 			// dtp_fecha
 			// 
-			this.dtp_fecha.Enabled = false;
+			this.dtp_fecha.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+			this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 			this.dtp_fecha.Location = new System.Drawing.Point(193, 36);
 			this.dtp_fecha.Name = "dtp_fecha";
 			this.dtp_fecha.Size = new System.Drawing.Size(163, 20);
@@ -238,14 +239,15 @@ namespace Codigo_Azul
 			this.cbxTipo.Size = new System.Drawing.Size(298, 21);
 			this.cbxTipo.TabIndex = 51;
 			// 
-			// button2
+			// btnBuscarPaciente
 			// 
-			this.button2.Location = new System.Drawing.Point(497, 175);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(32, 25);
-			this.button2.TabIndex = 50;
-			this.button2.Text = "...";
-			this.button2.UseVisualStyleBackColor = true;
+			this.btnBuscarPaciente.Location = new System.Drawing.Point(497, 175);
+			this.btnBuscarPaciente.Name = "btnBuscarPaciente";
+			this.btnBuscarPaciente.Size = new System.Drawing.Size(32, 25);
+			this.btnBuscarPaciente.TabIndex = 50;
+			this.btnBuscarPaciente.Text = "...";
+			this.btnBuscarPaciente.UseVisualStyleBackColor = true;
+			this.btnBuscarPaciente.Click += new System.EventHandler(this.BtnBuscarPacienteClick);
 			// 
 			// button1
 			// 
@@ -264,13 +266,13 @@ namespace Codigo_Azul
 			this.textBox2.Size = new System.Drawing.Size(298, 20);
 			this.textBox2.TabIndex = 48;
 			// 
-			// textBox1
+			// txtPaciente
 			// 
-			this.textBox1.Location = new System.Drawing.Point(193, 178);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.Size = new System.Drawing.Size(298, 20);
-			this.textBox1.TabIndex = 47;
+			this.txtPaciente.Location = new System.Drawing.Point(193, 178);
+			this.txtPaciente.Name = "txtPaciente";
+			this.txtPaciente.ReadOnly = true;
+			this.txtPaciente.Size = new System.Drawing.Size(298, 20);
+			this.txtPaciente.TabIndex = 47;
 			// 
 			// label1
 			// 
@@ -377,14 +379,15 @@ namespace Codigo_Azul
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
 			this.ResumeLayout(false);
+
 		}
 		private System.Windows.Forms.RichTextBox richTextBox1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox txtPaciente;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button btnBuscarPaciente;
 		private System.Windows.Forms.ComboBox cbxTipo;
 		private System.Windows.Forms.ComboBox comboBox2;
 		private System.Windows.Forms.DateTimePicker dtp_fecha;

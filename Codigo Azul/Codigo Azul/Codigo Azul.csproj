@@ -56,6 +56,10 @@
     <Compile Include="FormGrilla.Designer.cs">
       <DependentUpon>FormGrilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPacientes.cs" />
+    <Compile Include="FormPacientes.Designer.cs">
+      <DependentUpon>FormPacientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSuceso.cs" />
     <Compile Include="FormSuceso.Designer.cs">
       <DependentUpon>FormSuceso.cs</DependentUpon>
@@ -64,6 +68,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paciente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGrilla.resx">
       <DependentUpon>FormGrilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPacientes.resx">
+      <DependentUpon>FormPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuceso.resx">
       <DependentUpon>FormSuceso.cs</DependentUpon>

@@ -9,6 +9,8 @@ namespace Codigo_Azul
 	public partial class FormSuceso : Form
 	{
 		public ClassConexionSQL miconexion;
+		private Paciente pacienteSeleccionado;
+		
 		public FormSuceso()
 		{
 			InitializeComponent();
@@ -28,6 +30,23 @@ namespace Codigo_Azul
 				// cbxTipo.SelectedValue = valorInicial;
 			}
 			
+			
+			
+		}
+		void BtnBuscarPacienteClick(object sender, EventArgs e)
+		{
+			Paciente paciente = new Paciente(); // Crea una instancia de Pacientes
+			FormPacientes formPacientes = new FormPacientes(paciente,miconexion);
+			
+			// Muestra el formulario de pacientes
+			formPacientes.ShowDialog();
+
+			// Verifica si el usuario aceptó los cambios en el formulario de pacientes
+			if (formPacientes.DialogResult == DialogResult.OK)
+			{
+				pacienteSeleccionado = paciente;
+				txtPaciente.Text = pacienteSeleccionado.Nombre + ' ' + pacienteSeleccionado.Apellido;
+			}
 		}
 	}
 }
