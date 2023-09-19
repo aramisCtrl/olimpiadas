@@ -54,7 +54,7 @@ namespace Codigo_Azul
 			this.cbxTipo = new System.Windows.Forms.ComboBox();
 			this.btnBuscarPaciente = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtUsuario = new System.Windows.Forms.TextBox();
 			this.txtPaciente = new System.Windows.Forms.TextBox();
 			this.lbl_dni1 = new System.Windows.Forms.Label();
 			this.lbl_dni = new System.Windows.Forms.Label();
@@ -133,7 +133,7 @@ namespace Codigo_Azul
 			this.panel3.Controls.Add(this.cbxTipo);
 			this.panel3.Controls.Add(this.btnBuscarPaciente);
 			this.panel3.Controls.Add(this.button1);
-			this.panel3.Controls.Add(this.textBox2);
+			this.panel3.Controls.Add(this.txtUsuario);
 			this.panel3.Controls.Add(this.txtPaciente);
 			this.panel3.Controls.Add(this.lbl_dni1);
 			this.panel3.Controls.Add(this.lbl_dni);
@@ -257,14 +257,15 @@ namespace Codigo_Azul
 			this.button1.TabIndex = 49;
 			this.button1.Text = "...";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
-			// textBox2
+			// txtUsuario
 			// 
-			this.textBox2.Location = new System.Drawing.Point(193, 143);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.ReadOnly = true;
-			this.textBox2.Size = new System.Drawing.Size(298, 20);
-			this.textBox2.TabIndex = 48;
+			this.txtUsuario.Location = new System.Drawing.Point(193, 143);
+			this.txtUsuario.Name = "txtUsuario";
+			this.txtUsuario.ReadOnly = true;
+			this.txtUsuario.Size = new System.Drawing.Size(298, 20);
+			this.txtUsuario.TabIndex = 48;
 			// 
 			// txtPaciente
 			// 
@@ -384,7 +385,7 @@ namespace Codigo_Azul
 		private System.Windows.Forms.Label lbl_dni;
 		private System.Windows.Forms.Label lbl_dni1;
 		private System.Windows.Forms.TextBox txtPaciente;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtUsuario;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button btnBuscarPaciente;
 		private System.Windows.Forms.ComboBox cbxTipo;

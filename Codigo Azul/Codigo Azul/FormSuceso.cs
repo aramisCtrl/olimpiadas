@@ -12,6 +12,7 @@ namespace Codigo_Azul
 		private Suceso oSuceso;
 		public ClassConexionSQL miconexion;
 		private Paciente pacienteSeleccionado;
+		private Usuario UsuarioSeleccionado;
 		
 		public FormSuceso( Suceso FSuceso,ClassConexionSQL fconexion)
 		{
@@ -70,6 +71,24 @@ namespace Codigo_Azul
 				lbl_dni1.Text = pacienteSeleccionado.Dni;
 				lbl_grupo_sanguineo1.Text = pacienteSeleccionado.GrupoSanguineo;
 				lbl_obra_social1.Text = pacienteSeleccionado.ObraSocialDescripcion;
+
+			}
+		}
+		
+		void Button1Click(object sender, EventArgs e)
+		{
+			Usuario oUsuario = new Usuario(); // Crea una instancia de usuario
+			FormUsuario formUsuario = new FormUsuario(oUsuario,miconexion);
+			
+			// Muestra el formulario de pacientes
+			formUsuario.ShowDialog();
+
+			// Verifica si el usuario aceptó los cambios en el formulario de usuario
+			if (formUsuario.DialogResult == DialogResult.OK)
+			{
+				UsuarioSeleccionado = oUsuario;
+				txtUsuario.Text = UsuarioSeleccionado.Nombre + ' ' + UsuarioSeleccionado.Apellido;
+				
 
 			}
 		}

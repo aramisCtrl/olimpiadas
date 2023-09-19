@@ -58,3 +58,8 @@ C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\
 C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.MainForm.resources
 C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csproj.GenerateResource.Cache
 C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.exe
+D:\Descargas\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormPacientes.resources
+C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormUsuario.resources
+C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.exe
+C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.pdb
+C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb

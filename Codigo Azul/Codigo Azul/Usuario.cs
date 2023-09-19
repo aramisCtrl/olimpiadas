@@ -34,12 +34,12 @@ namespace Codigo_Azul
 		{
 			Nombre = nombre;
 			Apellido = apellido;
-			Usuario = Usuario;
-			Contraseña = Contraseña;
-			RolID = RolID;
-			AreaID = AreaID;
-			RolNombre = RolNombre;
-			AreaDescripcion	= AreaDescripcion;
+			//Usuario = usuario;
+			//Contraseña = Contraseña;
+			//RolID = RolID;
+			//AreaID = AreaID;
+			//RolNombre = RolNombre;
+			//AreaDescripcion	= AreaDescripcion;
 		}
 	}
 }

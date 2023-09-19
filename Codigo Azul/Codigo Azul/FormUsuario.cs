@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using System.Data;
 namespace Codigo_Azul
 {
 	public partial class FormUsuario : Form
@@ -11,7 +11,7 @@ namespace Codigo_Azul
 		private ClassConexionSQL miConexion;
 		BindingSource bindingSource = new BindingSource();
 		
-		public FormUsuario(Paciente fPaciente ,ClassConexionSQL fconexion)
+		public FormUsuario(Usuario fUsuario ,ClassConexionSQL fconexion)
 		{
 			InitializeComponent();
 			this.oUsuario = fUsuario;
@@ -23,7 +23,7 @@ namespace Codigo_Azul
 			txtNombre.Text = "";
 			txtApellido.Text = "";
 			txtUser.Text = "";
-			txtContraseña.Text = "";	
+			txtContraseña.Text = "";
 			cbxRol.SelectedIndex = -1;
 			cbxArea.SelectedIndex = -1;
 		}
@@ -70,26 +70,26 @@ namespace Codigo_Azul
 		}
 		
 		void cargarComboRol(){
-            DataSet ds = miConexion.EjecutarSentencia("SELECT * FROM Rol");
-            
-            if (ds != null && ds.Tables.Count > 0)
-            {
-                cbxRol.DataSource = ds.Tables[0];
-                cbxRol.DisplayMember = "rol_nombre";
-                cbxRol.ValueMember = "rol_id";
-            }
-        }
-        
-        void cargarComboArea(){
-            DataSet ds = miConexion.EjecutarSentencia("SELECT * FROM Area");
-            
-            if (ds != null && ds.Tables.Count > 0)
-            {
-                cbxArea.DataSource = ds.Tables[0];
-                cbxArea.DisplayMember = "area_descripcion";
-                cbxArea.ValueMember = "area_id";
-            }
-        }
+			DataSet ds = miConexion.EjecutarSentencia("SELECT * FROM Rol");
+			
+			if (ds != null && ds.Tables.Count > 0)
+			{
+				cbxRol.DataSource = ds.Tables[0];
+				cbxRol.DisplayMember = "rol_nombre";
+				cbxRol.ValueMember = "rol_id";
+			}
+		}
+		
+		void cargarComboArea(){
+			DataSet ds = miConexion.EjecutarSentencia("SELECT * FROM Area");
+			
+			if (ds != null && ds.Tables.Count > 0)
+			{
+				cbxArea.DataSource = ds.Tables[0];
+				cbxArea.DisplayMember = "area_descripcion";
+				cbxArea.ValueMember = "area_id";
+			}
+		}
 		
 		void BtnSeleccionarClick(object sender, EventArgs e)
 		{
@@ -98,7 +98,7 @@ namespace Codigo_Azul
 		}
 		
 		void cargarGrilla(){
-			DataSet ds = miConexion.EjecutarSentencia("exec sp_ObtenerUsuariossGrilla");
+			DataSet ds = miConexion.EjecutarSentencia("exec sp_ObtenerUsuarios");
 			
 			gridDatos.AutoGenerateColumns = false;
 			bindingSource.DataSource = ds.Tables[0]; // ds es tu DataSet
@@ -115,7 +115,7 @@ namespace Codigo_Azul
 			IniciarSeleccion();
 		}
 		
-			void GridDatosSelectionChanged(object sender, EventArgs e)
+		void GridDatosSelectionChanged(object sender, EventArgs e)
 		{
 			if (gridDatos.SelectedRows.Count > 0)
 			{
@@ -128,33 +128,36 @@ namespace Codigo_Azul
 				oUsuario.ID = Convert.ToInt32(filaSeleccionada.Cells["usua_id"].Value.ToString());
 				oUsuario.Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
 				oUsuario.Apellido =filaSeleccionada.Cells["Apellido"].Value.ToString();
-				oUsuario.User =filaSeleccionada.Cells["Usuario"].Value.ToString();
-				oUsuario.Contraseña = filaSeleccionada.Cells["Contraseña"].Value.ToString();
+				oUsuario.User =filaSeleccionada.Cells["User"].Value.ToString();
+				oUsuario.Contraseña = filaSeleccionada.Cells["usua_contraseña"].Value.ToString();
 				
 
 				//Actualiza los componentes visuales
 				txtNombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
 				txtApellido.Text = filaSeleccionada.Cells["Apellido"].Value.ToString();
-				txtUser.Text = filaSeleccionada.Cells["Usuario"].Value.ToString();
-				txtContraseña.Text = filaSeleccionada.Cells["Contraseña"].Value.ToString();
+				txtUser.Text = filaSeleccionada.Cells["User"].Value.ToString();
+				txtContraseña.Text = filaSeleccionada.Cells["usua_contraseña"].Value.ToString();
 				
-				string Rol = gridDatos.SelectedRows[0].Cells["Rol"].Value.ToString();
-				for (int i = 0; i < cbxRol.Items.Count; i++)
-				{
-					if (cbxRol.GetItemText(cbxRol.Items[i]) == Rol)
+				if (filaSeleccionada.Cells["Area"].Value != null){
+					string Area = filaSeleccionada.Cells["Area"].Value.ToString();
+					for (int i = 0; i < cbxArea.Items.Count; i++)
 					{
-						cbxRol.SelectedIndex = i;
-						break;
+						if (cbxArea.GetItemText(cbxArea.Items[i]) == Area)
+						{
+							cbxArea.SelectedIndex = i;
+							break;
+						}
 					}
 				}
-				
-				string Area = gridDatos.SelectedRows[0].Cells["Area"].Value.ToString();
-				for (int i = 0; i < cbxArea.Items.Count; i++)
-				{
-					if (cbxArea.GetItemText(cbxArea.Items[i]) == Area)
+				if (filaSeleccionada.Cells["Rol"].Value != null){
+					string Rol = filaSeleccionada.Cells["Rol"].Value.ToString();
+					for (int i = 0; i < cbxRol.Items.Count; i++)
 					{
-						cbxArea.SelectedIndex = i;
-						break;
+						if (cbxRol.GetItemText(cbxRol.Items[i]) == Rol)
+						{
+							cbxRol.SelectedIndex = i;
+							break;
+						}
 					}
 				}
 			}
@@ -166,13 +169,13 @@ namespace Codigo_Azul
 			
 		}
 		
-			
+		
 		void TxtBuscarTextChanged(object sender, EventArgs e)
 		{
 			string valorBusqueda = txtBuscar.Text;
 
 			// Crear un filtro que sea insensible a mayúsculas y minúsculas
-			string filtro = "paci_nombre LIKE '%"+valorBusqueda+"%' OR paci_apellido LIKE '%"+valorBusqueda+"%'";
+			string filtro = "usua_nombre LIKE '%"+valorBusqueda+"%' OR usua_apellido LIKE '%"+valorBusqueda+"%'";
 
 			// Aplicar el filtro al BindingSource
 			bindingSource.Filter = filtro;
@@ -192,12 +195,12 @@ namespace Codigo_Azul
 		{
 			if(Edicion){
 				// Construye la cadena de parámetros
-				string parametros = oUsuarios.ID + ", '" +txtNombre.Text+"', '"+ txtApellido.Text + "', " + txtUser.Text +
-					", '" + txtContraseña.Text + "', " + Convert.ToInt32(cbxRol.SelectedValue) + ", " + Convert.ToInt32(cbxArea.SelectedValue) + " ";
+				string parametros = oUsuario.ID + ", '" +txtNombre.Text+"', '"+ txtApellido.Text + "', '" + txtUser.Text +
+					"', '" + txtContraseña.Text + "', " + Convert.ToInt32(cbxRol.SelectedValue) + ", " + Convert.ToInt32(cbxArea.SelectedValue) + " ";
 
 				miConexion.EjecutarSentencia("exec sp_ActualizarUsuario " + parametros);
 			}else if (Nuevo){
-				string parametros = "'" +txtNombre.Text+"', '"+ txtApellido.Text + "', " + txtUser.Text +", '" + txtContraseña.Text + "', " +
+				string parametros = "'" +txtNombre.Text+"', '"+ txtApellido.Text + "', '" + txtUser.Text +"', '" + txtContraseña.Text + "', " +
 					Convert.ToInt32(cbxRol.SelectedValue) + ", " + Convert.ToInt32(cbxArea.SelectedValue) + "";
 
 				miConexion.EjecutarSentencia("exec sp_InsertarUsuario " + parametros);
@@ -213,11 +216,10 @@ namespace Codigo_Azul
 			GridDatosSelectionChanged(null,e);
 		}
 		void BtnNuevoClick(object sender, EventArgs e)
-		{			
+		{
 			IniciarNuevo();
 			Limpiar();
 		}
-		
 		
 	}
 }

@@ -61,10 +61,12 @@ namespace Codigo_Azul
 			this.pnlMid = new System.Windows.Forms.Panel();
 			this.gridDatos = new System.Windows.Forms.DataGridView();
 			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.paci_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.paci_prov_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.paci_obso_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.usua_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.usua_contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.pnlTop.SuspendLayout();
 			this.btnButtons.SuspendLayout();
 			this.pnlData.SuspendLayout();
@@ -88,6 +90,7 @@ namespace Codigo_Azul
 			this.txtBuscar.Name = "txtBuscar";
 			this.txtBuscar.Size = new System.Drawing.Size(438, 20);
 			this.txtBuscar.TabIndex = 0;
+			this.txtBuscar.TextChanged += new System.EventHandler(this.TxtBuscarTextChanged);
 			// 
 			// label1
 			// 
@@ -115,27 +118,30 @@ namespace Codigo_Azul
 			this.btnNuevo.Location = new System.Drawing.Point(128, 6);
 			this.btnNuevo.Name = "btnNuevo";
 			this.btnNuevo.Size = new System.Drawing.Size(106, 27);
-			this.btnNuevo.TabIndex = 4;
+			this.btnNuevo.TabIndex = 1;
 			this.btnNuevo.Text = "Nuevo";
 			this.btnNuevo.UseVisualStyleBackColor = true;
+			this.btnNuevo.Click += new System.EventHandler(this.BtnNuevoClick);
 			// 
 			// btnEditar
 			// 
 			this.btnEditar.Location = new System.Drawing.Point(240, 6);
 			this.btnEditar.Name = "btnEditar";
 			this.btnEditar.Size = new System.Drawing.Size(106, 27);
-			this.btnEditar.TabIndex = 3;
+			this.btnEditar.TabIndex = 2;
 			this.btnEditar.Text = "Editar";
 			this.btnEditar.UseVisualStyleBackColor = true;
+			this.btnEditar.Click += new System.EventHandler(this.BtnEditarClick);
 			// 
 			// btnSeleccionar
 			// 
 			this.btnSeleccionar.Location = new System.Drawing.Point(16, 6);
 			this.btnSeleccionar.Name = "btnSeleccionar";
 			this.btnSeleccionar.Size = new System.Drawing.Size(106, 27);
-			this.btnSeleccionar.TabIndex = 2;
+			this.btnSeleccionar.TabIndex = 0;
 			this.btnSeleccionar.Text = "Seleccionar";
 			this.btnSeleccionar.UseVisualStyleBackColor = true;
+			this.btnSeleccionar.Click += new System.EventHandler(this.BtnSeleccionarClick);
 			// 
 			// btnCancelar
 			// 
@@ -143,9 +149,10 @@ namespace Codigo_Azul
 			this.btnCancelar.Location = new System.Drawing.Point(464, 6);
 			this.btnCancelar.Name = "btnCancelar";
 			this.btnCancelar.Size = new System.Drawing.Size(106, 27);
-			this.btnCancelar.TabIndex = 1;
+			this.btnCancelar.TabIndex = 4;
 			this.btnCancelar.Text = "Cancelar";
 			this.btnCancelar.UseVisualStyleBackColor = true;
+			this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
 			// 
 			// btnAceptar
 			// 
@@ -153,9 +160,10 @@ namespace Codigo_Azul
 			this.btnAceptar.Location = new System.Drawing.Point(352, 6);
 			this.btnAceptar.Name = "btnAceptar";
 			this.btnAceptar.Size = new System.Drawing.Size(106, 27);
-			this.btnAceptar.TabIndex = 0;
+			this.btnAceptar.TabIndex = 3;
 			this.btnAceptar.Text = "Aceptar";
 			this.btnAceptar.UseVisualStyleBackColor = true;
+			this.btnAceptar.Click += new System.EventHandler(this.BtnAceptarClick);
 			// 
 			// pnlData
 			// 
@@ -183,7 +191,7 @@ namespace Codigo_Azul
 			this.txtUser.Location = new System.Drawing.Point(132, 77);
 			this.txtUser.Name = "txtUser";
 			this.txtUser.Size = new System.Drawing.Size(238, 20);
-			this.txtUser.TabIndex = 17;
+			this.txtUser.TabIndex = 2;
 			// 
 			// label5
 			// 
@@ -200,7 +208,7 @@ namespace Codigo_Azul
 			this.cbxArea.Location = new System.Drawing.Point(132, 156);
 			this.cbxArea.Name = "cbxArea";
 			this.cbxArea.Size = new System.Drawing.Size(238, 21);
-			this.cbxArea.TabIndex = 7;
+			this.cbxArea.TabIndex = 5;
 			// 
 			// cbxRol
 			// 
@@ -209,7 +217,7 @@ namespace Codigo_Azul
 			this.cbxRol.Location = new System.Drawing.Point(132, 129);
 			this.cbxRol.Name = "cbxRol";
 			this.cbxRol.Size = new System.Drawing.Size(238, 21);
-			this.cbxRol.TabIndex = 6;
+			this.cbxRol.TabIndex = 4;
 			// 
 			// label9
 			// 
@@ -232,7 +240,7 @@ namespace Codigo_Azul
 			this.txtContraseña.Location = new System.Drawing.Point(132, 103);
 			this.txtContraseña.Name = "txtContraseña";
 			this.txtContraseña.Size = new System.Drawing.Size(176, 20);
-			this.txtContraseña.TabIndex = 2;
+			this.txtContraseña.TabIndex = 3;
 			// 
 			// label2
 			// 
@@ -289,10 +297,12 @@ namespace Codigo_Azul
 			this.gridDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 									this.Nombre,
-									this.paci_id,
-									this.paci_prov_id,
-									this.paci_obso_id,
-									this.Apellido});
+									this.Apellido,
+									this.User,
+									this.Rol,
+									this.Area,
+									this.usua_id,
+									this.usua_contraseña});
 			this.gridDatos.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.gridDatos.Location = new System.Drawing.Point(0, 0);
 			this.gridDatos.Name = "gridDatos";
@@ -300,6 +310,7 @@ namespace Codigo_Azul
 			this.gridDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.gridDatos.Size = new System.Drawing.Size(645, 262);
 			this.gridDatos.TabIndex = 0;
+			this.gridDatos.SelectionChanged += new System.EventHandler(this.GridDatosSelectionChanged);
 			// 
 			// Nombre
 			// 
@@ -308,33 +319,49 @@ namespace Codigo_Azul
 			this.Nombre.Name = "Nombre";
 			this.Nombre.ReadOnly = true;
 			// 
-			// paci_id
-			// 
-			this.paci_id.DataPropertyName = "usua_apellido";
-			this.paci_id.HeaderText = "Apellido";
-			this.paci_id.Name = "paci_id";
-			this.paci_id.ReadOnly = true;
-			// 
-			// paci_prov_id
-			// 
-			this.paci_prov_id.DataPropertyName = "usua_usuario";
-			this.paci_prov_id.HeaderText = "Usuario";
-			this.paci_prov_id.Name = "paci_prov_id";
-			this.paci_prov_id.ReadOnly = true;
-			// 
-			// paci_obso_id
-			// 
-			this.paci_obso_id.DataPropertyName = "rol_nombre";
-			this.paci_obso_id.HeaderText = "Rol";
-			this.paci_obso_id.Name = "paci_obso_id";
-			this.paci_obso_id.ReadOnly = true;
-			// 
 			// Apellido
 			// 
-			this.Apellido.DataPropertyName = "area_descripcion";
-			this.Apellido.HeaderText = "Área";
+			this.Apellido.DataPropertyName = "usua_apellido";
+			this.Apellido.HeaderText = "Apellido";
 			this.Apellido.Name = "Apellido";
 			this.Apellido.ReadOnly = true;
+			// 
+			// User
+			// 
+			this.User.DataPropertyName = "usua_usuario";
+			this.User.HeaderText = "User";
+			this.User.Name = "User";
+			this.User.ReadOnly = true;
+			// 
+			// Rol
+			// 
+			this.Rol.DataPropertyName = "rol_nombre";
+			this.Rol.HeaderText = "Rol";
+			this.Rol.Name = "Rol";
+			this.Rol.ReadOnly = true;
+			// 
+			// Area
+			// 
+			this.Area.DataPropertyName = "area_descripcion";
+			this.Area.HeaderText = "Area";
+			this.Area.Name = "Area";
+			this.Area.ReadOnly = true;
+			// 
+			// usua_id
+			// 
+			this.usua_id.DataPropertyName = "usua_id";
+			this.usua_id.HeaderText = "usua_id";
+			this.usua_id.Name = "usua_id";
+			this.usua_id.ReadOnly = true;
+			this.usua_id.Visible = false;
+			// 
+			// usua_contraseña
+			// 
+			this.usua_contraseña.DataPropertyName = "usua_contraseña";
+			this.usua_contraseña.HeaderText = "usua_contraseña";
+			this.usua_contraseña.Name = "usua_contraseña";
+			this.usua_contraseña.ReadOnly = true;
+			this.usua_contraseña.Visible = false;
 			// 
 			// FormUsuario
 			// 
@@ -357,10 +384,13 @@ namespace Codigo_Azul
 			((System.ComponentModel.ISupportInitialize)(this.gridDatos)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.DataGridViewTextBoxColumn Area;
+		private System.Windows.Forms.DataGridViewTextBoxColumn usua_contraseña;
+		private System.Windows.Forms.DataGridViewTextBoxColumn usua_id;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Área;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn User;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-		private System.Windows.Forms.DataGridViewTextBoxColumn paci_obso_id;
-		private System.Windows.Forms.DataGridViewTextBoxColumn paci_prov_id;
-		private System.Windows.Forms.DataGridViewTextBoxColumn paci_id;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
 		private System.Windows.Forms.DataGridView gridDatos;
 		private System.Windows.Forms.Panel pnlMid;
