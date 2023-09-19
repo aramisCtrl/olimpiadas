@@ -6,7 +6,7 @@ namespace Codigo_Azul
 {
 	public partial class FormGrilla : Form
 	{
-	
+		
 		ClassConexionSQL miConexion;
 		Suceso miSuceso;
 		public FormGrilla()
@@ -41,7 +41,7 @@ namespace Codigo_Azul
 		}
 		
 
-		void Button1Click(object sender, EventArgs e)
+		void btnNuevoClick(object sender, EventArgs e)
 		{
 			FormSuceso form = new FormSuceso(miSuceso,miConexion);
 			form.miconexion = this.miConexion;
@@ -63,36 +63,37 @@ namespace Codigo_Azul
 		
 		void DataGridView1DoubleClick(object sender, EventArgs e)
 		{
-			//Obtén la fila seleccionada actualmente
-			DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
-					
-			// Actualiza los datos del objeto Pacientes con los valores del formulario
-//					oSuceso.Estado=Convert.ToInt32(cbxProvincia.SelectedValue);
-//					oSuceso.FechaInicio = Convert.ToInt32(cbxObraSocial.SelectedValue);
-//					oSuceso.Tipo = Convert.ToInt32(cbxProvincia.SelectedValue);
-//					oSuceso.Descripcion = Convert.ToInt32(filaSeleccionada.Cells["paci_id"].Value.ToString());
-//					oSuceso.Sala = filaSeleccionada.Cells["Nombre"].Value.ToString();
-//					oSuceso.Nombre =filaSeleccionada.Cells["Apellido"].Value.ToString();
-//					oSuceso.Apellido =filaSeleccionada.Cells["Direccion"].Value.ToString();
-//					oSuceso.Dni = filaSeleccionada.Cells["Dni"].Value.ToString();
-//					oSuceso.GrupoSanguineo =  filaSeleccionada.Cells["GrupoSanguineo"].Value.ToString();
-//					oSuceso.ObraSocialDescripcion = filaSeleccionada.Cells["obso_descripcion"].Value.ToString();
-			miSuceso.Estado=filaSeleccionada.Cells["Estado"].Value.ToString();
-			miSuceso.Estado=filaSeleccionada.Cells["FechaInicio"].Value.ToString();
-			miSuceso.Estado=filaSeleccionada.Cells["Tipo"].Value.ToString();
-			miSuceso.Estado=filaSeleccionada.Cells["Descripcion"].Value.ToString();
-			miSuceso.Estado=filaSeleccionada.Cells["Sala"].Value.ToString();
-			miSuceso.Estado=filaSeleccionada.Cells["Nombre"].Value.ToString();
-			miSuceso.Estado=filaSeleccionada.Cells["Apellido"].Value.ToString();
-			miSuceso.Estado=filaSeleccionada.Cells["Dni"].Value.ToString();
-			miSuceso.Estado=filaSeleccionada.Cells["GrupoSanguineo"].Value.ToString();
-			miSuceso.Estado=filaSeleccionada.Cells["ObraSocial"].Value.ToString();
+			if (dataGridView1.SelectedRows.Count > 0)
+			{
+				//Obtén la fila seleccionada actualmente
+				DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
 				
-			FormSuceso form = new FormSuceso(miSuceso,miConexion);
-			form.miconexion = this.miConexion;
+				// Actualiza los datos del objeto Suceso con los valores del formulario
+				miSuceso.Numero=int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
+				miSuceso.Estado=filaSeleccionada.Cells["estado"].Value.ToString();
+				miSuceso.FechaInicio=DateTime.Parse(filaSeleccionada.Cells["FechaInicio"].Value.ToString());
+				miSuceso.Tipo=filaSeleccionada.Cells["Tipo"].Value.ToString();
+				miSuceso.Descripcion=filaSeleccionada.Cells["Descripcion"].Value.ToString();
+				miSuceso.Sala=filaSeleccionada.Cells["Sala"].Value.ToString();
+				miSuceso.Nombre=filaSeleccionada.Cells["Nombre"].Value.ToString();
+				miSuceso.Apellido=filaSeleccionada.Cells["Apellido"].Value.ToString();
+				miSuceso.Dni=int.Parse(filaSeleccionada.Cells["Dni"].Value.ToString());
+				miSuceso.GrupoSanguineo=filaSeleccionada.Cells["GrupoSanguineo"].Value.ToString();
+				miSuceso.ObraSocial=filaSeleccionada.Cells["ObraSocial"].Value.ToString();
+				miSuceso.Origen=filaSeleccionada.Cells["Origen"].Value.ToString();
+				miSuceso.Medico=filaSeleccionada.Cells["Medico"].Value.ToString();
+				
+				FormSuceso form = new FormSuceso(miSuceso,miConexion);
+				form.miconexion = this.miConexion;
+				
+				form.Edicion=true;
+				form.Show();
+			}
+		}
+		
+		void DataGridView1CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
 			
-			form.Edicion=true;
-			form.Show();
 		}
 	}
 }

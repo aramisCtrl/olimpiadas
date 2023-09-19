@@ -40,21 +40,21 @@ namespace Codigo_Azul
 			this.button4 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.lbl_suceso = new System.Windows.Forms.Label();
-			this.panel3 = new System.Windows.Forms.Panel();
+			this.lblNumero = new System.Windows.Forms.Label();
+			this.pnlDatos = new System.Windows.Forms.Panel();
 			this.lbl_obra_social1 = new System.Windows.Forms.Label();
 			this.lbl_obra_social = new System.Windows.Forms.Label();
 			this.lbl_grupo_sanguineo1 = new System.Windows.Forms.Label();
 			this.lbl_grupo_sanguineo = new System.Windows.Forms.Label();
-			this.comboBox4 = new System.Windows.Forms.ComboBox();
+			this.cbxOrigen = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.comboBox3 = new System.Windows.Forms.ComboBox();
+			this.cbxEstado = new System.Windows.Forms.ComboBox();
 			this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.cbxSala = new System.Windows.Forms.ComboBox();
 			this.cbxTipo = new System.Windows.Forms.ComboBox();
 			this.btnBuscarPaciente = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtMedico = new System.Windows.Forms.TextBox();
 			this.txtPaciente = new System.Windows.Forms.TextBox();
 			this.lbl_dni1 = new System.Windows.Forms.Label();
 			this.lbl_dni = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@ namespace Codigo_Azul
 			this.lbl_estado = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
-			this.panel3.SuspendLayout();
+			this.pnlDatos.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -101,55 +101,55 @@ namespace Codigo_Azul
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.lbl_suceso);
+			this.panel2.Controls.Add(this.lblNumero);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(1062, 45);
 			this.panel2.TabIndex = 38;
 			// 
-			// lbl_suceso
+			// lblNumero
 			// 
-			this.lbl_suceso.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.lbl_suceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_suceso.Location = new System.Drawing.Point(0, 0);
-			this.lbl_suceso.Name = "lbl_suceso";
-			this.lbl_suceso.Size = new System.Drawing.Size(1062, 45);
-			this.lbl_suceso.TabIndex = 1;
-			this.lbl_suceso.Text = "Suceso Nº 123456";
-			this.lbl_suceso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblNumero.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblNumero.Location = new System.Drawing.Point(0, 0);
+			this.lblNumero.Name = "lblNumero";
+			this.lblNumero.Size = new System.Drawing.Size(1062, 45);
+			this.lblNumero.TabIndex = 1;
+			this.lblNumero.Text = "Suceso Nº 123456";
+			this.lblNumero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// panel3
+			// pnlDatos
 			// 
-			this.panel3.Controls.Add(this.lbl_obra_social1);
-			this.panel3.Controls.Add(this.lbl_obra_social);
-			this.panel3.Controls.Add(this.lbl_grupo_sanguineo1);
-			this.panel3.Controls.Add(this.lbl_grupo_sanguineo);
-			this.panel3.Controls.Add(this.comboBox4);
-			this.panel3.Controls.Add(this.label3);
-			this.panel3.Controls.Add(this.comboBox3);
-			this.panel3.Controls.Add(this.dtp_fecha);
-			this.panel3.Controls.Add(this.comboBox2);
-			this.panel3.Controls.Add(this.cbxTipo);
-			this.panel3.Controls.Add(this.btnBuscarPaciente);
-			this.panel3.Controls.Add(this.button1);
-			this.panel3.Controls.Add(this.textBox2);
-			this.panel3.Controls.Add(this.txtPaciente);
-			this.panel3.Controls.Add(this.lbl_dni1);
-			this.panel3.Controls.Add(this.lbl_dni);
-			this.panel3.Controls.Add(this.richTextBox1);
-			this.panel3.Controls.Add(this.lbl_sala);
-			this.panel3.Controls.Add(this.lbl_descripcion);
-			this.panel3.Controls.Add(this.lbl_medico);
-			this.panel3.Controls.Add(this.lbl_paciente);
-			this.panel3.Controls.Add(this.lbl_inicio);
-			this.panel3.Controls.Add(this.lbl_tipo);
-			this.panel3.Controls.Add(this.lbl_estado);
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel3.Location = new System.Drawing.Point(0, 45);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(1062, 458);
-			this.panel3.TabIndex = 39;
+			this.pnlDatos.Controls.Add(this.lbl_obra_social1);
+			this.pnlDatos.Controls.Add(this.lbl_obra_social);
+			this.pnlDatos.Controls.Add(this.lbl_grupo_sanguineo1);
+			this.pnlDatos.Controls.Add(this.lbl_grupo_sanguineo);
+			this.pnlDatos.Controls.Add(this.cbxOrigen);
+			this.pnlDatos.Controls.Add(this.label3);
+			this.pnlDatos.Controls.Add(this.cbxEstado);
+			this.pnlDatos.Controls.Add(this.dtp_fecha);
+			this.pnlDatos.Controls.Add(this.cbxSala);
+			this.pnlDatos.Controls.Add(this.cbxTipo);
+			this.pnlDatos.Controls.Add(this.btnBuscarPaciente);
+			this.pnlDatos.Controls.Add(this.button1);
+			this.pnlDatos.Controls.Add(this.txtMedico);
+			this.pnlDatos.Controls.Add(this.txtPaciente);
+			this.pnlDatos.Controls.Add(this.lbl_dni1);
+			this.pnlDatos.Controls.Add(this.lbl_dni);
+			this.pnlDatos.Controls.Add(this.richTextBox1);
+			this.pnlDatos.Controls.Add(this.lbl_sala);
+			this.pnlDatos.Controls.Add(this.lbl_descripcion);
+			this.pnlDatos.Controls.Add(this.lbl_medico);
+			this.pnlDatos.Controls.Add(this.lbl_paciente);
+			this.pnlDatos.Controls.Add(this.lbl_inicio);
+			this.pnlDatos.Controls.Add(this.lbl_tipo);
+			this.pnlDatos.Controls.Add(this.lbl_estado);
+			this.pnlDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlDatos.Location = new System.Drawing.Point(0, 45);
+			this.pnlDatos.Name = "pnlDatos";
+			this.pnlDatos.Size = new System.Drawing.Size(1062, 458);
+			this.pnlDatos.TabIndex = 39;
 			// 
 			// lbl_obra_social1
 			// 
@@ -185,14 +185,15 @@ namespace Codigo_Azul
 			this.lbl_grupo_sanguineo.Text = "Grupo sanguíneo:";
 			this.lbl_grupo_sanguineo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// comboBox4
+			// cbxOrigen
 			// 
-			this.comboBox4.Enabled = false;
-			this.comboBox4.FormattingEnabled = true;
-			this.comboBox4.Location = new System.Drawing.Point(773, 37);
-			this.comboBox4.Name = "comboBox4";
-			this.comboBox4.Size = new System.Drawing.Size(203, 21);
-			this.comboBox4.TabIndex = 56;
+			this.cbxOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxOrigen.Enabled = false;
+			this.cbxOrigen.FormattingEnabled = true;
+			this.cbxOrigen.Location = new System.Drawing.Point(773, 37);
+			this.cbxOrigen.Name = "cbxOrigen";
+			this.cbxOrigen.Size = new System.Drawing.Size(203, 21);
+			this.cbxOrigen.TabIndex = 56;
 			// 
 			// label3
 			// 
@@ -203,14 +204,15 @@ namespace Codigo_Azul
 			this.label3.Text = "Origen:";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// comboBox3
+			// cbxEstado
 			// 
-			this.comboBox3.Enabled = false;
-			this.comboBox3.FormattingEnabled = true;
-			this.comboBox3.Location = new System.Drawing.Point(465, 35);
-			this.comboBox3.Name = "comboBox3";
-			this.comboBox3.Size = new System.Drawing.Size(203, 21);
-			this.comboBox3.TabIndex = 54;
+			this.cbxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxEstado.Enabled = false;
+			this.cbxEstado.FormattingEnabled = true;
+			this.cbxEstado.Location = new System.Drawing.Point(465, 35);
+			this.cbxEstado.Name = "cbxEstado";
+			this.cbxEstado.Size = new System.Drawing.Size(203, 21);
+			this.cbxEstado.TabIndex = 54;
 			// 
 			// dtp_fecha
 			// 
@@ -221,14 +223,14 @@ namespace Codigo_Azul
 			this.dtp_fecha.Size = new System.Drawing.Size(163, 20);
 			this.dtp_fecha.TabIndex = 53;
 			// 
-			// comboBox2
+			// cbxSala
 			// 
-			this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Location = new System.Drawing.Point(193, 108);
-			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(298, 21);
-			this.comboBox2.TabIndex = 52;
+			this.cbxSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxSala.FormattingEnabled = true;
+			this.cbxSala.Location = new System.Drawing.Point(193, 108);
+			this.cbxSala.Name = "cbxSala";
+			this.cbxSala.Size = new System.Drawing.Size(298, 21);
+			this.cbxSala.TabIndex = 52;
 			// 
 			// cbxTipo
 			// 
@@ -258,13 +260,13 @@ namespace Codigo_Azul
 			this.button1.Text = "...";
 			this.button1.UseVisualStyleBackColor = true;
 			// 
-			// textBox2
+			// txtMedico
 			// 
-			this.textBox2.Location = new System.Drawing.Point(193, 143);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.ReadOnly = true;
-			this.textBox2.Size = new System.Drawing.Size(298, 20);
-			this.textBox2.TabIndex = 48;
+			this.txtMedico.Location = new System.Drawing.Point(193, 143);
+			this.txtMedico.Name = "txtMedico";
+			this.txtMedico.ReadOnly = true;
+			this.txtMedico.Size = new System.Drawing.Size(298, 20);
+			this.txtMedico.TabIndex = 48;
 			// 
 			// txtPaciente
 			// 
@@ -367,7 +369,7 @@ namespace Codigo_Azul
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1062, 568);
-			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.pnlDatos);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Name = "FormSuceso";
@@ -376,28 +378,28 @@ namespace Codigo_Azul
 			this.Load += new System.EventHandler(this.FormSucesoLoad);
 			this.panel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
-			this.panel3.ResumeLayout(false);
-			this.panel3.PerformLayout();
+			this.pnlDatos.ResumeLayout(false);
+			this.pnlDatos.PerformLayout();
 			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.RichTextBox richTextBox1;
 		private System.Windows.Forms.Label lbl_dni;
 		private System.Windows.Forms.Label lbl_dni1;
 		private System.Windows.Forms.TextBox txtPaciente;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtMedico;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button btnBuscarPaciente;
 		private System.Windows.Forms.ComboBox cbxTipo;
-		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.ComboBox cbxSala;
 		private System.Windows.Forms.DateTimePicker dtp_fecha;
-		private System.Windows.Forms.ComboBox comboBox3;
+		private System.Windows.Forms.ComboBox cbxEstado;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.ComboBox comboBox4;
+		private System.Windows.Forms.ComboBox cbxOrigen;
 		private System.Windows.Forms.Label lbl_grupo_sanguineo;
 		private System.Windows.Forms.Label lbl_grupo_sanguineo1;
 		private System.Windows.Forms.Label lbl_obra_social;
 		private System.Windows.Forms.Label lbl_obra_social1;
-		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel pnlDatos;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button4;
@@ -409,6 +411,6 @@ namespace Codigo_Azul
 		private System.Windows.Forms.Label lbl_inicio;
 		private System.Windows.Forms.Label lbl_tipo;
 		private System.Windows.Forms.Label lbl_estado;
-		private System.Windows.Forms.Label lbl_suceso;
+		private System.Windows.Forms.Label lblNumero;
 	}
 }

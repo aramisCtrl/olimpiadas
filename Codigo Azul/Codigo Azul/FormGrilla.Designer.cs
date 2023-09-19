@@ -41,20 +41,22 @@ namespace Codigo_Azul
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btn_reportes = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnNuevo = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.paci_dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.paci_grupo_sanguineo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.obso_descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.GrupoSanguineo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ObraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,7 +71,7 @@ namespace Codigo_Azul
 			// 
 			this.panel1.Controls.Add(this.btn_reportes);
 			this.panel1.Controls.Add(this.button2);
-			this.panel1.Controls.Add(this.button1);
+			this.panel1.Controls.Add(this.btnNuevo);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
@@ -95,15 +97,15 @@ namespace Codigo_Azul
 			this.button2.Text = "button2";
 			this.button2.UseVisualStyleBackColor = true;
 			// 
-			// button1
+			// btnNuevo
 			// 
-			this.button1.Location = new System.Drawing.Point(12, 23);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "Modificar";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.Button1Click);
+			this.btnNuevo.Location = new System.Drawing.Point(12, 23);
+			this.btnNuevo.Name = "btnNuevo";
+			this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+			this.btnNuevo.TabIndex = 0;
+			this.btnNuevo.Text = "Nuevo";
+			this.btnNuevo.UseVisualStyleBackColor = true;
+			this.btnNuevo.Click += new System.EventHandler(this.btnNuevoClick);
 			// 
 			// panel2
 			// 
@@ -122,101 +124,134 @@ namespace Codigo_Azul
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-									this.Column1,
-									this.Column4,
-									this.Column2,
-									this.Column8,
-									this.Column3,
-									this.Column7,
-									this.Column5,
-									this.Column6,
-									this.paci_dni,
-									this.paci_grupo_sanguineo,
-									this.obso_descripcion});
+									this.Estado,
+									this.Numero,
+									this.FechaInicio,
+									this.Tipo,
+									this.Descripcion,
+									this.Sala,
+									this.Nombre,
+									this.Apellido,
+									this.Dni,
+									this.GrupoSanguineo,
+									this.ObraSocial,
+									this.Medico,
+									this.Origen});
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
 			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadOnly = true;
+			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridView1.Size = new System.Drawing.Size(1342, 414);
 			this.dataGridView1.TabIndex = 7;
+			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
 			this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1DoubleClick);
 			// 
-			// Column1
+			// Estado
 			// 
-			this.Column1.DataPropertyName = "sues_descripcion";
-			this.Column1.HeaderText = "Estado";
-			this.Column1.Name = "Column1";
-			this.Column1.Width = 65;
+			this.Estado.DataPropertyName = "sues_descripcion";
+			this.Estado.HeaderText = "Estado";
+			this.Estado.Name = "Estado";
+			this.Estado.ReadOnly = true;
+			this.Estado.Width = 65;
 			// 
-			// Column4
+			// Numero
 			// 
-			this.Column4.DataPropertyName = "suce_id";
-			this.Column4.HeaderText = "Column4";
-			this.Column4.Name = "Column4";
-			this.Column4.Visible = false;
-			this.Column4.Width = 73;
+			this.Numero.DataPropertyName = "suce_id";
+			this.Numero.HeaderText = "Numero";
+			this.Numero.Name = "Numero";
+			this.Numero.ReadOnly = true;
+			this.Numero.Visible = false;
+			this.Numero.Width = 69;
 			// 
-			// Column2
+			// FechaInicio
 			// 
-			this.Column2.DataPropertyName = "suce_fecha_ini";
-			this.Column2.HeaderText = "Fecha de inicio";
-			this.Column2.Name = "Column2";
-			this.Column2.Width = 74;
+			this.FechaInicio.DataPropertyName = "suce_fecha_ini";
+			this.FechaInicio.HeaderText = "Fecha de inicio";
+			this.FechaInicio.Name = "FechaInicio";
+			this.FechaInicio.ReadOnly = true;
+			this.FechaInicio.Width = 74;
 			// 
-			// Column8
+			// Tipo
 			// 
-			this.Column8.DataPropertyName = "suti_descripcion";
-			this.Column8.HeaderText = "Tipo ";
-			this.Column8.Name = "Column8";
-			this.Column8.Width = 56;
+			this.Tipo.DataPropertyName = "suti_descripcion";
+			this.Tipo.HeaderText = "Tipo";
+			this.Tipo.Name = "Tipo";
+			this.Tipo.ReadOnly = true;
+			this.Tipo.Width = 53;
 			// 
-			// Column3
+			// Descripcion
 			// 
-			this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Column3.DataPropertyName = "suce_descripcion";
-			this.Column3.HeaderText = "Descripción";
-			this.Column3.Name = "Column3";
+			this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Descripcion.DataPropertyName = "suce_descripcion";
+			this.Descripcion.HeaderText = "Descripción";
+			this.Descripcion.Name = "Descripcion";
+			this.Descripcion.ReadOnly = true;
 			// 
-			// Column7
+			// Sala
 			// 
-			this.Column7.DataPropertyName = "sala_descripcion";
-			this.Column7.HeaderText = "Sala";
-			this.Column7.Name = "Column7";
-			this.Column7.Width = 53;
+			this.Sala.DataPropertyName = "sala_descripcion";
+			this.Sala.HeaderText = "Sala";
+			this.Sala.Name = "Sala";
+			this.Sala.ReadOnly = true;
+			this.Sala.Width = 53;
 			// 
-			// Column5
+			// Nombre
 			// 
-			this.Column5.DataPropertyName = "paci_nombre";
-			this.Column5.HeaderText = "Nombre";
-			this.Column5.Name = "Column5";
-			this.Column5.Width = 69;
+			this.Nombre.DataPropertyName = "paci_nombre";
+			this.Nombre.HeaderText = "Nombre";
+			this.Nombre.Name = "Nombre";
+			this.Nombre.ReadOnly = true;
+			this.Nombre.Width = 69;
 			// 
-			// Column6
+			// Apellido
 			// 
-			this.Column6.DataPropertyName = "paci_apellido";
-			this.Column6.HeaderText = "Apellido";
-			this.Column6.Name = "Column6";
-			this.Column6.Width = 69;
+			this.Apellido.DataPropertyName = "paci_apellido";
+			this.Apellido.HeaderText = "Apellido";
+			this.Apellido.Name = "Apellido";
+			this.Apellido.ReadOnly = true;
+			this.Apellido.Width = 69;
 			// 
-			// paci_dni
+			// Dni
 			// 
-			this.paci_dni.DataPropertyName = "paci_dni";
-			this.paci_dni.HeaderText = "DNI";
-			this.paci_dni.Name = "paci_dni";
-			this.paci_dni.Width = 51;
+			this.Dni.DataPropertyName = "paci_dni";
+			this.Dni.HeaderText = "DNI";
+			this.Dni.Name = "Dni";
+			this.Dni.ReadOnly = true;
+			this.Dni.Width = 51;
 			// 
-			// paci_grupo_sanguineo
+			// GrupoSanguineo
 			// 
-			this.paci_grupo_sanguineo.DataPropertyName = "paci_grupo_sanguineo";
-			this.paci_grupo_sanguineo.HeaderText = "Grupo sanguineo";
-			this.paci_grupo_sanguineo.Name = "paci_grupo_sanguineo";
-			this.paci_grupo_sanguineo.Width = 104;
+			this.GrupoSanguineo.DataPropertyName = "paci_grupo_sanguineo";
+			this.GrupoSanguineo.HeaderText = "Grupo sanguineo";
+			this.GrupoSanguineo.Name = "GrupoSanguineo";
+			this.GrupoSanguineo.ReadOnly = true;
+			this.GrupoSanguineo.Width = 104;
 			// 
-			// obso_descripcion
+			// ObraSocial
 			// 
-			this.obso_descripcion.DataPropertyName = "obso_descripcion";
-			this.obso_descripcion.HeaderText = "Obra social";
-			this.obso_descripcion.Name = "obso_descripcion";
-			this.obso_descripcion.Width = 78;
+			this.ObraSocial.DataPropertyName = "obso_descripcion";
+			this.ObraSocial.HeaderText = "Obra social";
+			this.ObraSocial.Name = "ObraSocial";
+			this.ObraSocial.ReadOnly = true;
+			this.ObraSocial.Width = 78;
+			// 
+			// Medico
+			// 
+			this.Medico.DataPropertyName = "usua_nombre";
+			this.Medico.HeaderText = "Medico";
+			this.Medico.Name = "Medico";
+			this.Medico.ReadOnly = true;
+			this.Medico.Width = 67;
+			// 
+			// Origen
+			// 
+			this.Origen.DataPropertyName = "suor_descripcion";
+			this.Origen.HeaderText = "Origen";
+			this.Origen.Name = "Origen";
+			this.Origen.ReadOnly = true;
+			this.Origen.Visible = false;
+			this.Origen.Width = 63;
 			// 
 			// FormGrilla
 			// 
@@ -234,12 +269,24 @@ namespace Codigo_Azul
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Origen;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Medico;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ObraSocial;
+		private System.Windows.Forms.DataGridViewTextBoxColumn GrupoSanguineo;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Sala;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+		private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
 		private System.Windows.Forms.Button btn_reportes;
 		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnNuevo;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Timer timer1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn obso_descripcion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn paci_grupo_sanguineo;
 		private System.Windows.Forms.DataGridViewTextBoxColumn paci_dni;

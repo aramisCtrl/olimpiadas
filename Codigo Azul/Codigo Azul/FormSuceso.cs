@@ -24,6 +24,11 @@ namespace Codigo_Azul
 		{
 			DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM suceso_tipo");
 			
+			cargarComboEstado();
+			cargarComboOrigen();
+			cargarComboTipo();
+			cargarComboSala();
+			
 			if (ds != null && ds.Tables.Count > 0)
 			{
 				if(Nuevo==true)
@@ -35,20 +40,53 @@ namespace Codigo_Azul
 					// cbxTipo.SelectedValue = valorInicial;
 				}
 				else if(Edicion==true){
-//					// Obtén la fila seleccionada actualmente
-//					DataGridViewRow filaSeleccionada = gridDatos.SelectedRows[0];
-//					
-//					// Actualiza los datos del objeto Pacientes con los valores del formulario
-//					oSuceso.Estado=Convert.ToInt32(cbxProvincia.SelectedValue);
-//					oSuceso.FechaInicio = Convert.ToInt32(cbxObraSocial.SelectedValue);
-//					oSuceso.Tipo = Convert.ToInt32(cbxProvincia.SelectedValue);
-//					oSuceso.Descripcion = Convert.ToInt32(filaSeleccionada.Cells["paci_id"].Value.ToString());
-//					oSuceso.Sala = filaSeleccionada.Cells["Nombre"].Value.ToString();
-//					oSuceso.Nombre =filaSeleccionada.Cells["Apellido"].Value.ToString();
-//					oSuceso.Apellido =filaSeleccionada.Cells["Direccion"].Value.ToString();
-//					oSuceso.Dni = filaSeleccionada.Cells["Dni"].Value.ToString();
-//					oSuceso.GrupoSanguineo =  filaSeleccionada.Cells["GrupoSanguineo"].Value.ToString();
-//					oSuceso.ObraSocialDescripcion = filaSeleccionada.Cells["obso_descripcion"].Value.ToString();
+					dtp_fecha.Enabled=false;
+					lblNumero.Text="Suceso Nº"+oSuceso.Numero;
+					dtp_fecha.Value=oSuceso.FechaInicio;
+					cbxSala.Text=oSuceso.Sala;
+					txtMedico.Text=oSuceso.Medico;
+					txtPaciente.Text=oSuceso.Nombre +" "+ oSuceso.Apellido;
+					lbl_dni1.Text=oSuceso.Dni.ToString();
+					lbl_obra_social1.Text=oSuceso.ObraSocial;
+					lbl_grupo_sanguineo1.Text=oSuceso.GrupoSanguineo;
+					richTextBox1.Text=oSuceso.Descripcion;
+					
+					for (int i = 0; i < cbxTipo.Items.Count; i++)
+					{
+						if (cbxTipo.GetItemText(cbxTipo.Items[i]) == oSuceso.Tipo)
+						{
+							cbxTipo.SelectedIndex = i;
+							break;
+						}
+					}
+					
+					for (int i = 0; i < cbxEstado.Items.Count; i++)
+					{
+						if (cbxEstado.GetItemText(cbxEstado.Items[i]) == oSuceso.Estado)
+						{
+							cbxEstado.SelectedIndex = i;
+							break;
+						}
+					}
+					
+					for (int i = 0; i < cbxOrigen.Items.Count; i++)
+					{
+						if (cbxOrigen.GetItemText(cbxOrigen.Items[i]) == oSuceso.Origen)
+						{
+							cbxOrigen.SelectedIndex = i;
+							break;
+						}
+					}
+					
+					for (int i = 0; i < cbxSala.Items.Count; i++)
+					{
+						if (cbxSala.GetItemText(cbxSala.Items[i]) == oSuceso.Sala)
+						{
+							cbxSala.SelectedIndex = i;
+							break;
+						}
+					}
+					
 				}
 			}
 			
@@ -73,5 +111,50 @@ namespace Codigo_Azul
 
 			}
 		}
+		
+		void cargarComboEstado(){
+			DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM suceso_estado ORDER BY sues_descripcion");
+			
+			if (ds != null && ds.Tables.Count > 0)
+			{
+				cbxEstado.DataSource = ds.Tables[0];
+				cbxEstado.DisplayMember = "sues_descripcion";
+				cbxEstado.ValueMember = "sues_id";
+			}
+		}
+		
+		void cargarComboOrigen(){
+			DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM suceso_origen ORDER BY suor_descripcion");
+			
+			if (ds != null && ds.Tables.Count > 0)
+			{
+				cbxOrigen.DataSource = ds.Tables[0];
+				cbxOrigen.DisplayMember = "suor_descripcion";
+				cbxOrigen.ValueMember = "suor_id";
+			}
+		}
+		
+		void cargarComboTipo(){
+			DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM suceso_tipo ORDER BY suti_descripcion");
+			
+			if (ds != null && ds.Tables.Count > 0)
+			{
+				cbxTipo.DataSource = ds.Tables[0];
+				cbxTipo.DisplayMember = "suti_descripcion";
+				cbxTipo.ValueMember = "suti_id";
+			}
+		}
+		
+		void cargarComboSala(){
+			DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM sala ORDER BY sala_descripcion");
+			
+			if (ds != null && ds.Tables.Count > 0)
+			{
+				cbxSala.DataSource = ds.Tables[0];
+				cbxSala.DisplayMember = "sala_descripcion";
+				cbxSala.ValueMember = "sala_id";
+			}
+		}
+		
 	}
 }
