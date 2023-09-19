@@ -23,6 +23,9 @@ namespace Codigo_Azul
 		public string Telefono { get; set; } 
 		public string Email { get; set; }
 		public string Direccion { get; set; } 
+		public string ObraSocialDescripcion{ get; set; }
+		public string CiudadNombre { get; set; } 	
+		public string ProvinciaNombre { get; set; } 		
 
 		// Constructor por defecto
 		public Paciente()
@@ -38,7 +41,9 @@ namespace Codigo_Azul
 			Telefono 		= "";
 			Email  			= "";
 			Direccion  		= "";
-			
+			 ObraSocialDescripcion = "";
+			 CiudadNombre = "";
+			 ProvinciaNombre ="";
 		}
 
 		// Constructor con parámetros para crear un paciente con datos iniciales

@@ -115,6 +115,7 @@ namespace Codigo_Azul
 			this.pnlMid = new System.Windows.Forms.Panel();
 			this.gridDatos = new System.Windows.Forms.DataGridView();
 			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.obso_descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.paci_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.paci_obso_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.paci_prov_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -428,6 +429,7 @@ namespace Codigo_Azul
 			this.gridDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 									this.Nombre,
+									this.obso_descripcion,
 									this.paci_id,
 									this.paci_obso_id,
 									this.paci_prov_id,
@@ -441,11 +443,12 @@ namespace Codigo_Azul
 									this.ObraSocial,
 									this.GrupoSanguineo,
 									this.paci_cuid_id});
-			this.gridDatos.Location = new System.Drawing.Point(0, 34);
+			this.gridDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gridDatos.Location = new System.Drawing.Point(0, 0);
 			this.gridDatos.Name = "gridDatos";
 			this.gridDatos.ReadOnly = true;
 			this.gridDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gridDatos.Size = new System.Drawing.Size(954, 160);
+			this.gridDatos.Size = new System.Drawing.Size(1077, 194);
 			this.gridDatos.TabIndex = 0;
 			this.gridDatos.SelectionChanged += new System.EventHandler(this.GridDatosSelectionChanged);
 			// 
@@ -455,6 +458,14 @@ namespace Codigo_Azul
 			this.Nombre.HeaderText = "Nombre";
 			this.Nombre.Name = "Nombre";
 			this.Nombre.ReadOnly = true;
+			// 
+			// obso_descripcion
+			// 
+			this.obso_descripcion.DataPropertyName = "obso_descripcion";
+			this.obso_descripcion.HeaderText = "obso_descripcion";
+			this.obso_descripcion.Name = "obso_descripcion";
+			this.obso_descripcion.ReadOnly = true;
+			this.obso_descripcion.Visible = false;
 			// 
 			// paci_id
 			// 
@@ -574,5 +585,6 @@ namespace Codigo_Azul
 			((System.ComponentModel.ISupportInitialize)(this.gridDatos)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.DataGridViewTextBoxColumn obso_descripcion;
 	}
 }

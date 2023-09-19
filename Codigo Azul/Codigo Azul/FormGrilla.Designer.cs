@@ -39,6 +39,7 @@ namespace Codigo_Azul
 			this.components = new System.ComponentModel.Container();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btn_reportes = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
@@ -54,7 +55,6 @@ namespace Codigo_Azul
 			this.paci_dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.paci_grupo_sanguineo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.obso_descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.btn_reportes = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,6 +76,16 @@ namespace Codigo_Azul
 			this.panel1.Size = new System.Drawing.Size(1342, 62);
 			this.panel1.TabIndex = 7;
 			// 
+			// btn_reportes
+			// 
+			this.btn_reportes.Location = new System.Drawing.Point(174, 23);
+			this.btn_reportes.Name = "btn_reportes";
+			this.btn_reportes.Size = new System.Drawing.Size(85, 23);
+			this.btn_reportes.TabIndex = 2;
+			this.btn_reportes.Text = "Abrir reportes";
+			this.btn_reportes.UseVisualStyleBackColor = true;
+			this.btn_reportes.Click += new System.EventHandler(this.Btn_reportesClick);
+			// 
 			// button2
 			// 
 			this.button2.Location = new System.Drawing.Point(93, 23);
@@ -91,7 +101,7 @@ namespace Codigo_Azul
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 0;
-			this.button1.Text = "button1";
+			this.button1.Text = "Modificar";
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
@@ -128,6 +138,7 @@ namespace Codigo_Azul
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(1342, 414);
 			this.dataGridView1.TabIndex = 7;
+			this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1DoubleClick);
 			// 
 			// Column1
 			// 
@@ -206,16 +217,6 @@ namespace Codigo_Azul
 			this.obso_descripcion.HeaderText = "Obra social";
 			this.obso_descripcion.Name = "obso_descripcion";
 			this.obso_descripcion.Width = 78;
-			// 
-			// btn_reportes
-			// 
-			this.btn_reportes.Location = new System.Drawing.Point(174, 23);
-			this.btn_reportes.Name = "btn_reportes";
-			this.btn_reportes.Size = new System.Drawing.Size(85, 23);
-			this.btn_reportes.TabIndex = 2;
-			this.btn_reportes.Text = "Abrir reportes";
-			this.btn_reportes.UseVisualStyleBackColor = true;
-			this.btn_reportes.Click += new System.EventHandler(this.Btn_reportesClick);
 			// 
 			// FormGrilla
 			// 

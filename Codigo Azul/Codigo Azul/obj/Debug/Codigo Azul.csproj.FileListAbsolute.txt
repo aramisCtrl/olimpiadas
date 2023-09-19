@@ -49,15 +49,4 @@ D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo 
 D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.pdb
 D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb
 D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormPacientes.resources
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csprojResolveAssemblyReference.cache
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormDatos.resources
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormGrilla.resources
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormPacientes.resources
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormSuceso.resources
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormUsuario.resources
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.MainForm.resources
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csproj.GenerateResource.Cache
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.exe
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.exe
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.pdb
+C:\Users\Lab-01\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormPacientes.resources

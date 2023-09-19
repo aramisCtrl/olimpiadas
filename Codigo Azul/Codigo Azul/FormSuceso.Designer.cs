@@ -42,10 +42,10 @@ namespace Codigo_Azul
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.lbl_suceso = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
+			this.lbl_obra_social1 = new System.Windows.Forms.Label();
+			this.lbl_obra_social = new System.Windows.Forms.Label();
+			this.lbl_grupo_sanguineo1 = new System.Windows.Forms.Label();
+			this.lbl_grupo_sanguineo = new System.Windows.Forms.Label();
 			this.comboBox4 = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -56,8 +56,8 @@ namespace Codigo_Azul
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.txtPaciente = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lbl_dni1 = new System.Windows.Forms.Label();
+			this.lbl_dni = new System.Windows.Forms.Label();
 			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
 			this.lbl_sala = new System.Windows.Forms.Label();
 			this.lbl_descripcion = new System.Windows.Forms.Label();
@@ -121,10 +121,10 @@ namespace Codigo_Azul
 			// 
 			// panel3
 			// 
-			this.panel3.Controls.Add(this.label6);
-			this.panel3.Controls.Add(this.label7);
-			this.panel3.Controls.Add(this.label4);
-			this.panel3.Controls.Add(this.label5);
+			this.panel3.Controls.Add(this.lbl_obra_social1);
+			this.panel3.Controls.Add(this.lbl_obra_social);
+			this.panel3.Controls.Add(this.lbl_grupo_sanguineo1);
+			this.panel3.Controls.Add(this.lbl_grupo_sanguineo);
 			this.panel3.Controls.Add(this.comboBox4);
 			this.panel3.Controls.Add(this.label3);
 			this.panel3.Controls.Add(this.comboBox3);
@@ -135,8 +135,8 @@ namespace Codigo_Azul
 			this.panel3.Controls.Add(this.button1);
 			this.panel3.Controls.Add(this.textBox2);
 			this.panel3.Controls.Add(this.txtPaciente);
-			this.panel3.Controls.Add(this.label1);
-			this.panel3.Controls.Add(this.label2);
+			this.panel3.Controls.Add(this.lbl_dni1);
+			this.panel3.Controls.Add(this.lbl_dni);
 			this.panel3.Controls.Add(this.richTextBox1);
 			this.panel3.Controls.Add(this.lbl_sala);
 			this.panel3.Controls.Add(this.lbl_descripcion);
@@ -151,39 +151,39 @@ namespace Codigo_Azul
 			this.panel3.Size = new System.Drawing.Size(1062, 458);
 			this.panel3.TabIndex = 39;
 			// 
-			// label6
+			// lbl_obra_social1
 			// 
-			this.label6.Location = new System.Drawing.Point(312, 262);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(179, 23);
-			this.label6.TabIndex = 60;
-			this.label6.Text = "label6";
+			this.lbl_obra_social1.Location = new System.Drawing.Point(312, 262);
+			this.lbl_obra_social1.Name = "lbl_obra_social1";
+			this.lbl_obra_social1.Size = new System.Drawing.Size(179, 23);
+			this.lbl_obra_social1.TabIndex = 60;
+			this.lbl_obra_social1.Text = "-";
 			// 
-			// label7
+			// lbl_obra_social
 			// 
-			this.label7.Location = new System.Drawing.Point(193, 257);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(100, 23);
-			this.label7.TabIndex = 59;
-			this.label7.Text = "datos del paciente:";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbl_obra_social.Location = new System.Drawing.Point(193, 257);
+			this.lbl_obra_social.Name = "lbl_obra_social";
+			this.lbl_obra_social.Size = new System.Drawing.Size(100, 23);
+			this.lbl_obra_social.TabIndex = 59;
+			this.lbl_obra_social.Text = "Obra social:";
+			this.lbl_obra_social.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// label4
+			// lbl_grupo_sanguineo1
 			// 
-			this.label4.Location = new System.Drawing.Point(312, 239);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(179, 23);
-			this.label4.TabIndex = 58;
-			this.label4.Text = "label4";
+			this.lbl_grupo_sanguineo1.Location = new System.Drawing.Point(312, 239);
+			this.lbl_grupo_sanguineo1.Name = "lbl_grupo_sanguineo1";
+			this.lbl_grupo_sanguineo1.Size = new System.Drawing.Size(179, 23);
+			this.lbl_grupo_sanguineo1.TabIndex = 58;
+			this.lbl_grupo_sanguineo1.Text = "-";
 			// 
-			// label5
+			// lbl_grupo_sanguineo
 			// 
-			this.label5.Location = new System.Drawing.Point(193, 234);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(100, 23);
-			this.label5.TabIndex = 57;
-			this.label5.Text = "datos del paciente:";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbl_grupo_sanguineo.Location = new System.Drawing.Point(193, 234);
+			this.lbl_grupo_sanguineo.Name = "lbl_grupo_sanguineo";
+			this.lbl_grupo_sanguineo.Size = new System.Drawing.Size(100, 23);
+			this.lbl_grupo_sanguineo.TabIndex = 57;
+			this.lbl_grupo_sanguineo.Text = "Grupo sanguíneo:";
+			this.lbl_grupo_sanguineo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// comboBox4
 			// 
@@ -274,22 +274,22 @@ namespace Codigo_Azul
 			this.txtPaciente.Size = new System.Drawing.Size(298, 20);
 			this.txtPaciente.TabIndex = 47;
 			// 
-			// label1
+			// lbl_dni1
 			// 
-			this.label1.Location = new System.Drawing.Point(312, 216);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(179, 23);
-			this.label1.TabIndex = 46;
-			this.label1.Text = "label1";
+			this.lbl_dni1.Location = new System.Drawing.Point(312, 216);
+			this.lbl_dni1.Name = "lbl_dni1";
+			this.lbl_dni1.Size = new System.Drawing.Size(179, 23);
+			this.lbl_dni1.TabIndex = 46;
+			this.lbl_dni1.Text = "-";
 			// 
-			// label2
+			// lbl_dni
 			// 
-			this.label2.Location = new System.Drawing.Point(193, 211);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(100, 23);
-			this.label2.TabIndex = 45;
-			this.label2.Text = "datos del paciente:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbl_dni.Location = new System.Drawing.Point(193, 211);
+			this.lbl_dni.Name = "lbl_dni";
+			this.lbl_dni.Size = new System.Drawing.Size(100, 23);
+			this.lbl_dni.TabIndex = 45;
+			this.lbl_dni.Text = "DNI:";
+			this.lbl_dni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// richTextBox1
 			// 
@@ -379,11 +379,10 @@ namespace Codigo_Azul
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
 			this.ResumeLayout(false);
-
 		}
 		private System.Windows.Forms.RichTextBox richTextBox1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lbl_dni;
+		private System.Windows.Forms.Label lbl_dni1;
 		private System.Windows.Forms.TextBox txtPaciente;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Button button1;
@@ -394,10 +393,10 @@ namespace Codigo_Azul
 		private System.Windows.Forms.ComboBox comboBox3;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ComboBox comboBox4;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label lbl_grupo_sanguineo;
+		private System.Windows.Forms.Label lbl_grupo_sanguineo1;
+		private System.Windows.Forms.Label lbl_obra_social;
+		private System.Windows.Forms.Label lbl_obra_social1;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Button button3;
