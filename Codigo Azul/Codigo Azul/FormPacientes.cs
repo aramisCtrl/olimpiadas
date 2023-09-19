@@ -119,7 +119,6 @@ namespace Codigo_Azul
 		}
 		void BtnSeleccionarClick(object sender, EventArgs e)
 		{
-			//HOLA
 			this.DialogResult = DialogResult.OK;
 			this.Close();
 		}
@@ -142,6 +141,7 @@ namespace Codigo_Azul
 			IniciarSeleccion();
 			
 		}
+		
 		void GridDatosSelectionChanged(object sender, EventArgs e)
 		{
 			if (gridDatos.SelectedRows.Count > 0)

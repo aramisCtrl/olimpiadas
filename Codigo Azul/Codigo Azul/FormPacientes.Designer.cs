@@ -427,26 +427,25 @@ namespace Codigo_Azul
 			this.gridDatos.AllowUserToResizeRows = false;
 			this.gridDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.Nombre,
-			this.paci_id,
-			this.paci_obso_id,
-			this.paci_prov_id,
-			this.Apellido,
-			this.Dni,
-			this.Telefono,
-			this.Email,
-			this.Direccion,
-			this.Ciudad,
-			this.Provincia,
-			this.ObraSocial,
-			this.GrupoSanguineo,
-			this.paci_cuid_id});
-			this.gridDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.gridDatos.Location = new System.Drawing.Point(0, 0);
+									this.Nombre,
+									this.paci_id,
+									this.paci_obso_id,
+									this.paci_prov_id,
+									this.Apellido,
+									this.Dni,
+									this.Telefono,
+									this.Email,
+									this.Direccion,
+									this.Ciudad,
+									this.Provincia,
+									this.ObraSocial,
+									this.GrupoSanguineo,
+									this.paci_cuid_id});
+			this.gridDatos.Location = new System.Drawing.Point(0, 34);
 			this.gridDatos.Name = "gridDatos";
 			this.gridDatos.ReadOnly = true;
 			this.gridDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gridDatos.Size = new System.Drawing.Size(1077, 194);
+			this.gridDatos.Size = new System.Drawing.Size(954, 160);
 			this.gridDatos.TabIndex = 0;
 			this.gridDatos.SelectionChanged += new System.EventHandler(this.GridDatosSelectionChanged);
 			// 
@@ -574,7 +573,6 @@ namespace Codigo_Azul
 			this.pnlMid.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridDatos)).EndInit();
 			this.ResumeLayout(false);
-
 		}
 	}
 }
