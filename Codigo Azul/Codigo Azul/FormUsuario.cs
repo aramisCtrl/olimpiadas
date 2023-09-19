@@ -151,7 +151,7 @@ namespace Codigo_Azul
 				string Area = gridDatos.SelectedRows[0].Cells["Area"].Value.ToString();
 				for (int i = 0; i < cbxArea.Items.Count; i++)
 				{
-					if (cbxObraSocial.GetItemText(cbxArea.Items[i]) == Area)
+					if (cbxArea.GetItemText(cbxArea.Items[i]) == Area)
 					{
 						cbxArea.SelectedIndex = i;
 						break;
@@ -164,6 +164,58 @@ namespace Codigo_Azul
 				Limpiar();
 			}
 			
+		}
+		
+			
+		void TxtBuscarTextChanged(object sender, EventArgs e)
+		{
+			string valorBusqueda = txtBuscar.Text;
+
+			// Crear un filtro que sea insensible a mayúsculas y minúsculas
+			string filtro = "paci_nombre LIKE '%"+valorBusqueda+"%' OR paci_apellido LIKE '%"+valorBusqueda+"%'";
+
+			// Aplicar el filtro al BindingSource
+			bindingSource.Filter = filtro;
+			
+			if (txtBuscar.Text ==""){
+				bindingSource.Filter = "";
+			}
+
+		}
+		
+		void BtnEditarClick(object sender, EventArgs e)
+		{
+			IniciarEdicion();
+		}
+		
+		void BtnAceptarClick(object sender, EventArgs e)
+		{
+			if(Edicion){
+				// Construye la cadena de parámetros
+				string parametros = oUsuarios.ID + ", '" +txtNombre.Text+"', '"+ txtApellido.Text + "', " + txtUser.Text +
+					", '" + txtContraseña.Text + "', " + Convert.ToInt32(cbxRol.SelectedValue) + ", " + Convert.ToInt32(cbxArea.SelectedValue) + " ";
+
+				miConexion.EjecutarSentencia("exec sp_ActualizarUsuario " + parametros);
+			}else if (Nuevo){
+				string parametros = "'" +txtNombre.Text+"', '"+ txtApellido.Text + "', " + txtUser.Text +", '" + txtContraseña.Text + "', " +
+					Convert.ToInt32(cbxRol.SelectedValue) + ", " + Convert.ToInt32(cbxArea.SelectedValue) + "";
+
+				miConexion.EjecutarSentencia("exec sp_InsertarUsuario " + parametros);
+			}
+			//recargo la grilla
+			cargarGrilla();
+			IniciarSeleccion();
+		}
+		
+		void BtnCancelarClick(object sender, EventArgs e)
+		{
+			IniciarSeleccion();
+			GridDatosSelectionChanged(null,e);
+		}
+		void BtnNuevoClick(object sender, EventArgs e)
+		{			
+			IniciarNuevo();
+			Limpiar();
 		}
 		
 		
