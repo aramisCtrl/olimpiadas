@@ -161,6 +161,9 @@ namespace Codigo_Azul
 				oPaciente.Email= filaSeleccionada.Cells["Email"].Value.ToString();
 				oPaciente.GrupoSanguineo =  filaSeleccionada.Cells["GrupoSanguineo"].Value.ToString();
 				oPaciente.Telefono = filaSeleccionada.Cells["Telefono"].Value.ToString();
+				oPaciente.ObraSocialDescripcion = filaSeleccionada.Cells["obso_descripcion"].Value.ToString();
+				oPaciente.CiudadNombre = cbxciudad.Text;
+				oPaciente.ProvinciaNombre = cbxProvincia.Text;
 				
 
 				//Actualiza los componentes visuales

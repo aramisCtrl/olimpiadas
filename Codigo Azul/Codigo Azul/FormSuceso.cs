@@ -31,7 +31,6 @@ namespace Codigo_Azul
 			}
 			
 			
-			
 		}
 		void BtnBuscarPacienteClick(object sender, EventArgs e)
 		{
@@ -46,6 +45,11 @@ namespace Codigo_Azul
 			{
 				pacienteSeleccionado = paciente;
 				txtPaciente.Text = pacienteSeleccionado.Nombre + ' ' + pacienteSeleccionado.Apellido;
+				
+				lbl_dni1.Text = pacienteSeleccionado.Dni;
+				lbl_grupo_sanguineo1.Text = pacienteSeleccionado.GrupoSanguineo;
+				lbl_obra_social1.Text = pacienteSeleccionado.ObraSocialDescripcion;
+
 			}
 		}
 	}

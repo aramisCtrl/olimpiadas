@@ -49,3 +49,4 @@ D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo 
 D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\Codigo Azul.pdb
 D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb
 D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormPacientes.resources
+C:\Users\Lab-01\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormPacientes.resources
