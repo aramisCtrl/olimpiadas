@@ -119,7 +119,7 @@ namespace Codigo_Azul
 		}
 		void BtnSeleccionarClick(object sender, EventArgs e)
 		{
-
+			//HOLA
 			this.DialogResult = DialogResult.OK;
 			this.Close();
 		}
