@@ -8,11 +8,14 @@ namespace Codigo_Azul
 {
 	public partial class FormSuceso : Form
 	{
+		public bool Nuevo,Edicion;
+		private Suceso oSuceso;
 		public ClassConexionSQL miconexion;
 		private Paciente pacienteSeleccionado;
 		
-		public FormSuceso()
+		public FormSuceso( Suceso FSuceso,ClassConexionSQL fconexion)
 		{
+			oSuceso = FSuceso;
 			InitializeComponent();
 		}
 
@@ -23,13 +26,31 @@ namespace Codigo_Azul
 			
 			if (ds != null && ds.Tables.Count > 0)
 			{
-				cbxTipo.DataSource = ds.Tables[0];
-				cbxTipo.DisplayMember = "suti_descripcion";
-				cbxTipo.ValueMember = "suti_id";
-				// establecer el valor seleccionado inicial
-				// cbxTipo.SelectedValue = valorInicial;
+				if(Nuevo==true)
+				{
+					cbxTipo.DataSource = ds.Tables[0];
+					cbxTipo.DisplayMember = "suti_descripcion";
+					cbxTipo.ValueMember = "suti_id";
+					// establecer el valor seleccionado inicial
+					// cbxTipo.SelectedValue = valorInicial;
+				}
+				else if(Edicion==true){
+//					// Obtén la fila seleccionada actualmente
+//					DataGridViewRow filaSeleccionada = gridDatos.SelectedRows[0];
+//					
+//					// Actualiza los datos del objeto Pacientes con los valores del formulario
+//					oSuceso.Estado=Convert.ToInt32(cbxProvincia.SelectedValue);
+//					oSuceso.FechaInicio = Convert.ToInt32(cbxObraSocial.SelectedValue);
+//					oSuceso.Tipo = Convert.ToInt32(cbxProvincia.SelectedValue);
+//					oSuceso.Descripcion = Convert.ToInt32(filaSeleccionada.Cells["paci_id"].Value.ToString());
+//					oSuceso.Sala = filaSeleccionada.Cells["Nombre"].Value.ToString();
+//					oSuceso.Nombre =filaSeleccionada.Cells["Apellido"].Value.ToString();
+//					oSuceso.Apellido =filaSeleccionada.Cells["Direccion"].Value.ToString();
+//					oSuceso.Dni = filaSeleccionada.Cells["Dni"].Value.ToString();
+//					oSuceso.GrupoSanguineo =  filaSeleccionada.Cells["GrupoSanguineo"].Value.ToString();
+//					oSuceso.ObraSocialDescripcion = filaSeleccionada.Cells["obso_descripcion"].Value.ToString();
+				}
 			}
-			
 			
 		}
 		void BtnBuscarPacienteClick(object sender, EventArgs e)

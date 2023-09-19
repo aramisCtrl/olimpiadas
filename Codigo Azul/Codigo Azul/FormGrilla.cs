@@ -6,7 +6,9 @@ namespace Codigo_Azul
 {
 	public partial class FormGrilla : Form
 	{
+	
 		ClassConexionSQL miConexion;
+		Suceso miSuceso;
 		public FormGrilla()
 		{
 			InitializeComponent();
@@ -21,6 +23,7 @@ namespace Codigo_Azul
 		{
 //			//crear el objeto conexion
 			miConexion = new ClassConexionSQL();
+			miSuceso=new Suceso();
 //
 //			//crear la conexion indicando el nombre de la base de datos que vamos a usar
 			miConexion.CrearConexion("codigo_azul");
@@ -42,6 +45,7 @@ namespace Codigo_Azul
 		{
 			FormSuceso form = new FormSuceso();
 			form.miconexion = this.miConexion;
+			form.Nuevo=true;
 			form.Show();
 		}
 		
@@ -55,6 +59,17 @@ namespace Codigo_Azul
 			{
 				MessageBox.Show("Error al abrir la URL: " + ex.Message);
 			}
+		}
+		
+		void DataGridView1DoubleClick(object sender, EventArgs e)
+		{
+//			miSuceso.Estado
+				
+			FormSuceso form = new FormSuceso(miSuceso,miConexion);
+			form.miconexion = this.miConexion;
+			
+			form.Edicion=true;
+			form.Show();
 		}
 	}
 }
