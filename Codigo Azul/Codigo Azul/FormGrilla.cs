@@ -43,7 +43,7 @@ namespace Codigo_Azul
 
 		void Button1Click(object sender, EventArgs e)
 		{
-			FormSuceso form = new FormSuceso();
+			FormSuceso form = new FormSuceso(miSuceso,miConexion);
 			form.miconexion = this.miConexion;
 			form.Nuevo=true;
 			form.Show();
@@ -63,7 +63,30 @@ namespace Codigo_Azul
 		
 		void DataGridView1DoubleClick(object sender, EventArgs e)
 		{
-//			miSuceso.Estado
+			//Obtén la fila seleccionada actualmente
+			DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+					
+			// Actualiza los datos del objeto Pacientes con los valores del formulario
+//					oSuceso.Estado=Convert.ToInt32(cbxProvincia.SelectedValue);
+//					oSuceso.FechaInicio = Convert.ToInt32(cbxObraSocial.SelectedValue);
+//					oSuceso.Tipo = Convert.ToInt32(cbxProvincia.SelectedValue);
+//					oSuceso.Descripcion = Convert.ToInt32(filaSeleccionada.Cells["paci_id"].Value.ToString());
+//					oSuceso.Sala = filaSeleccionada.Cells["Nombre"].Value.ToString();
+//					oSuceso.Nombre =filaSeleccionada.Cells["Apellido"].Value.ToString();
+//					oSuceso.Apellido =filaSeleccionada.Cells["Direccion"].Value.ToString();
+//					oSuceso.Dni = filaSeleccionada.Cells["Dni"].Value.ToString();
+//					oSuceso.GrupoSanguineo =  filaSeleccionada.Cells["GrupoSanguineo"].Value.ToString();
+//					oSuceso.ObraSocialDescripcion = filaSeleccionada.Cells["obso_descripcion"].Value.ToString();
+			miSuceso.Estado=filaSeleccionada.Cells["Estado"].Value.ToString();
+			miSuceso.Estado=filaSeleccionada.Cells["FechaInicio"].Value.ToString();
+			miSuceso.Estado=filaSeleccionada.Cells["Tipo"].Value.ToString();
+			miSuceso.Estado=filaSeleccionada.Cells["Descripcion"].Value.ToString();
+			miSuceso.Estado=filaSeleccionada.Cells["Sala"].Value.ToString();
+			miSuceso.Estado=filaSeleccionada.Cells["Nombre"].Value.ToString();
+			miSuceso.Estado=filaSeleccionada.Cells["Apellido"].Value.ToString();
+			miSuceso.Estado=filaSeleccionada.Cells["Dni"].Value.ToString();
+			miSuceso.Estado=filaSeleccionada.Cells["GrupoSanguineo"].Value.ToString();
+			miSuceso.Estado=filaSeleccionada.Cells["ObraSocial"].Value.ToString();
 				
 			FormSuceso form = new FormSuceso(miSuceso,miConexion);
 			form.miconexion = this.miConexion;
