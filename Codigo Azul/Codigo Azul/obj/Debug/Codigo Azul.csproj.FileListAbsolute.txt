@@ -71,3 +71,4 @@ C:\Users\Fiski\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Cod
 C:\Users\Fiski\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.csproj.GenerateResource.Cache
 C:\Users\Fiski\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.exe
 C:\Users\Fiski\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb
+C:\Users\Lab-01\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormUsuario.resources
