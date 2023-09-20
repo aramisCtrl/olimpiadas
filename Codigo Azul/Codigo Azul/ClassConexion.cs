@@ -52,8 +52,8 @@ public class ClassConexionSQL
 	{
 		try
 		{
-//			string strConexion = String.Format("Server=localhost;Database={0}; integrated security = true", BaseDatos);
-			string strConexion = String.Format("Data Source=192.168.1.103;Initial Catalog= codigo_azul; User id=sa;Password=123456", BaseDatos);
+			string strConexion = String.Format("Server=localhost;Database={0}; integrated security = true", BaseDatos);
+//			string strConexion = String.Format("Data Source=192.168.1.103;Initial Catalog= codigo_azul; User id=sa;Password=123456", BaseDatos);
 			conexion = new SqlConnection(strConexion);
 			return true;
 		}

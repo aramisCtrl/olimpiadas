@@ -27,8 +27,8 @@ namespace Codigo_Azul
 //
 //			//crear la conexion indicando el nombre de la base de datos que vamos a usar
 			miConexion.CrearConexion("codigo_azul");
-			dataGridView1.AutoGenerateColumns = false;
-			miConexion.LLenarGrid(ref dataGridView1, "exec sp_ObtenerSucesosGrilla");
+			dgv_sucesos.AutoGenerateColumns = false;
+			miConexion.LLenarGrid(ref dgv_sucesos, "exec sp_ObtenerSucesosGrilla");
 			
 			//cargar la grilla con un select, se le pasa como 1er parametro el datagridview y como 2do parametro la consulta con la que queremos llenar ese grid
 //			miConexion.LLenarGrid(ref dataGridView1, "select * from suceso");
@@ -37,7 +37,7 @@ namespace Codigo_Azul
 		
 		void Timer1Tick(object sender, EventArgs e)
 		{
-			miConexion.LLenarGrid(ref dataGridView1, "exec sp_ObtenerSucesosGrilla");
+			miConexion.LLenarGrid(ref dgv_sucesos, "exec sp_ObtenerSucesosGrilla");
 		}
 		
 
@@ -63,10 +63,10 @@ namespace Codigo_Azul
 		
 		void DataGridView1DoubleClick(object sender, EventArgs e)
 		{
-			if (dataGridView1.SelectedRows.Count > 0)
+			if (dgv_sucesos.SelectedRows.Count > 0)
 			{
 				//Obtén la fila seleccionada actualmente
-				DataGridViewRow filaSeleccionada = dataGridView1.SelectedRows[0];
+				DataGridViewRow filaSeleccionada = dgv_sucesos.SelectedRows[0];
 				
 				// Actualiza los datos del objeto Suceso con los valores del formulario
 				miSuceso.Numero=int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());

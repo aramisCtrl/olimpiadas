@@ -24,19 +24,19 @@ namespace Codigo_Azul
 			{
 				FormGrilla form = new FormGrilla();
 				form.Show();
+				this.Hide();
 			}
 			else
 			{
 				MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
 			}
 		}
+		
 		void Button1Click(object sender, EventArgs e)
 		{
 			FormGrilla form = new FormGrilla();
 			form.Show();
+			this.Hide();
 		}
-
 	}
 }
-
-

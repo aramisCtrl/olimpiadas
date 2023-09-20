@@ -37,13 +37,14 @@ namespace Codigo_Azul
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGrilla));
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btn_reportes = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.btnNuevo = new System.Windows.Forms.Button();
+			this.btn_nueva_area = new System.Windows.Forms.Button();
+			this.btn_nuevo_suceso = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dgv_sucesos = new System.Windows.Forms.DataGridView();
 			this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +58,11 @@ namespace Codigo_Azul
 			this.ObraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.toolTip_botones = new System.Windows.Forms.ToolTip(this.components);
+			this.btn_alarma = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_sucesos)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// timer1
@@ -69,61 +72,76 @@ namespace Codigo_Azul
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.btn_alarma);
 			this.panel1.Controls.Add(this.btn_reportes);
-			this.panel1.Controls.Add(this.button2);
-			this.panel1.Controls.Add(this.btnNuevo);
+			this.panel1.Controls.Add(this.btn_nueva_area);
+			this.panel1.Controls.Add(this.btn_nuevo_suceso);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1342, 62);
+			this.panel1.Size = new System.Drawing.Size(1789, 87);
 			this.panel1.TabIndex = 7;
 			// 
 			// btn_reportes
 			// 
-			this.btn_reportes.Location = new System.Drawing.Point(174, 23);
+			this.btn_reportes.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_reportes.Image = ((System.Drawing.Image)(resources.GetObject("btn_reportes.Image")));
+			this.btn_reportes.Location = new System.Drawing.Point(196, 4);
+			this.btn_reportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.btn_reportes.Name = "btn_reportes";
-			this.btn_reportes.Size = new System.Drawing.Size(85, 23);
+			this.btn_reportes.Size = new System.Drawing.Size(88, 79);
 			this.btn_reportes.TabIndex = 2;
-			this.btn_reportes.Text = "Abrir reportes";
+			this.toolTip_botones.SetToolTip(this.btn_reportes, "Abrir reportes");
 			this.btn_reportes.UseVisualStyleBackColor = true;
 			this.btn_reportes.Click += new System.EventHandler(this.Btn_reportesClick);
 			// 
-			// button2
+			// btn_nueva_area
 			// 
-			this.button2.Location = new System.Drawing.Point(93, 23);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "button2";
-			this.button2.UseVisualStyleBackColor = true;
+			this.btn_nueva_area.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_nueva_area.Image = ((System.Drawing.Image)(resources.GetObject("btn_nueva_area.Image")));
+			this.btn_nueva_area.Location = new System.Drawing.Point(100, 4);
+			this.btn_nueva_area.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_nueva_area.Name = "btn_nueva_area";
+			this.btn_nueva_area.Size = new System.Drawing.Size(88, 79);
+			this.btn_nueva_area.TabIndex = 1;
+			this.toolTip_botones.SetToolTip(this.btn_nueva_area, "Nueva area");
+			this.btn_nueva_area.UseVisualStyleBackColor = true;
 			// 
-			// btnNuevo
+			// btn_nuevo_suceso
 			// 
-			this.btnNuevo.Location = new System.Drawing.Point(12, 23);
-			this.btnNuevo.Name = "btnNuevo";
-			this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-			this.btnNuevo.TabIndex = 0;
-			this.btnNuevo.Text = "Nuevo";
-			this.btnNuevo.UseVisualStyleBackColor = true;
-			this.btnNuevo.Click += new System.EventHandler(this.btnNuevoClick);
+			this.btn_nuevo_suceso.BackColor = System.Drawing.Color.Transparent;
+			this.btn_nuevo_suceso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.btn_nuevo_suceso.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_nuevo_suceso.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevo_suceso.Image")));
+			this.btn_nuevo_suceso.Location = new System.Drawing.Point(4, 4);
+			this.btn_nuevo_suceso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_nuevo_suceso.Name = "btn_nuevo_suceso";
+			this.btn_nuevo_suceso.Size = new System.Drawing.Size(88, 79);
+			this.btn_nuevo_suceso.TabIndex = 0;
+			this.toolTip_botones.SetToolTip(this.btn_nuevo_suceso, "Nuevo suceso");
+			this.btn_nuevo_suceso.UseVisualStyleBackColor = false;
+			this.btn_nuevo_suceso.Click += new System.EventHandler(this.btnNuevoClick);
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.dataGridView1);
+			this.panel2.Controls.Add(this.dgv_sucesos);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel2.Location = new System.Drawing.Point(0, 62);
+			this.panel2.Location = new System.Drawing.Point(0, 87);
+			this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1342, 414);
+			this.panel2.Size = new System.Drawing.Size(1789, 499);
 			this.panel2.TabIndex = 8;
 			// 
-			// dataGridView1
+			// dgv_sucesos
 			// 
-			this.dataGridView1.AllowUserToAddRows = false;
-			this.dataGridView1.AllowUserToDeleteRows = false;
-			this.dataGridView1.AllowUserToResizeRows = false;
-			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dgv_sucesos.AllowUserToAddRows = false;
+			this.dgv_sucesos.AllowUserToDeleteRows = false;
+			this.dgv_sucesos.AllowUserToResizeRows = false;
+			this.dgv_sucesos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgv_sucesos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.dgv_sucesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_sucesos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 									this.Estado,
 									this.Numero,
 									this.FechaInicio,
@@ -137,16 +155,17 @@ namespace Codigo_Azul
 									this.ObraSocial,
 									this.Medico,
 									this.Origen});
-			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridView1.Size = new System.Drawing.Size(1342, 414);
-			this.dataGridView1.TabIndex = 7;
-			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
-			this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridView1DataBindingComplete);
-			this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1DoubleClick);
+			this.dgv_sucesos.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgv_sucesos.Location = new System.Drawing.Point(0, 0);
+			this.dgv_sucesos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dgv_sucesos.Name = "dgv_sucesos";
+			this.dgv_sucesos.ReadOnly = true;
+			this.dgv_sucesos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgv_sucesos.Size = new System.Drawing.Size(1789, 499);
+			this.dgv_sucesos.TabIndex = 7;
+			this.dgv_sucesos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
+			this.dgv_sucesos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridView1DataBindingComplete);
+			this.dgv_sucesos.DoubleClick += new System.EventHandler(this.DataGridView1DoubleClick);
 			// 
 			// Estado
 			// 
@@ -154,7 +173,7 @@ namespace Codigo_Azul
 			this.Estado.HeaderText = "Estado";
 			this.Estado.Name = "Estado";
 			this.Estado.ReadOnly = true;
-			this.Estado.Width = 65;
+			this.Estado.Width = 77;
 			// 
 			// Numero
 			// 
@@ -171,7 +190,7 @@ namespace Codigo_Azul
 			this.FechaInicio.HeaderText = "Fecha de inicio";
 			this.FechaInicio.Name = "FechaInicio";
 			this.FechaInicio.ReadOnly = true;
-			this.FechaInicio.Width = 74;
+			this.FechaInicio.Width = 78;
 			// 
 			// Tipo
 			// 
@@ -179,7 +198,7 @@ namespace Codigo_Azul
 			this.Tipo.HeaderText = "Tipo";
 			this.Tipo.Name = "Tipo";
 			this.Tipo.ReadOnly = true;
-			this.Tipo.Width = 53;
+			this.Tipo.Width = 61;
 			// 
 			// Descripcion
 			// 
@@ -195,7 +214,7 @@ namespace Codigo_Azul
 			this.Sala.HeaderText = "Sala";
 			this.Sala.Name = "Sala";
 			this.Sala.ReadOnly = true;
-			this.Sala.Width = 53;
+			this.Sala.Width = 61;
 			// 
 			// Nombre
 			// 
@@ -203,7 +222,7 @@ namespace Codigo_Azul
 			this.Nombre.HeaderText = "Nombre";
 			this.Nombre.Name = "Nombre";
 			this.Nombre.ReadOnly = true;
-			this.Nombre.Width = 69;
+			this.Nombre.Width = 83;
 			// 
 			// Apellido
 			// 
@@ -211,7 +230,7 @@ namespace Codigo_Azul
 			this.Apellido.HeaderText = "Apellido";
 			this.Apellido.Name = "Apellido";
 			this.Apellido.ReadOnly = true;
-			this.Apellido.Width = 69;
+			this.Apellido.Width = 83;
 			// 
 			// Dni
 			// 
@@ -219,7 +238,7 @@ namespace Codigo_Azul
 			this.Dni.HeaderText = "DNI";
 			this.Dni.Name = "Dni";
 			this.Dni.ReadOnly = true;
-			this.Dni.Width = 51;
+			this.Dni.Width = 56;
 			// 
 			// GrupoSanguineo
 			// 
@@ -227,7 +246,7 @@ namespace Codigo_Azul
 			this.GrupoSanguineo.HeaderText = "Grupo sanguineo";
 			this.GrupoSanguineo.Name = "GrupoSanguineo";
 			this.GrupoSanguineo.ReadOnly = true;
-			this.GrupoSanguineo.Width = 104;
+			this.GrupoSanguineo.Width = 131;
 			// 
 			// ObraSocial
 			// 
@@ -235,7 +254,7 @@ namespace Codigo_Azul
 			this.ObraSocial.HeaderText = "Obra social";
 			this.ObraSocial.Name = "ObraSocial";
 			this.ObraSocial.ReadOnly = true;
-			this.ObraSocial.Width = 78;
+			this.ObraSocial.Width = 96;
 			// 
 			// Medico
 			// 
@@ -243,7 +262,7 @@ namespace Codigo_Azul
 			this.Medico.HeaderText = "Medico";
 			this.Medico.Name = "Medico";
 			this.Medico.ReadOnly = true;
-			this.Medico.Width = 67;
+			this.Medico.Width = 78;
 			// 
 			// Origen
 			// 
@@ -254,22 +273,41 @@ namespace Codigo_Azul
 			this.Origen.Visible = false;
 			this.Origen.Width = 63;
 			// 
+			// btn_alarma
+			// 
+			this.btn_alarma.BackColor = System.Drawing.Color.Transparent;
+			this.btn_alarma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.btn_alarma.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_alarma.Dock = System.Windows.Forms.DockStyle.Right;
+			this.btn_alarma.Image = ((System.Drawing.Image)(resources.GetObject("btn_alarma.Image")));
+			this.btn_alarma.Location = new System.Drawing.Point(1696, 0);
+			this.btn_alarma.Margin = new System.Windows.Forms.Padding(4, 4, 8, 4);
+			this.btn_alarma.Name = "btn_alarma";
+			this.btn_alarma.Size = new System.Drawing.Size(93, 87);
+			this.btn_alarma.TabIndex = 3;
+			this.toolTip_botones.SetToolTip(this.btn_alarma, "Alarma Código Azul");
+			this.btn_alarma.UseVisualStyleBackColor = false;
+			// 
 			// FormGrilla
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1342, 476);
+			this.ClientSize = new System.Drawing.Size(1789, 586);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "FormGrilla";
-			this.Text = "Form1";
+			this.ShowIcon = false;
+			this.Text = "Sucesos";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.FormGrillaLoad);
 			this.panel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_sucesos)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Button btn_alarma;
+		private System.Windows.Forms.ToolTip toolTip_botones;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Origen;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Medico;
@@ -285,7 +323,7 @@ namespace Codigo_Azul
 		private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
 		private System.Windows.Forms.Button btn_reportes;
 		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Button btnNuevo;
+		private System.Windows.Forms.Button btn_nuevo_suceso;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn obso_descripcion;
@@ -298,7 +336,7 @@ namespace Codigo_Azul
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.Button btn_nueva_area;
+		private System.Windows.Forms.DataGridView dgv_sucesos;
 	}
 }
