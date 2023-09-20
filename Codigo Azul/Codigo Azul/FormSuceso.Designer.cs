@@ -76,14 +76,14 @@ namespace Codigo_Azul
 			this.panel1.Controls.Add(this.button4);
 			this.panel1.Controls.Add(this.button3);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel1.Location = new System.Drawing.Point(0, 503);
+			this.panel1.Location = new System.Drawing.Point(0, 541);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1062, 65);
+			this.panel1.Size = new System.Drawing.Size(704, 65);
 			this.panel1.TabIndex = 37;
 			// 
 			// button4
 			// 
-			this.button4.Location = new System.Drawing.Point(953, 19);
+			this.button4.Location = new System.Drawing.Point(578, 21);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(75, 23);
 			this.button4.TabIndex = 1;
@@ -92,7 +92,7 @@ namespace Codigo_Azul
 			// 
 			// button3
 			// 
-			this.button3.Location = new System.Drawing.Point(841, 19);
+			this.button3.Location = new System.Drawing.Point(466, 21);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(75, 23);
 			this.button3.TabIndex = 0;
@@ -105,7 +105,7 @@ namespace Codigo_Azul
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1062, 45);
+			this.panel2.Size = new System.Drawing.Size(704, 45);
 			this.panel2.TabIndex = 38;
 			// 
 			// lblNumero
@@ -114,7 +114,7 @@ namespace Codigo_Azul
 			this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblNumero.Location = new System.Drawing.Point(0, 0);
 			this.lblNumero.Name = "lblNumero";
-			this.lblNumero.Size = new System.Drawing.Size(1062, 45);
+			this.lblNumero.Size = new System.Drawing.Size(704, 45);
 			this.lblNumero.TabIndex = 1;
 			this.lblNumero.Text = "Suceso Nº 123456";
 			this.lblNumero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,12 +148,12 @@ namespace Codigo_Azul
 			this.pnlDatos.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlDatos.Location = new System.Drawing.Point(0, 45);
 			this.pnlDatos.Name = "pnlDatos";
-			this.pnlDatos.Size = new System.Drawing.Size(1062, 458);
+			this.pnlDatos.Size = new System.Drawing.Size(704, 496);
 			this.pnlDatos.TabIndex = 39;
 			// 
 			// lbl_obra_social1
 			// 
-			this.lbl_obra_social1.Location = new System.Drawing.Point(312, 262);
+			this.lbl_obra_social1.Location = new System.Drawing.Point(312, 308);
 			this.lbl_obra_social1.Name = "lbl_obra_social1";
 			this.lbl_obra_social1.Size = new System.Drawing.Size(179, 23);
 			this.lbl_obra_social1.TabIndex = 60;
@@ -161,16 +161,16 @@ namespace Codigo_Azul
 			// 
 			// lbl_obra_social
 			// 
-			this.lbl_obra_social.Location = new System.Drawing.Point(193, 257);
+			this.lbl_obra_social.Location = new System.Drawing.Point(193, 303);
 			this.lbl_obra_social.Name = "lbl_obra_social";
 			this.lbl_obra_social.Size = new System.Drawing.Size(100, 23);
 			this.lbl_obra_social.TabIndex = 59;
 			this.lbl_obra_social.Text = "Obra social:";
-			this.lbl_obra_social.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbl_obra_social.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lbl_grupo_sanguineo1
 			// 
-			this.lbl_grupo_sanguineo1.Location = new System.Drawing.Point(312, 239);
+			this.lbl_grupo_sanguineo1.Location = new System.Drawing.Point(312, 285);
 			this.lbl_grupo_sanguineo1.Name = "lbl_grupo_sanguineo1";
 			this.lbl_grupo_sanguineo1.Size = new System.Drawing.Size(179, 23);
 			this.lbl_grupo_sanguineo1.TabIndex = 58;
@@ -178,26 +178,26 @@ namespace Codigo_Azul
 			// 
 			// lbl_grupo_sanguineo
 			// 
-			this.lbl_grupo_sanguineo.Location = new System.Drawing.Point(193, 234);
+			this.lbl_grupo_sanguineo.Location = new System.Drawing.Point(193, 280);
 			this.lbl_grupo_sanguineo.Name = "lbl_grupo_sanguineo";
 			this.lbl_grupo_sanguineo.Size = new System.Drawing.Size(100, 23);
 			this.lbl_grupo_sanguineo.TabIndex = 57;
 			this.lbl_grupo_sanguineo.Text = "Grupo sanguíneo:";
-			this.lbl_grupo_sanguineo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbl_grupo_sanguineo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// cbxOrigen
 			// 
 			this.cbxOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbxOrigen.Enabled = false;
 			this.cbxOrigen.FormattingEnabled = true;
-			this.cbxOrigen.Location = new System.Drawing.Point(773, 37);
+			this.cbxOrigen.Location = new System.Drawing.Point(193, 98);
 			this.cbxOrigen.Name = "cbxOrigen";
-			this.cbxOrigen.Size = new System.Drawing.Size(203, 21);
+			this.cbxOrigen.Size = new System.Drawing.Size(298, 21);
 			this.cbxOrigen.TabIndex = 56;
 			// 
 			// label3
 			// 
-			this.label3.Location = new System.Drawing.Point(721, 35);
+			this.label3.Location = new System.Drawing.Point(88, 96);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(100, 23);
 			this.label3.TabIndex = 55;
@@ -209,9 +209,9 @@ namespace Codigo_Azul
 			this.cbxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbxEstado.Enabled = false;
 			this.cbxEstado.FormattingEnabled = true;
-			this.cbxEstado.Location = new System.Drawing.Point(465, 35);
+			this.cbxEstado.Location = new System.Drawing.Point(193, 71);
 			this.cbxEstado.Name = "cbxEstado";
-			this.cbxEstado.Size = new System.Drawing.Size(203, 21);
+			this.cbxEstado.Size = new System.Drawing.Size(298, 21);
 			this.cbxEstado.TabIndex = 54;
 			// 
 			// dtp_fecha
@@ -227,7 +227,7 @@ namespace Codigo_Azul
 			// 
 			this.cbxSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbxSala.FormattingEnabled = true;
-			this.cbxSala.Location = new System.Drawing.Point(193, 108);
+			this.cbxSala.Location = new System.Drawing.Point(193, 155);
 			this.cbxSala.Name = "cbxSala";
 			this.cbxSala.Size = new System.Drawing.Size(298, 21);
 			this.cbxSala.TabIndex = 52;
@@ -236,14 +236,14 @@ namespace Codigo_Azul
 			// 
 			this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbxTipo.FormattingEnabled = true;
-			this.cbxTipo.Location = new System.Drawing.Point(193, 78);
+			this.cbxTipo.Location = new System.Drawing.Point(193, 125);
 			this.cbxTipo.Name = "cbxTipo";
 			this.cbxTipo.Size = new System.Drawing.Size(298, 21);
 			this.cbxTipo.TabIndex = 51;
 			// 
 			// btnBuscarPaciente
 			// 
-			this.btnBuscarPaciente.Location = new System.Drawing.Point(497, 175);
+			this.btnBuscarPaciente.Location = new System.Drawing.Point(497, 222);
 			this.btnBuscarPaciente.Name = "btnBuscarPaciente";
 			this.btnBuscarPaciente.Size = new System.Drawing.Size(32, 25);
 			this.btnBuscarPaciente.TabIndex = 50;
@@ -253,7 +253,7 @@ namespace Codigo_Azul
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(497, 140);
+			this.button1.Location = new System.Drawing.Point(497, 187);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(32, 25);
 			this.button1.TabIndex = 49;
@@ -262,7 +262,7 @@ namespace Codigo_Azul
 			// 
 			// txtMedico
 			// 
-			this.txtMedico.Location = new System.Drawing.Point(193, 143);
+			this.txtMedico.Location = new System.Drawing.Point(193, 190);
 			this.txtMedico.Name = "txtMedico";
 			this.txtMedico.ReadOnly = true;
 			this.txtMedico.Size = new System.Drawing.Size(298, 20);
@@ -270,7 +270,7 @@ namespace Codigo_Azul
 			// 
 			// txtPaciente
 			// 
-			this.txtPaciente.Location = new System.Drawing.Point(193, 178);
+			this.txtPaciente.Location = new System.Drawing.Point(193, 225);
 			this.txtPaciente.Name = "txtPaciente";
 			this.txtPaciente.ReadOnly = true;
 			this.txtPaciente.Size = new System.Drawing.Size(298, 20);
@@ -278,7 +278,7 @@ namespace Codigo_Azul
 			// 
 			// lbl_dni1
 			// 
-			this.lbl_dni1.Location = new System.Drawing.Point(312, 216);
+			this.lbl_dni1.Location = new System.Drawing.Point(312, 262);
 			this.lbl_dni1.Name = "lbl_dni1";
 			this.lbl_dni1.Size = new System.Drawing.Size(179, 23);
 			this.lbl_dni1.TabIndex = 46;
@@ -286,16 +286,16 @@ namespace Codigo_Azul
 			// 
 			// lbl_dni
 			// 
-			this.lbl_dni.Location = new System.Drawing.Point(193, 211);
+			this.lbl_dni.Location = new System.Drawing.Point(193, 257);
 			this.lbl_dni.Name = "lbl_dni";
 			this.lbl_dni.Size = new System.Drawing.Size(100, 23);
 			this.lbl_dni.TabIndex = 45;
 			this.lbl_dni.Text = "DNI:";
-			this.lbl_dni.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbl_dni.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// richTextBox1
 			// 
-			this.richTextBox1.Location = new System.Drawing.Point(193, 291);
+			this.richTextBox1.Location = new System.Drawing.Point(193, 338);
 			this.richTextBox1.Name = "richTextBox1";
 			this.richTextBox1.Size = new System.Drawing.Size(460, 137);
 			this.richTextBox1.TabIndex = 44;
@@ -303,7 +303,7 @@ namespace Codigo_Azul
 			// 
 			// lbl_sala
 			// 
-			this.lbl_sala.Location = new System.Drawing.Point(87, 111);
+			this.lbl_sala.Location = new System.Drawing.Point(87, 158);
 			this.lbl_sala.Name = "lbl_sala";
 			this.lbl_sala.Size = new System.Drawing.Size(100, 23);
 			this.lbl_sala.TabIndex = 43;
@@ -312,7 +312,7 @@ namespace Codigo_Azul
 			// 
 			// lbl_descripcion
 			// 
-			this.lbl_descripcion.Location = new System.Drawing.Point(87, 289);
+			this.lbl_descripcion.Location = new System.Drawing.Point(87, 336);
 			this.lbl_descripcion.Name = "lbl_descripcion";
 			this.lbl_descripcion.Size = new System.Drawing.Size(100, 23);
 			this.lbl_descripcion.TabIndex = 42;
@@ -321,7 +321,7 @@ namespace Codigo_Azul
 			// 
 			// lbl_medico
 			// 
-			this.lbl_medico.Location = new System.Drawing.Point(87, 140);
+			this.lbl_medico.Location = new System.Drawing.Point(87, 187);
 			this.lbl_medico.Name = "lbl_medico";
 			this.lbl_medico.Size = new System.Drawing.Size(100, 23);
 			this.lbl_medico.TabIndex = 41;
@@ -330,7 +330,7 @@ namespace Codigo_Azul
 			// 
 			// lbl_paciente
 			// 
-			this.lbl_paciente.Location = new System.Drawing.Point(87, 175);
+			this.lbl_paciente.Location = new System.Drawing.Point(87, 222);
 			this.lbl_paciente.Name = "lbl_paciente";
 			this.lbl_paciente.Size = new System.Drawing.Size(100, 23);
 			this.lbl_paciente.TabIndex = 40;
@@ -348,7 +348,7 @@ namespace Codigo_Azul
 			// 
 			// lbl_tipo
 			// 
-			this.lbl_tipo.Location = new System.Drawing.Point(87, 76);
+			this.lbl_tipo.Location = new System.Drawing.Point(87, 123);
 			this.lbl_tipo.Name = "lbl_tipo";
 			this.lbl_tipo.Size = new System.Drawing.Size(100, 23);
 			this.lbl_tipo.TabIndex = 38;
@@ -357,7 +357,7 @@ namespace Codigo_Azul
 			// 
 			// lbl_estado
 			// 
-			this.lbl_estado.Location = new System.Drawing.Point(412, 31);
+			this.lbl_estado.Location = new System.Drawing.Point(87, 67);
 			this.lbl_estado.Name = "lbl_estado";
 			this.lbl_estado.Size = new System.Drawing.Size(100, 23);
 			this.lbl_estado.TabIndex = 37;
@@ -368,7 +368,7 @@ namespace Codigo_Azul
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1062, 568);
+			this.ClientSize = new System.Drawing.Size(704, 606);
 			this.Controls.Add(this.pnlDatos);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);

@@ -145,6 +145,7 @@ namespace Codigo_Azul
 			this.dataGridView1.Size = new System.Drawing.Size(1342, 414);
 			this.dataGridView1.TabIndex = 7;
 			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellContentClick);
+			this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridView1DataBindingComplete);
 			this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1DoubleClick);
 			// 
 			// Estado

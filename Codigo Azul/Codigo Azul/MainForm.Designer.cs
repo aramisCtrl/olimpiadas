@@ -36,7 +36,7 @@
 			// 
 			// txt_usuario
 			// 
-			this.txt_usuario.ForeColor = System.Drawing.SystemColors.ScrollBar;
+			this.txt_usuario.ForeColor = System.Drawing.SystemColors.MenuText;
 			this.txt_usuario.Location = new System.Drawing.Point(227, 134);
 			this.txt_usuario.Name = "txt_usuario";
 			this.txt_usuario.Size = new System.Drawing.Size(121, 20);
@@ -45,7 +45,7 @@
 			// 
 			// txt_contraseña
 			// 
-			this.txt_contraseña.ForeColor = System.Drawing.SystemColors.ScrollBar;
+			this.txt_contraseña.ForeColor = System.Drawing.SystemColors.MenuText;
 			this.txt_contraseña.Location = new System.Drawing.Point(227, 178);
 			this.txt_contraseña.Name = "txt_contraseña";
 			this.txt_contraseña.Size = new System.Drawing.Size(121, 20);
@@ -119,7 +119,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pic_fondo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 		private System.Windows.Forms.Label lbl_contraseña;
 		private System.Windows.Forms.Label lbl_usuario;
