@@ -29,7 +29,7 @@
 			// txt_usuario
 			// 
 			this.txt_usuario.ForeColor = System.Drawing.SystemColors.MenuText;
-			this.txt_usuario.Location = new System.Drawing.Point(228, 251);
+			this.txt_usuario.Location = new System.Drawing.Point(245, 250);
 			this.txt_usuario.Name = "txt_usuario";
 			this.txt_usuario.Size = new System.Drawing.Size(121, 20);
 			this.txt_usuario.TabIndex = 6;
@@ -38,7 +38,7 @@
 			// txt_contraseña
 			// 
 			this.txt_contraseña.ForeColor = System.Drawing.SystemColors.MenuText;
-			this.txt_contraseña.Location = new System.Drawing.Point(228, 295);
+			this.txt_contraseña.Location = new System.Drawing.Point(245, 294);
 			this.txt_contraseña.Name = "txt_contraseña";
 			this.txt_contraseña.Size = new System.Drawing.Size(121, 20);
 			this.txt_contraseña.TabIndex = 5;
@@ -46,16 +46,17 @@
 			// 
 			// btn_ingresar
 			// 
-			this.btn_ingresar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+			this.btn_ingresar.BackColor = System.Drawing.Color.White;
 			this.btn_ingresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.btn_ingresar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_ingresar.FlatAppearance.BorderSize = 0;
 			this.btn_ingresar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_ingresar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.btn_ingresar.Location = new System.Drawing.Point(228, 347);
+			this.btn_ingresar.ForeColor = System.Drawing.Color.Transparent;
+			this.btn_ingresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_ingresar.Image")));
+			this.btn_ingresar.Location = new System.Drawing.Point(228, 351);
 			this.btn_ingresar.Name = "btn_ingresar";
-			this.btn_ingresar.Size = new System.Drawing.Size(107, 33);
+			this.btn_ingresar.Size = new System.Drawing.Size(65, 33);
 			this.btn_ingresar.TabIndex = 4;
-			this.btn_ingresar.Text = "Ingresar";
 			this.btn_ingresar.UseVisualStyleBackColor = false;
 			this.btn_ingresar.Click += new System.EventHandler(this.Btn_ingresarClick);
 			// 
@@ -63,7 +64,7 @@
 			// 
 			this.lbl_usuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_usuario.Location = new System.Drawing.Point(146, 249);
+			this.lbl_usuario.Location = new System.Drawing.Point(163, 248);
 			this.lbl_usuario.Name = "lbl_usuario";
 			this.lbl_usuario.Size = new System.Drawing.Size(76, 23);
 			this.lbl_usuario.TabIndex = 7;
@@ -74,7 +75,7 @@
 			// 
 			this.lbl_contraseña.BackColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.lbl_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_contraseña.Location = new System.Drawing.Point(146, 292);
+			this.lbl_contraseña.Location = new System.Drawing.Point(163, 291);
 			this.lbl_contraseña.Name = "lbl_contraseña";
 			this.lbl_contraseña.Size = new System.Drawing.Size(76, 23);
 			this.lbl_contraseña.TabIndex = 8;
@@ -108,17 +109,17 @@
 			this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(517, 488);
+			this.Controls.Add(this.btn_ingresar);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.lbl_contraseña);
 			this.Controls.Add(this.lbl_usuario);
 			this.Controls.Add(this.txt_usuario);
 			this.Controls.Add(this.txt_contraseña);
-			this.Controls.Add(this.btn_ingresar);
 			this.Controls.Add(this.pictureBox1);
 			this.Name = "MainForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Codigo Azul";
+			this.Text = "Login";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
