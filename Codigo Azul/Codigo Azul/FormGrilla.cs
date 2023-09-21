@@ -9,6 +9,8 @@ namespace Codigo_Azul
 		
 		ClassConexionSQL miConexion;
 		Suceso miSuceso;
+		Area fArea;
+		Sala fSala;
 		public FormGrilla()
 		{
 			InitializeComponent();
@@ -98,25 +100,42 @@ namespace Codigo_Azul
 		
 		void DataGridView1DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
 		{
-		    var gridView = (DataGridView)sender;
-		    var tipo = "Emergencia";
-		    var estado = "Pendiente";
-		    Color color = Color.LightBlue;
-		    Color colorAux = Color.White;
-		
-		    foreach (DataGridViewRow row in gridView.Rows)
-		    {
-		        if (row.Cells["Tipo"].Value.ToString() == tipo && row.Cells["Estado"].Value.ToString() == estado)
-		        {
-		            row.DefaultCellStyle.BackColor = color;
-		        }
-		        else
-		        {
-		            row.DefaultCellStyle.BackColor = colorAux;
-		        }
-		    }
+			var gridView = (DataGridView)sender;
+			var tipo = "Emergencia";
+			var estado = "Pendiente";
+			Color color = Color.LightBlue;
+			Color colorAux = Color.White;
+			
+			foreach (DataGridViewRow row in gridView.Rows)
+			{
+				if (row.Cells["Tipo"].Value.ToString() == tipo && row.Cells["Estado"].Value.ToString() == estado)
+				{
+					row.DefaultCellStyle.BackColor = color;
+				}
+				else
+				{
+					row.DefaultCellStyle.BackColor = colorAux;
+				}
+			}
 		}
 
 
+		
+		void Button1Click(object sender, EventArgs e)
+		{
+			fSala = new Sala();
+
+			FormSala aFormSala = new FormSala(fSala,miConexion);
+			aFormSala.ShowDialog();
+		}
+		
+
+		void Btn_nueva_areaClick(object sender, EventArgs e)
+		{
+			fArea = new Area();
+
+			FormArea aFormArea = new FormArea(fArea,miConexion);
+			aFormArea.Show();		
+		}
 	}
 }

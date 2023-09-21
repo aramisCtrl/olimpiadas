@@ -12,6 +12,7 @@ namespace Codigo_Azul
 		private Suceso oSuceso;
 		public ClassConexionSQL miconexion;
 		private Paciente pacienteSeleccionado;
+
 		
 		public FormSuceso( Suceso FSuceso,ClassConexionSQL fconexion)
 		{

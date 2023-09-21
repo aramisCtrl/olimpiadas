@@ -443,12 +443,11 @@ namespace Codigo_Azul
 									this.ObraSocial,
 									this.GrupoSanguineo,
 									this.paci_cuid_id});
-			this.gridDatos.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.gridDatos.Location = new System.Drawing.Point(0, 0);
 			this.gridDatos.Name = "gridDatos";
 			this.gridDatos.ReadOnly = true;
 			this.gridDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gridDatos.Size = new System.Drawing.Size(1077, 194);
+			this.gridDatos.Size = new System.Drawing.Size(1077, 108);
 			this.gridDatos.TabIndex = 0;
 			this.gridDatos.SelectionChanged += new System.EventHandler(this.GridDatosSelectionChanged);
 			// 

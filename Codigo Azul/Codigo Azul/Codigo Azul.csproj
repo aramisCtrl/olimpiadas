@@ -47,7 +47,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area.cs" />
     <Compile Include="ClassConexion.cs" />
+    <Compile Include="FormArea.cs" />
+    <Compile Include="FormArea.Designer.cs" />
     <Compile Include="FormDatos.cs" />
     <Compile Include="FormDatos.Designer.cs">
       <DependentUpon>FormDatos.cs</DependentUpon>
@@ -59,6 +62,10 @@
     <Compile Include="FormPacientes.cs" />
     <Compile Include="FormPacientes.Designer.cs">
       <DependentUpon>FormPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSala.cs" />
+    <Compile Include="FormSala.Designer.cs">
+      <DependentUpon>FormSala.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSuceso.cs" />
     <Compile Include="FormSuceso.Designer.cs">
@@ -75,10 +82,14 @@
     <Compile Include="Paciente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sala.cs" />
     <Compile Include="Suceso.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormArea.resx">
+      <DependentUpon>FormArea.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDatos.resx">
       <DependentUpon>FormDatos.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPacientes.resx">
       <DependentUpon>FormPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSala.resx">
+      <DependentUpon>FormSala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuceso.resx">
       <DependentUpon>FormSuceso.cs</DependentUpon>

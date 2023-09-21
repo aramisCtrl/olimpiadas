@@ -36,10 +36,7 @@ namespace Codigo_Azul
 			Apellido = apellido;
 			Usuario = Usuario;
 			Contraseña = Contraseña;
-			RolID = RolID;
-			AreaID = AreaID;
-			RolNombre = RolNombre;
-			AreaDescripcion	= AreaDescripcion;
+			
 		}
 	}
 }
