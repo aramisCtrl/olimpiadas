@@ -61,6 +61,7 @@ namespace Codigo_Azul
 			}
 		}
 		
+		//Doble click
 		void DataGridView1DoubleClick(object sender, EventArgs e)
 		{
 			if (dgv_sucesos.SelectedRows.Count > 0)
@@ -69,7 +70,7 @@ namespace Codigo_Azul
 				DataGridViewRow filaSeleccionada = dgv_sucesos.SelectedRows[0];
 				
 				// Actualiza los datos del objeto Suceso con los valores del formulario
-				miSuceso.Numero=int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
+				miSuceso.Id=int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
 				miSuceso.Estado=filaSeleccionada.Cells["estado"].Value.ToString();
 				miSuceso.FechaInicio=DateTime.Parse(filaSeleccionada.Cells["FechaInicio"].Value.ToString());
 				miSuceso.Tipo=filaSeleccionada.Cells["Tipo"].Value.ToString();
@@ -82,6 +83,14 @@ namespace Codigo_Azul
 				miSuceso.ObraSocial=filaSeleccionada.Cells["ObraSocial"].Value.ToString();
 				miSuceso.Origen=filaSeleccionada.Cells["Origen"].Value.ToString();
 				miSuceso.Medico=filaSeleccionada.Cells["Medico"].Value.ToString();
+				miSuceso.SuceAreaId=int.Parse(filaSeleccionada.Cells["SuceAreaId"].Value.ToString());
+				miSuceso.SuceSuesId=int.Parse(filaSeleccionada.Cells["SuceSuesId"].Value.ToString());
+				miSuceso.SucePaciId=int.Parse(filaSeleccionada.Cells["SucePaciId"].Value.ToString());
+				miSuceso.SuceSutiId=int.Parse(filaSeleccionada.Cells["SuceSutiId"].Value.ToString());
+				miSuceso.SuceUsuaId=int.Parse(filaSeleccionada.Cells["SuceUsuaId"].Value.ToString());
+				miSuceso.SuceSuorId=int.Parse(filaSeleccionada.Cells["SuceSuorId"].Value.ToString());
+				miSuceso.SucePaciSalaId=int.Parse(filaSeleccionada.Cells["SucePaciSalaId"].Value.ToString());
+	
 				
 				FormSuceso form = new FormSuceso(miSuceso,miConexion);
 				form.miconexion = this.miConexion;
@@ -96,6 +105,7 @@ namespace Codigo_Azul
 			
 		}
 		
+		//Color azul
 		void DataGridView1DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
 		{
 		    var gridView = (DataGridView)sender;

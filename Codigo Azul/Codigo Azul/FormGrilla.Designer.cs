@@ -46,6 +46,7 @@ namespace Codigo_Azul
 			this.btn_nuevo_suceso = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.dgv_sucesos = new System.Windows.Forms.DataGridView();
+			this.toolTip_botones = new System.Windows.Forms.ToolTip(this.components);
 			this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +60,13 @@ namespace Codigo_Azul
 			this.ObraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.toolTip_botones = new System.Windows.Forms.ToolTip(this.components);
+			this.SuceAreaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SuceSutiId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SuceSuesId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SucePaciId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SuceUsuaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SuceSuorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SucePaciSalaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_sucesos)).BeginInit();
@@ -164,7 +171,14 @@ namespace Codigo_Azul
 									this.GrupoSanguineo,
 									this.ObraSocial,
 									this.Medico,
-									this.Origen});
+									this.Origen,
+									this.SuceAreaId,
+									this.SuceSutiId,
+									this.SuceSuesId,
+									this.SucePaciId,
+									this.SuceUsuaId,
+									this.SuceSuorId,
+									this.SucePaciSalaId});
 			this.dgv_sucesos.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgv_sucesos.Location = new System.Drawing.Point(0, 0);
 			this.dgv_sucesos.Name = "dgv_sucesos";
@@ -282,6 +296,69 @@ namespace Codigo_Azul
 			this.Origen.Visible = false;
 			this.Origen.Width = 63;
 			// 
+			// SuceAreaId
+			// 
+			this.SuceAreaId.DataPropertyName = "suce_area_id";
+			this.SuceAreaId.HeaderText = "SuceAreaId";
+			this.SuceAreaId.Name = "SuceAreaId";
+			this.SuceAreaId.ReadOnly = true;
+			this.SuceAreaId.Visible = false;
+			this.SuceAreaId.Width = 88;
+			// 
+			// SuceSutiId
+			// 
+			this.SuceSutiId.DataPropertyName = "suce_suti_id";
+			this.SuceSutiId.HeaderText = "SuceSutiId";
+			this.SuceSutiId.Name = "SuceSutiId";
+			this.SuceSutiId.ReadOnly = true;
+			this.SuceSutiId.Visible = false;
+			this.SuceSutiId.Width = 84;
+			// 
+			// SuceSuesId
+			// 
+			this.SuceSuesId.DataPropertyName = "suce_sues_id";
+			this.SuceSuesId.HeaderText = "SuceSuesId";
+			this.SuceSuesId.Name = "SuceSuesId";
+			this.SuceSuesId.ReadOnly = true;
+			this.SuceSuesId.Visible = false;
+			this.SuceSuesId.Width = 83;
+			// 
+			// SucePaciId
+			// 
+			this.SucePaciId.DataPropertyName = "suce_paci_id";
+			this.SucePaciId.HeaderText = "SucePaciId";
+			this.SucePaciId.Name = "SucePaciId";
+			this.SucePaciId.ReadOnly = true;
+			this.SucePaciId.Visible = false;
+			this.SucePaciId.Width = 87;
+			// 
+			// SuceUsuaId
+			// 
+			this.SuceUsuaId.DataPropertyName = "suce_usua_id";
+			this.SuceUsuaId.HeaderText = "SuceUsuaId";
+			this.SuceUsuaId.Name = "SuceUsuaId";
+			this.SuceUsuaId.ReadOnly = true;
+			this.SuceUsuaId.Visible = false;
+			this.SuceUsuaId.Width = 91;
+			// 
+			// SuceSuorId
+			// 
+			this.SuceSuorId.DataPropertyName = "suce_suor_id";
+			this.SuceSuorId.HeaderText = "SuceSuorId";
+			this.SuceSuorId.Name = "SuceSuorId";
+			this.SuceSuorId.ReadOnly = true;
+			this.SuceSuorId.Visible = false;
+			this.SuceSuorId.Width = 88;
+			// 
+			// SucePaciSalaId
+			// 
+			this.SucePaciSalaId.DataPropertyName = "suce_paci_sala_id";
+			this.SucePaciSalaId.HeaderText = "SucePaciSalaId";
+			this.SucePaciSalaId.Name = "SucePaciSalaId";
+			this.SucePaciSalaId.ReadOnly = true;
+			this.SucePaciSalaId.Visible = false;
+			this.SucePaciSalaId.Width = 73;
+			// 
 			// FormGrilla
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +376,13 @@ namespace Codigo_Azul
 			((System.ComponentModel.ISupportInitialize)(this.dgv_sucesos)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.DataGridViewTextBoxColumn SucePaciSalaId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SuceSuorId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SuceUsuaId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SucePaciId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SuceSuesId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SuceSutiId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SuceAreaId;
 		private System.Windows.Forms.Button btn_alarma;
 		private System.Windows.Forms.ToolTip toolTip_botones;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Numero;

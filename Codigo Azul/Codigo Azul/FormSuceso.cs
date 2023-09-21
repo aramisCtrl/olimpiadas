@@ -12,6 +12,7 @@ namespace Codigo_Azul
 		private Suceso oSuceso;
 		public ClassConexionSQL miconexion;
 		private Paciente pacienteSeleccionado;
+		private Usuario usuarioSeleccionado;
 		
 		public FormSuceso( Suceso FSuceso,ClassConexionSQL fconexion)
 		{
@@ -33,18 +34,17 @@ namespace Codigo_Azul
 			{
 				if(Nuevo==true)
 				{
-					cbxTipo.DataSource = ds.Tables[0];
-					cbxTipo.DisplayMember = "suti_descripcion";
-					cbxTipo.ValueMember = "suti_id";
-					// establecer el valor seleccionado inicial
-					// cbxTipo.SelectedValue = valorInicial;
+					lblNumero.Text="Nuevo suceso";
+					dtp_fecha.Enabled=false; 
+					cbxEstado.Enabled=true;
+					cbxOrigen.Enabled=true;
 				}
 				else if(Edicion==true){
 					dtp_fecha.Enabled=false;
-					lblNumero.Text="Suceso Nº"+oSuceso.Numero;
+					lblNumero.Text="Suceso Nº"+oSuceso.Id;
 					dtp_fecha.Value=oSuceso.FechaInicio;
 					cbxSala.Text=oSuceso.Sala;
-					txtMedico.Text=oSuceso.Medico;
+					txtUsuario.Text=oSuceso.Medico;
 					txtPaciente.Text=oSuceso.Nombre +" "+ oSuceso.Apellido;
 					lbl_dni1.Text=oSuceso.Dni.ToString();
 					lbl_obra_social1.Text=oSuceso.ObraSocial;
@@ -112,6 +112,23 @@ namespace Codigo_Azul
 			}
 		}
 		
+		void BtnBuscarUsuarioClick(object sender, EventArgs e)
+		{
+			Usuario usuario = new Usuario(); // Crea una instancia de Pacientes
+			FormUsuario formUsuario = new FormUsuario(usuario,miconexion);
+			
+			// Muestra el formulario de pacientes
+			formUsuario.ShowDialog();
+
+			// Verifica si el usuario aceptó los cambios en el formulario de pacientes
+			if (formUsuario.DialogResult == DialogResult.OK)
+			{
+				usuarioSeleccionado = usuario;
+				txtUsuario.Text = usuarioSeleccionado.Nombre + ' ' + pacienteSeleccionado.Apellido;
+
+			}
+		}
+		
 		void cargarComboEstado(){
 			DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM suceso_estado ORDER BY sues_descripcion");
 			
@@ -154,6 +171,70 @@ namespace Codigo_Azul
 				cbxSala.DisplayMember = "sala_descripcion";
 				cbxSala.ValueMember = "sala_id";
 			}
+		}
+		
+		private void GuardarSuceso()
+		{
+		    try
+		    {
+	            string query="";
+	            string parametros;
+	
+	            if (Nuevo)
+	            {
+//	            	   @suce_area_id INT,
+//					    @suce_suti_id INT,
+//					    @suce_sues_id INT,
+//					    @suce_paci_id INT,
+//					    @suce_usua_id INT,
+//					    @suce_suor_id INT,
+//					    @suce_descripcion VARCHAR(MAX),
+//					    @suce_fecha_ini DATETIME,
+//					    @suce_paci_sala_id INT
+	                parametros = oSuceso.SuceAreaId + ", " + oSuceso.SuceSutiId + ", " + cbxEstado.ValueMember + ", " +
+	                	pacienteSeleccionado.ID + ", " + usuarioSeleccionado.ID + ", " + oSuceso.SuceSuorId + ", '" +
+	                    richTextBox1.Text + "', '" + dtp_fecha.Value.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+	                    oSuceso.SucePaciSalaId;
+	                
+	                // Prepara la consulta de inserción
+	                query = "exec sp_InsertarSuceso " + parametros;
+	            }
+//	            else
+//	            {
+//	                // Para una edición, construye la cadena de parámetros
+//	                parametros = oSuceso.Id + ", " + tuValorSuceAreaId + ", " + tuValorSuceSutiId + ", " +
+//	                    tuValorSuceSuesId + ", " + tuValorSucePaciId + ", " + tuValorSuceUsuaId + ", " +
+//	                    tuValorSuceSuorId + ", '" + richTextBox1.Text + "', '" +
+//	                    dtp_fecha.Value.ToString("yyyy-MM-dd HH:mm:ss") + "', " + tuValorSucePaciSalaId;
+//	                
+//	                // Prepara la consulta de actualización
+//	                query = "exec sp_ActualizarSuceso " + parametros;
+//	            }
+	
+	            // Ejecuta la consulta utilizando el método EjecutarSentencia
+	            DataSet filasAfectadas = miconexion.EjecutarSentencia(query);
+	            int filasafectadas=int.Parse(filasAfectadas.ToString());
+	
+	            if (filasafectadas > 0)
+	            {
+	                MessageBox.Show("Suceso guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+	            }
+	            else
+	            {
+	                MessageBox.Show("No se pudo guardar el suceso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+	            }
+		        
+		    }
+		    catch (Exception ex)
+		    {
+		        MessageBox.Show("Error al guardar el suceso: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+		    }
+		}
+
+	
+		void Btn_aceptarClick(object sender, EventArgs e)
+		{
+			GuardarSuceso();
 		}
 		
 	}

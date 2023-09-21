@@ -53,8 +53,8 @@ namespace Codigo_Azul
 			this.cbxSala = new System.Windows.Forms.ComboBox();
 			this.cbxTipo = new System.Windows.Forms.ComboBox();
 			this.btnBuscarPaciente = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
-			this.txtMedico = new System.Windows.Forms.TextBox();
+			this.btnBuscarUsuario = new System.Windows.Forms.Button();
+			this.txtUsuario = new System.Windows.Forms.TextBox();
 			this.txtPaciente = new System.Windows.Forms.TextBox();
 			this.lbl_dni1 = new System.Windows.Forms.Label();
 			this.lbl_dni = new System.Windows.Forms.Label();
@@ -98,6 +98,7 @@ namespace Codigo_Azul
 			this.btn_aceptar.TabIndex = 0;
 			this.btn_aceptar.Text = "Aceptar";
 			this.btn_aceptar.UseVisualStyleBackColor = true;
+			this.btn_aceptar.Click += new System.EventHandler(this.Btn_aceptarClick);
 			// 
 			// panel2
 			// 
@@ -132,8 +133,8 @@ namespace Codigo_Azul
 			this.pnlDatos.Controls.Add(this.cbxSala);
 			this.pnlDatos.Controls.Add(this.cbxTipo);
 			this.pnlDatos.Controls.Add(this.btnBuscarPaciente);
-			this.pnlDatos.Controls.Add(this.button1);
-			this.pnlDatos.Controls.Add(this.txtMedico);
+			this.pnlDatos.Controls.Add(this.btnBuscarUsuario);
+			this.pnlDatos.Controls.Add(this.txtUsuario);
 			this.pnlDatos.Controls.Add(this.txtPaciente);
 			this.pnlDatos.Controls.Add(this.lbl_dni1);
 			this.pnlDatos.Controls.Add(this.lbl_dni);
@@ -251,22 +252,23 @@ namespace Codigo_Azul
 			this.btnBuscarPaciente.UseVisualStyleBackColor = true;
 			this.btnBuscarPaciente.Click += new System.EventHandler(this.BtnBuscarPacienteClick);
 			// 
-			// button1
+			// btnBuscarUsuario
 			// 
-			this.button1.Location = new System.Drawing.Point(497, 187);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(32, 25);
-			this.button1.TabIndex = 49;
-			this.button1.Text = "...";
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnBuscarUsuario.Location = new System.Drawing.Point(497, 187);
+			this.btnBuscarUsuario.Name = "btnBuscarUsuario";
+			this.btnBuscarUsuario.Size = new System.Drawing.Size(32, 25);
+			this.btnBuscarUsuario.TabIndex = 49;
+			this.btnBuscarUsuario.Text = "...";
+			this.btnBuscarUsuario.UseVisualStyleBackColor = true;
+			this.btnBuscarUsuario.Click += new System.EventHandler(this.BtnBuscarUsuarioClick);
 			// 
-			// txtMedico
+			// txtUsuario
 			// 
-			this.txtMedico.Location = new System.Drawing.Point(193, 190);
-			this.txtMedico.Name = "txtMedico";
-			this.txtMedico.ReadOnly = true;
-			this.txtMedico.Size = new System.Drawing.Size(298, 20);
-			this.txtMedico.TabIndex = 48;
+			this.txtUsuario.Location = new System.Drawing.Point(193, 190);
+			this.txtUsuario.Name = "txtUsuario";
+			this.txtUsuario.ReadOnly = true;
+			this.txtUsuario.Size = new System.Drawing.Size(298, 20);
+			this.txtUsuario.TabIndex = 48;
 			// 
 			// txtPaciente
 			// 
@@ -386,8 +388,8 @@ namespace Codigo_Azul
 		private System.Windows.Forms.Label lbl_dni;
 		private System.Windows.Forms.Label lbl_dni1;
 		private System.Windows.Forms.TextBox txtPaciente;
-		private System.Windows.Forms.TextBox txtMedico;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.TextBox txtUsuario;
+		private System.Windows.Forms.Button btnBuscarUsuario;
 		private System.Windows.Forms.Button btnBuscarPaciente;
 		private System.Windows.Forms.ComboBox cbxTipo;
 		private System.Windows.Forms.ComboBox cbxSala;
