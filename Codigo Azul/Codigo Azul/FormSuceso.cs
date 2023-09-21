@@ -124,7 +124,7 @@ namespace Codigo_Azul
 			if (formUsuario.DialogResult == DialogResult.OK)
 			{
 				usuarioSeleccionado = usuario;
-				txtUsuario.Text = usuarioSeleccionado.Nombre + ' ' + pacienteSeleccionado.Apellido;
+				txtUsuario.Text = usuarioSeleccionado.Nombre;
 
 			}
 		}
@@ -191,9 +191,10 @@ namespace Codigo_Azul
 //					    @suce_descripcion VARCHAR(MAX),
 //					    @suce_fecha_ini DATETIME,
 //					    @suce_paci_sala_id INT
-	                parametros = oSuceso.SuceAreaId + ", " + oSuceso.SuceSutiId + ", " + cbxEstado.ValueMember + ", " +
+	            	string fecha = dtp_fecha.Value.ToString("yyyyMMdd HH:mm:ss"); 
+	                parametros = oSuceso.SuceAreaId + ", " + oSuceso.SuceSutiId + ", " + cbxEstado.SelectedValue + ", " +
 	                	pacienteSeleccionado.ID + ", " + usuarioSeleccionado.ID + ", " + oSuceso.SuceSuorId + ", '" +
-	                    richTextBox1.Text + "', '" + dtp_fecha.Value.ToString("yyyy-MM-dd HH:mm:ss") + "', " +
+	                    richTextBox1.Text + "', '" + fecha + "', " +
 	                    oSuceso.SucePaciSalaId;
 	                
 	                // Prepara la consulta de inserción
@@ -213,16 +214,16 @@ namespace Codigo_Azul
 	
 	            // Ejecuta la consulta utilizando el método EjecutarSentencia
 	            DataSet filasAfectadas = miconexion.EjecutarSentencia(query);
-	            int filasafectadas=int.Parse(filasAfectadas.ToString());
-	
-	            if (filasafectadas > 0)
-	            {
-	                MessageBox.Show("Suceso guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-	            }
-	            else
-	            {
-	                MessageBox.Show("No se pudo guardar el suceso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-	            }
+//	            int filasafectadas=int.Parse(filasAfectadas.ToString());
+//	
+//	            if (filasafectadas > 0)
+//	            {
+//	                MessageBox.Show("Suceso guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+//	            }
+//	            else
+//	            {
+//	                MessageBox.Show("No se pudo guardar el suceso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//	            }
 		        
 		    }
 		    catch (Exception ex)
