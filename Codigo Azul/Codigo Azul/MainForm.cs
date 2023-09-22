@@ -11,6 +11,10 @@ namespace Codigo_Azul
 		public MainForm()
 		{
 			InitializeComponent();
+			btn_ingresar.TabStop = false;
+			btn_ingresar.FlatStyle = FlatStyle.Flat;
+			btn_ingresar.FlatAppearance.BorderSize = 0;
+			btn_ingresar.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
 		}
 		
 		private void Btn_ingresarClick(object sender, EventArgs e)
