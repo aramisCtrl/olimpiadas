@@ -46,7 +46,6 @@ namespace Codigo_Azul
 			this.btn_nuevo_suceso = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.dgv_sucesos = new System.Windows.Forms.DataGridView();
-			this.toolTip_botones = new System.Windows.Forms.ToolTip(this.components);
 			this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +66,7 @@ namespace Codigo_Azul
 			this.SuceUsuaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SuceSuorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SucePaciSalaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.toolTip_botones = new System.Windows.Forms.ToolTip(this.components);
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_sucesos)).BeginInit();
@@ -103,6 +103,7 @@ namespace Codigo_Azul
 			this.btn_alarma.TabIndex = 3;
 			this.toolTip_botones.SetToolTip(this.btn_alarma, "Alarma Código Azul");
 			this.btn_alarma.UseVisualStyleBackColor = false;
+			this.btn_alarma.Click += new System.EventHandler(this.Btn_alarmaClick);
 			// 
 			// btn_reportes
 			// 
@@ -126,6 +127,7 @@ namespace Codigo_Azul
 			this.btn_nueva_area.TabIndex = 1;
 			this.toolTip_botones.SetToolTip(this.btn_nueva_area, "Gestión de áreas");
 			this.btn_nueva_area.UseVisualStyleBackColor = true;
+			this.btn_nueva_area.Click += new System.EventHandler(this.Btn_nueva_areaClick);
 			// 
 			// btn_nuevo_suceso
 			// 
@@ -159,26 +161,26 @@ namespace Codigo_Azul
 			this.dgv_sucesos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.dgv_sucesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgv_sucesos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-									this.Estado,
-									this.Numero,
-									this.FechaInicio,
-									this.Tipo,
-									this.Descripcion,
-									this.Sala,
-									this.Nombre,
-									this.Apellido,
-									this.Dni,
-									this.GrupoSanguineo,
-									this.ObraSocial,
-									this.Medico,
-									this.Origen,
-									this.SuceAreaId,
-									this.SuceSutiId,
-									this.SuceSuesId,
-									this.SucePaciId,
-									this.SuceUsuaId,
-									this.SuceSuorId,
-									this.SucePaciSalaId});
+			this.Estado,
+			this.Numero,
+			this.FechaInicio,
+			this.Tipo,
+			this.Descripcion,
+			this.Sala,
+			this.Nombre,
+			this.Apellido,
+			this.Dni,
+			this.GrupoSanguineo,
+			this.ObraSocial,
+			this.Medico,
+			this.Origen,
+			this.SuceAreaId,
+			this.SuceSutiId,
+			this.SuceSuesId,
+			this.SucePaciId,
+			this.SuceUsuaId,
+			this.SuceSuorId,
+			this.SucePaciSalaId});
 			this.dgv_sucesos.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgv_sucesos.Location = new System.Drawing.Point(0, 0);
 			this.dgv_sucesos.Name = "dgv_sucesos";
@@ -375,6 +377,7 @@ namespace Codigo_Azul
 			this.panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgv_sucesos)).EndInit();
 			this.ResumeLayout(false);
+
 		}
 		private System.Windows.Forms.DataGridViewTextBoxColumn SucePaciSalaId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn SuceSuorId;

@@ -72,3 +72,6 @@ C:\Users\Fiski\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Cod
 C:\Users\Fiski\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.exe
 C:\Users\Fiski\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb
 C:\Users\Lab-01\Documents\GitHub\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormUsuario.resources
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormUsuario.resources
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormArea.resources
+D:\Proyectos\olimpiadas2023\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormSala.resources

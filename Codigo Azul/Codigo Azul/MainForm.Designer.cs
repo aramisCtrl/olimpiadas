@@ -49,14 +49,14 @@
 			this.btn_ingresar.BackColor = System.Drawing.Color.White;
 			this.btn_ingresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.btn_ingresar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_ingresar.FlatAppearance.BorderSize = 0;
+			this.btn_ingresar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
 			this.btn_ingresar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_ingresar.ForeColor = System.Drawing.Color.Transparent;
-			this.btn_ingresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_ingresar.Image")));
-			this.btn_ingresar.Location = new System.Drawing.Point(228, 351);
+			this.btn_ingresar.ForeColor = System.Drawing.Color.SteelBlue;
+			this.btn_ingresar.Location = new System.Drawing.Point(240, 333);
 			this.btn_ingresar.Name = "btn_ingresar";
-			this.btn_ingresar.Size = new System.Drawing.Size(65, 33);
+			this.btn_ingresar.Size = new System.Drawing.Size(126, 33);
 			this.btn_ingresar.TabIndex = 4;
+			this.btn_ingresar.Text = "Aceptar";
 			this.btn_ingresar.UseVisualStyleBackColor = false;
 			this.btn_ingresar.Click += new System.EventHandler(this.Btn_ingresarClick);
 			// 
@@ -123,6 +123,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+
 		}
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label lbl_contraseña;

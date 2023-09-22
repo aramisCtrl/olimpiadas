@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Net;
+using System.Collections.Specialized;
+using System.Text;
 
 namespace Codigo_Azul
 {
@@ -90,7 +93,7 @@ namespace Codigo_Azul
 				miSuceso.SuceUsuaId=int.Parse(filaSeleccionada.Cells["SuceUsuaId"].Value.ToString());
 				miSuceso.SuceSuorId=int.Parse(filaSeleccionada.Cells["SuceSuorId"].Value.ToString());
 				miSuceso.SucePaciSalaId=int.Parse(filaSeleccionada.Cells["SucePaciSalaId"].Value.ToString());
-	
+				
 				
 				FormSuceso form = new FormSuceso(miSuceso,miConexion);
 				form.miconexion = this.miConexion;
@@ -108,25 +111,58 @@ namespace Codigo_Azul
 		//Color azul
 		void DataGridView1DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
 		{
-		    var gridView = (DataGridView)sender;
-		    var tipo = "Emergencia";
-		    var estado = "Pendiente";
-		    Color color = Color.LightBlue;
-		    Color colorAux = Color.White;
-		
-		    foreach (DataGridViewRow row in gridView.Rows)
-		    {
-		        if (row.Cells["Tipo"].Value.ToString() == tipo && row.Cells["Estado"].Value.ToString() == estado)
-		        {
-		            row.DefaultCellStyle.BackColor = color;
-		        }
-		        else
-		        {
-		            row.DefaultCellStyle.BackColor = colorAux;
-		        }
-		    }
+			var gridView = (DataGridView)sender;
+			var tipo = "Emergencia";
+			var estado = "Pendiente";
+			Color color = Color.LightBlue;
+			Color colorAux = Color.White;
+			
+			foreach (DataGridViewRow row in gridView.Rows)
+			{
+				if (row.Cells["Tipo"].Value.ToString() == tipo && row.Cells["Estado"].Value.ToString() == estado)
+				{
+					row.DefaultCellStyle.BackColor = color;
+				}
+				else
+				{
+					row.DefaultCellStyle.BackColor = colorAux;
+				}
+			}
+		}
+		void Btn_alarmaClick(object sender, EventArgs e)
+		{
+
+
+
+			using (var wb = new WebClient())
+			{
+				var data = new NameValueCollection();
+//				data["username"] = "myUser";
+//				data["password"] = "myPassword";
+
+				var response = wb.UploadValues("localhost:8081", "POST", data);
+				string responseInString = Encoding.UTF8.GetString(response);
+			}
+		}
+		void Btn_nueva_areaClick(object sender, EventArgs e)
+		{
+			FormArea aform = new FormArea(miSuceso,miConexion);
+			aform.ShowDialog();
 		}
 
 
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
