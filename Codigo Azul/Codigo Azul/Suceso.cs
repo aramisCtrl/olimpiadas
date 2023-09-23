@@ -24,6 +24,7 @@ namespace Codigo_Azul
 		public int SuceUsuaId{ get; set; }
 		public int SuceSuorId{ get; set; }
 		public int SucePaciSalaId{ get; set; }
+		public string SuceAreaDescripcion{ get; set; }
 		
 		public Suceso()
 		{
@@ -46,6 +47,7 @@ namespace Codigo_Azul
 		SuceUsuaId=0;
 		SuceSuorId=0;
 		SucePaciSalaId=0;
+		SuceAreaDescripcion="";
 		}
 	}
 }

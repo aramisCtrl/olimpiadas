@@ -9,9 +9,10 @@ namespace Codigo_Azul
 		
 		ClassConexionSQL miConexion;
 		Suceso miSuceso;
-		Area fArea;
+
 		Sala fSala;
-		
+		Area fArea;
+
 		public FormGrilla()
 		{
 			InitializeComponent();
@@ -49,6 +50,7 @@ namespace Codigo_Azul
 			FormSuceso form = new FormSuceso(miSuceso,miConexion);
 			form.miconexion = this.miConexion;
 			form.Nuevo=true;
+			form.Edicion=false;
 			form.ShowDialog();
 		}
 		
@@ -56,7 +58,9 @@ namespace Codigo_Azul
 		{
 			try
 			{
-				System.Diagnostics.Process.Start("http://192.168.1.131:3000");
+
+				System.Diagnostics.Process.Start("http://192.168.1.103:3000/public/dashboard/af5d4d6d-6de8-4e8e-a859-e892714436c6");
+
 			}
 			catch (Exception ex)
 			{
@@ -94,19 +98,17 @@ namespace Codigo_Azul
 				miSuceso.SuceSuorId=int.Parse(filaSeleccionada.Cells["SuceSuorId"].Value.ToString());
 				miSuceso.SucePaciSalaId=int.Parse(filaSeleccionada.Cells["SucePaciSalaId"].Value.ToString());
 	
+				miSuceso.SuceAreaDescripcion=filaSeleccionada.Cells["SuceAreaDescripcion"].Value.ToString();
 				
 				FormSuceso form = new FormSuceso(miSuceso,miConexion);
 				form.miconexion = this.miConexion;
 				
+				form.Nuevo=false;
 				form.Edicion=true;
 				form.ShowDialog();
 			}
 		}
 		
-		void DataGridView1CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			
-		}
 		
 		//Color azul
 		void DataGridView1DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -130,25 +132,34 @@ namespace Codigo_Azul
 			}
 		}
 
-
-		
-
 		void Btn_nueva_areaClick(object sender, EventArgs e)
 		{
-		fArea = new Area();
-		FormArea FormArea = new FormArea(fArea,miConexion);
-		FormArea.ShowDialog();	
+		        fArea = new Area();
+		        FormArea FormArea = new FormArea(fArea,miConexion);
+		        FormArea.ShowDialog();	
 		}
 		
 		void BtnSalaClick(object sender, EventArgs e)
 		{
 			fSala = new Sala();
-
 			FormSala aFormSala = new FormSala(fSala,miConexion);
 			aFormSala.ShowDialog();
 		}
 		
-		void Button1Click(object sender, EventArgs e)
+		void Btn_alarmaClick(object sender, EventArgs e)
+		{
+			using (var wb = new WebClient())
+			{
+				var data = new NameValueCollection();
+//				data["username"] = "myUser";
+//				data["password"] = "myPassword";
+
+				var response = wb.UploadValues("localhost:8081", "POST", data);
+				string responseInString = Encoding.UTF8.GetString(response);
+			}
+		}
+		
+		void Dgv_sucesosCellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			
 		}
