@@ -11,6 +11,7 @@ namespace Codigo_Azul
 		Suceso miSuceso;
 		Area fArea;
 		Sala fSala;
+		
 		public FormGrilla()
 		{
 			InitializeComponent();
@@ -55,7 +56,7 @@ namespace Codigo_Azul
 		{
 			try
 			{
-				System.Diagnostics.Process.Start("http://192.168.1.103:3000");
+				System.Diagnostics.Process.Start("http://192.168.1.131:3000");
 			}
 			catch (Exception ex)
 			{
@@ -131,7 +132,15 @@ namespace Codigo_Azul
 
 
 		
-		void Button1Click(object sender, EventArgs e)
+
+		void Btn_nueva_areaClick(object sender, EventArgs e)
+		{
+		fArea = new Area();
+		FormArea FormArea = new FormArea(fArea,miConexion);
+		FormArea.ShowDialog();	
+		}
+		
+		void BtnSalaClick(object sender, EventArgs e)
 		{
 			fSala = new Sala();
 
@@ -139,13 +148,9 @@ namespace Codigo_Azul
 			aFormSala.ShowDialog();
 		}
 		
-
-		void Btn_nueva_areaClick(object sender, EventArgs e)
+		void Button1Click(object sender, EventArgs e)
 		{
-			fArea = new Area();
-
-			FormArea aFormArea = new FormArea(fArea,miConexion);
-			aFormArea.Show();		
+			
 		}
 	}
 }

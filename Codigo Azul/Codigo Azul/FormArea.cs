@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: TaielGamerR
- * Date: 18/09/2023
- * Time: 21:55
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data;
@@ -41,7 +33,7 @@ namespace Codigo_Azul
 			}
 		}
 		void cargarGrilla(){
-			DataSet ds = miConexion.EjecutarSentencia("exec sp_ObtenerAreas");
+			DataSet ds = miConexion.EjecutarSentencia("exec sp_ObtenerAreasGrilla");
 			
 			gridDatos.AutoGenerateColumns = false;
 			bindingSource.DataSource = ds.Tables[0]; // ds es tu DataSet
@@ -119,42 +111,41 @@ namespace Codigo_Azul
 		
 		void GridDatosSelectionChanged(object sender, EventArgs e)
 		{
-//			if (gridDatos.SelectedRows.Count > 0)
-//			{
-//				// Obtén la fila seleccionada actualmente
-//				DataGridViewRow filaSeleccionada = gridDatos.SelectedRows[0];
-//				
-//				// Actualiza los datos del objeto Pacientes con los valores del formulario
-//				oArea.ID = Convert.ToInt32(filaSeleccionada.Cells["area_id"].Value.ToString());
-//				oArea.Nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
-//				
-//
-//				//Actualiza los componentes visuales
-//				txtNombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
-//				
-//				
-//				string Sala = gridDatos.SelectedRows[0].Cells["Sala"].Value.ToString();
-//				for (int i = 0; i < cbxsala.Items.Count; i++)
-//				{
-//					if (cbxsala.GetItemText(cbxsala.Items[i]) == Sala)
-//					{
-//						cbxsala.SelectedIndex = i;
-//						break;
-//					}
-//				}
-//				
-//			}
-//			else
-//			{
-//				//valores defecto si no hay registros en la grilla
-//				Limpiar();
-//			}
+			if (gridDatos.SelectedRows.Count > 0)
+			{
+				// Obtén la fila seleccionada actualmente
+				DataGridViewRow filaSeleccionada = gridDatos.SelectedRows[0];
+				
+				// Actualiza los datos del objeto Pacientes con los valores del formulario
+				oArea.ID = Convert.ToInt32(filaSeleccionada.Cells["area_id"].Value.ToString());
+				oArea.Nombre = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+				
+
+				//Actualiza los componentes visuales
+				txtNombre.Text = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+				txtDescipcion.Text = filaSeleccionada.Cells["AlarmaTexto"].Value.ToString();
+				
+				string aSala = gridDatos.SelectedRows[0].Cells["SalaAtencion"].Value.ToString();
+				for (int i = 0; i < cbxsala.Items.Count; i++)
+				{
+					if (cbxsala.GetItemText(cbxsala.Items[i]) == aSala)
+					{
+						cbxsala.SelectedIndex = i;
+						break;
+					}
+				}
+				
+			}
+			else
+			{
+				//valores defecto si no hay registros en la grilla
+				Limpiar();
+			}
 			
 		}
 		
 		void BtnSeleccionarClick(object sender, EventArgs e)
 		{
-			
 			this.DialogResult = DialogResult.OK;
 			this.Close();			
 		}
@@ -168,11 +159,11 @@ namespace Codigo_Azul
 		{
 			if(Edicion){
 				// Construye la cadena de parámetros
-				string parametros = oArea.ID + ", '" +txtNombre.Text+"', '"+/*falta id sala*/ "', " /*falta texto (speech)*/;
+				string parametros = oArea.ID + ", '" +txtNombre.Text+"', '"+ Convert.ToInt32(cbxsala.SelectedValue)+ "', '" +txtDescipcion.Text +"'";
 
 				miConexion.EjecutarSentencia("exec sp_ActualizarArea " + parametros);
 			}else if (Nuevo){
-				string parametros = "'" +txtNombre.Text+"', '"+"', "+/*falta id sala*/ "', " /*falta texto (speech)*/;
+				string parametros = "'" +txtNombre.Text+"', '"+ Convert.ToInt32(cbxsala.SelectedValue)+ "', '" +txtDescipcion.Text +"'";
 
 				miConexion.EjecutarSentencia("exec sp_InsertarArea " + parametros);
 			}
@@ -191,7 +182,7 @@ namespace Codigo_Azul
 			string valorBusqueda = txtBuscar.Text;
 
 			// Crear un filtro que sea insensible a mayúsculas y minúsculas
-			string filtro = "sala_descripcion LIKE '%"+valorBusqueda+"%'";
+			string filtro = "sala_descripcion LIKE '%"+valorBusqueda+"%'OR area_descripcion LIKE '%"+valorBusqueda+"%'";
 
 			// Aplicar el filtro al BindingSource
 			bindingSource.Filter = filtro;

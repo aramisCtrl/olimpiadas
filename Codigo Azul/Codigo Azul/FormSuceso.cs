@@ -42,10 +42,10 @@ namespace Codigo_Azul
 				}
 				else if(Edicion==true){
 					dtp_fecha.Enabled=false;
-					lblNumero.Text="Suceso Nº"+oSuceso.Numero;
+					lblNumero.Text="Suceso Nº"+oSuceso.Id;
 					dtp_fecha.Value=oSuceso.FechaInicio;
 					cbxSala.Text=oSuceso.Sala;
-					txtMedico.Text=oSuceso.Medico;
+					txtUsuario.Text=oSuceso.Medico;
 					txtPaciente.Text=oSuceso.Nombre +" "+ oSuceso.Apellido;
 					lbl_dni1.Text=oSuceso.Dni.ToString();
 					lbl_obra_social1.Text=oSuceso.ObraSocial;

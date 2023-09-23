@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: TaielGamerR
- * Date: 18/09/2023
- * Time: 21:55
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-namespace Codigo_Azul
+﻿namespace Codigo_Azul
 {
 	partial class FormArea
 	{
@@ -38,10 +30,14 @@ namespace Codigo_Azul
 		{
 			this.pnlMid = new System.Windows.Forms.Panel();
 			this.gridDatos = new System.Windows.Forms.DataGridView();
+			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.area_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SalaAtencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.AlarmaTexto = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.pnlData = new System.Windows.Forms.Panel();
 			this.cbxsala = new System.Windows.Forms.ComboBox();
 			this.label8 = new System.Windows.Forms.Label();
-			this.txtDni = new System.Windows.Forms.TextBox();
+			this.txtDescipcion = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtNombre = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
@@ -54,9 +50,6 @@ namespace Codigo_Azul
 			this.pnlTop = new System.Windows.Forms.Panel();
 			this.txtBuscar = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.SalaAtencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.AlarmaTexto = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.pnlMid.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridDatos)).BeginInit();
 			this.pnlData.SuspendLayout();
@@ -82,6 +75,7 @@ namespace Codigo_Azul
 			this.gridDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 									this.Descripcion,
+									this.area_id,
 									this.SalaAtencion,
 									this.AlarmaTexto});
 			this.gridDatos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -94,11 +88,41 @@ namespace Codigo_Azul
 			this.gridDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridDatosCellContentClick);
 			this.gridDatos.SelectionChanged += new System.EventHandler(this.GridDatosSelectionChanged);
 			// 
+			// Descripcion
+			// 
+			this.Descripcion.DataPropertyName = "area_descripcion";
+			this.Descripcion.HeaderText = "Descripcion";
+			this.Descripcion.Name = "Descripcion";
+			this.Descripcion.ReadOnly = true;
+			// 
+			// area_id
+			// 
+			this.area_id.DataPropertyName = "area_id";
+			this.area_id.HeaderText = "area_id";
+			this.area_id.Name = "area_id";
+			this.area_id.ReadOnly = true;
+			this.area_id.Visible = false;
+			// 
+			// SalaAtencion
+			// 
+			this.SalaAtencion.DataPropertyName = "sala_descripcion";
+			this.SalaAtencion.HeaderText = "Sala de atencion";
+			this.SalaAtencion.Name = "SalaAtencion";
+			this.SalaAtencion.ReadOnly = true;
+			// 
+			// AlarmaTexto
+			// 
+			this.AlarmaTexto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.AlarmaTexto.DataPropertyName = "area_alarma_texto";
+			this.AlarmaTexto.HeaderText = "Alarma Texto";
+			this.AlarmaTexto.Name = "AlarmaTexto";
+			this.AlarmaTexto.ReadOnly = true;
+			// 
 			// pnlData
 			// 
 			this.pnlData.Controls.Add(this.cbxsala);
 			this.pnlData.Controls.Add(this.label8);
-			this.pnlData.Controls.Add(this.txtDni);
+			this.pnlData.Controls.Add(this.txtDescipcion);
 			this.pnlData.Controls.Add(this.label2);
 			this.pnlData.Controls.Add(this.txtNombre);
 			this.pnlData.Controls.Add(this.label3);
@@ -126,12 +150,12 @@ namespace Codigo_Azul
 			this.label8.TabIndex = 14;
 			this.label8.Text = "Area";
 			// 
-			// txtDni
+			// txtDescipcion
 			// 
-			this.txtDni.Location = new System.Drawing.Point(132, 48);
-			this.txtDni.Name = "txtDni";
-			this.txtDni.Size = new System.Drawing.Size(238, 20);
-			this.txtDni.TabIndex = 2;
+			this.txtDescipcion.Location = new System.Drawing.Point(132, 48);
+			this.txtDescipcion.Name = "txtDescipcion";
+			this.txtDescipcion.Size = new System.Drawing.Size(238, 20);
+			this.txtDescipcion.TabIndex = 2;
 			// 
 			// label2
 			// 
@@ -248,27 +272,6 @@ namespace Codigo_Azul
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Buscar";
 			// 
-			// Descripcion
-			// 
-			this.Descripcion.DataPropertyName = "area_descripcion";
-			this.Descripcion.HeaderText = "Descripcion";
-			this.Descripcion.Name = "Descripcion";
-			this.Descripcion.ReadOnly = true;
-			// 
-			// SalaAtencion
-			// 
-			this.SalaAtencion.DataPropertyName = "sala_descripcion";
-			this.SalaAtencion.HeaderText = "Sala de atencion";
-			this.SalaAtencion.Name = "SalaAtencion";
-			this.SalaAtencion.ReadOnly = true;
-			// 
-			// AlarmaTexto
-			// 
-			this.AlarmaTexto.DataPropertyName = "area_alarma_texto";
-			this.AlarmaTexto.HeaderText = "Alarma Texto";
-			this.AlarmaTexto.Name = "AlarmaTexto";
-			this.AlarmaTexto.ReadOnly = true;
-			// 
 			// FormArea
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,6 +293,7 @@ namespace Codigo_Azul
 			this.pnlTop.PerformLayout();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.DataGridViewTextBoxColumn area_id;
 		private System.Windows.Forms.DataGridViewTextBoxColumn AlarmaTexto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn SalaAtencion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
@@ -305,7 +309,7 @@ namespace Codigo_Azul
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox txtNombre;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox txtDni;
+		private System.Windows.Forms.TextBox txtDescipcion;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.ComboBox cbxsala;
 		private System.Windows.Forms.Panel pnlData;

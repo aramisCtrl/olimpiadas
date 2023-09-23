@@ -5,7 +5,6 @@ using System.Data;
 
 namespace Codigo_Azul
 {
-
 	public partial class FormSala : Form
 	{
 		private bool Nuevo,Edicion;
@@ -152,12 +151,11 @@ namespace Codigo_Azul
 		{
 			if(Edicion){
 				// Construye la cadena de parámetros
-				string parametros = oSala.ID + ", '" +txtNombre.Text+ "', '"+ Convert.ToInt32(cbxArea.SelectedValue) +"', 1";
+				string parametros = oSala.ID + ", '" +txtNombre.Text+ "', "+ Convert.ToInt32(cbxArea.SelectedValue);
 
 				miConexion.EjecutarSentencia("exec sp_ActualizarSala " + parametros);
 			}else if (Nuevo){
-				string parametros = "'" +txtNombre.Text+"', '"+ Convert.ToInt32(cbxArea.SelectedValue) +"', 1";
-
+				string parametros = "'" +txtNombre.Text+"', "+ Convert.ToInt32(cbxArea.SelectedValue);
 				miConexion.EjecutarSentencia("exec sp_InsertarSala " + parametros);
 			}
 			//recargo la grilla
@@ -174,20 +172,6 @@ namespace Codigo_Azul
 		{
 			IniciarNuevo();
 			Limpiar();
-		}
-		void TxtNombreTextChanged(object sender, EventArgs e)
-		{
-			
-		}
-		
-		void GridDatosCellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			
-		}
-		
-		void CbxAreaSelectedIndexChanged(object sender, EventArgs e)
-		{
-			
 		}
 		
 		void FormSalaLoad(object sender, EventArgs e)

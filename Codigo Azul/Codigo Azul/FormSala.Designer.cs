@@ -39,24 +39,26 @@ namespace Codigo_Azul
 			this.pnlTop = new System.Windows.Forms.Panel();
 			this.txtBuscar = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.pnlData = new System.Windows.Forms.Panel();
 			this.btnButtons = new System.Windows.Forms.Panel();
 			this.btnNuevo = new System.Windows.Forms.Button();
 			this.btnEditar = new System.Windows.Forms.Button();
 			this.btnSeleccionar = new System.Windows.Forms.Button();
 			this.btnCancelar = new System.Windows.Forms.Button();
 			this.btnAceptar = new System.Windows.Forms.Button();
+			this.pnlData = new System.Windows.Forms.Panel();
 			this.cbxArea = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.txtNombre = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
+			this.pnlMid = new System.Windows.Forms.Panel();
 			this.gridDatos = new System.Windows.Forms.DataGridView();
-			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.usua_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.sala_area_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.pnlTop.SuspendLayout();
-			this.pnlData.SuspendLayout();
 			this.btnButtons.SuspendLayout();
+			this.pnlData.SuspendLayout();
+			this.pnlMid.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridDatos)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -86,20 +88,6 @@ namespace Codigo_Azul
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Buscar";
 			// 
-			// pnlData
-			// 
-			this.pnlData.Controls.Add(this.btnButtons);
-			this.pnlData.Controls.Add(this.cbxArea);
-			this.pnlData.Controls.Add(this.label9);
-			this.pnlData.Controls.Add(this.txtNombre);
-			this.pnlData.Controls.Add(this.label3);
-			this.pnlData.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.pnlData.Enabled = false;
-			this.pnlData.Location = new System.Drawing.Point(0, 378);
-			this.pnlData.Name = "pnlData";
-			this.pnlData.Size = new System.Drawing.Size(598, 144);
-			this.pnlData.TabIndex = 8;
-			// 
 			// btnButtons
 			// 
 			this.btnButtons.Controls.Add(this.btnNuevo);
@@ -108,10 +96,10 @@ namespace Codigo_Azul
 			this.btnButtons.Controls.Add(this.btnCancelar);
 			this.btnButtons.Controls.Add(this.btnAceptar);
 			this.btnButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.btnButtons.Location = new System.Drawing.Point(0, 101);
+			this.btnButtons.Location = new System.Drawing.Point(0, 479);
 			this.btnButtons.Name = "btnButtons";
 			this.btnButtons.Size = new System.Drawing.Size(598, 43);
-			this.btnButtons.TabIndex = 19;
+			this.btnButtons.TabIndex = 20;
 			// 
 			// btnNuevo
 			// 
@@ -165,6 +153,19 @@ namespace Codigo_Azul
 			this.btnAceptar.UseVisualStyleBackColor = true;
 			this.btnAceptar.Click += new System.EventHandler(this.BtnAceptarClick);
 			// 
+			// pnlData
+			// 
+			this.pnlData.Controls.Add(this.cbxArea);
+			this.pnlData.Controls.Add(this.label9);
+			this.pnlData.Controls.Add(this.txtNombre);
+			this.pnlData.Controls.Add(this.label3);
+			this.pnlData.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.pnlData.Enabled = false;
+			this.pnlData.Location = new System.Drawing.Point(0, 378);
+			this.pnlData.Name = "pnlData";
+			this.pnlData.Size = new System.Drawing.Size(598, 101);
+			this.pnlData.TabIndex = 22;
+			// 
 			// cbxArea
 			// 
 			this.cbxArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -188,7 +189,6 @@ namespace Codigo_Azul
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.Size = new System.Drawing.Size(238, 20);
 			this.txtNombre.TabIndex = 0;
-			this.txtNombre.TextChanged += new System.EventHandler(this.TxtNombreTextChanged);
 			// 
 			// label3
 			// 
@@ -198,72 +198,82 @@ namespace Codigo_Azul
 			this.label3.TabIndex = 2;
 			this.label3.Text = "Descripcion";
 			// 
+			// pnlMid
+			// 
+			this.pnlMid.Controls.Add(this.gridDatos);
+			this.pnlMid.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlMid.Location = new System.Drawing.Point(0, 46);
+			this.pnlMid.Name = "pnlMid";
+			this.pnlMid.Size = new System.Drawing.Size(598, 332);
+			this.pnlMid.TabIndex = 23;
+			// 
 			// gridDatos
 			// 
 			this.gridDatos.AllowUserToAddRows = false;
 			this.gridDatos.AllowUserToDeleteRows = false;
 			this.gridDatos.AllowUserToResizeRows = false;
-			this.gridDatos.BackgroundColor = System.Drawing.SystemColors.Window;
 			this.gridDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.Nombre,
-			this.Area,
-			this.usua_id});
+									this.Descripcion,
+									this.Area,
+									this.sala_area_id});
 			this.gridDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.gridDatos.GridColor = System.Drawing.SystemColors.Window;
-			this.gridDatos.Location = new System.Drawing.Point(0, 46);
+			this.gridDatos.Location = new System.Drawing.Point(0, 0);
 			this.gridDatos.Name = "gridDatos";
 			this.gridDatos.ReadOnly = true;
 			this.gridDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.gridDatos.Size = new System.Drawing.Size(598, 332);
-			this.gridDatos.TabIndex = 9;
+			this.gridDatos.TabIndex = 1;
+			this.gridDatos.SelectionChanged += new System.EventHandler(this.GridDatosSelectionChanged);
 			// 
-			// Nombre
+			// Descripcion
 			// 
-			this.Nombre.DataPropertyName = "usua_nombre";
-			this.Nombre.Frozen = true;
-			this.Nombre.HeaderText = "Descripcion";
-			this.Nombre.Name = "Nombre";
-			this.Nombre.ReadOnly = true;
+			this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Descripcion.DataPropertyName = "sala_descripcion";
+			this.Descripcion.HeaderText = "Descripcion";
+			this.Descripcion.Name = "Descripcion";
+			this.Descripcion.ReadOnly = true;
 			// 
 			// Area
 			// 
-			this.Area.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.Area.DataPropertyName = "area_descripcion";
-			this.Area.HeaderText = "Area";
+			this.Area.HeaderText = "Área";
 			this.Area.Name = "Area";
 			this.Area.ReadOnly = true;
 			// 
-			// usua_id
+			// sala_area_id
 			// 
-			this.usua_id.DataPropertyName = "usua_id";
-			this.usua_id.HeaderText = "sala_id";
-			this.usua_id.Name = "usua_id";
-			this.usua_id.ReadOnly = true;
-			this.usua_id.Visible = false;
+			this.sala_area_id.DataPropertyName = "sala_area_id";
+			this.sala_area_id.HeaderText = "sala_area_id";
+			this.sala_area_id.Name = "sala_area_id";
+			this.sala_area_id.ReadOnly = true;
+			this.sala_area_id.Visible = false;
 			// 
 			// FormSala
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(598, 522);
-			this.Controls.Add(this.gridDatos);
+			this.Controls.Add(this.pnlMid);
 			this.Controls.Add(this.pnlData);
+			this.Controls.Add(this.btnButtons);
 			this.Controls.Add(this.pnlTop);
 			this.Name = "FormSala";
-			this.Text = "FormSala";
+			this.Text = "Sala";
+			this.Load += new System.EventHandler(this.FormSalaLoad);
 			this.pnlTop.ResumeLayout(false);
 			this.pnlTop.PerformLayout();
+			this.btnButtons.ResumeLayout(false);
 			this.pnlData.ResumeLayout(false);
 			this.pnlData.PerformLayout();
-			this.btnButtons.ResumeLayout(false);
+			this.pnlMid.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridDatos)).EndInit();
 			this.ResumeLayout(false);
-
 		}
-		private System.Windows.Forms.DataGridViewTextBoxColumn usua_id;
+		private System.Windows.Forms.DataGridViewTextBoxColumn sala_area_id;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Area;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+		private System.Windows.Forms.Panel pnlMid;
 		private System.Windows.Forms.DataGridView gridDatos;
 		private System.Windows.Forms.Button btnAceptar;
 		private System.Windows.Forms.Button btnCancelar;

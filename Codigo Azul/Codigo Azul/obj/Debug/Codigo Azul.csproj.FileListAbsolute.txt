@@ -76,4 +76,3 @@ C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\bin\Debug\
 C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormUsuario.resources
 C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo Azul.pdb
 C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormSala.resources
-C:\Users\Lab-01\Documents\proyecto\olimpiadas\Codigo Azul\Codigo Azul\obj\Debug\Codigo_Azul.FormArea.resources

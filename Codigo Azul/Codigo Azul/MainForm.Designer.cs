@@ -32,7 +32,7 @@
 			this.txt_usuario.Location = new System.Drawing.Point(245, 250);
 			this.txt_usuario.Name = "txt_usuario";
 			this.txt_usuario.Size = new System.Drawing.Size(121, 20);
-			this.txt_usuario.TabIndex = 6;
+			this.txt_usuario.TabIndex = 0;
 			this.txt_usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txt_contraseña
@@ -41,7 +41,7 @@
 			this.txt_contraseña.Location = new System.Drawing.Point(245, 294);
 			this.txt_contraseña.Name = "txt_contraseña";
 			this.txt_contraseña.Size = new System.Drawing.Size(121, 20);
-			this.txt_contraseña.TabIndex = 5;
+			this.txt_contraseña.TabIndex = 1;
 			this.txt_contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// btn_ingresar
@@ -55,7 +55,7 @@
 			this.btn_ingresar.Location = new System.Drawing.Point(240, 333);
 			this.btn_ingresar.Name = "btn_ingresar";
 			this.btn_ingresar.Size = new System.Drawing.Size(126, 33);
-			this.btn_ingresar.TabIndex = 4;
+			this.btn_ingresar.TabIndex = 2;
 			this.btn_ingresar.Text = "Aceptar";
 			this.btn_ingresar.UseVisualStyleBackColor = false;
 			this.btn_ingresar.Click += new System.EventHandler(this.Btn_ingresarClick);
@@ -123,7 +123,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label lbl_contraseña;

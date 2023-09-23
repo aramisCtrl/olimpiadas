@@ -121,6 +121,27 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSala.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAKiSURBVGhD7ZmxTxRBGMX3n5EEMcLfIC1I7hCFzkYbMYoN
+        UGIAjbFREwvEyPEHcIVaGitCRFoPuEAi3h1gOBsrrUbehTne7M037KwHumQ2+SXHzPc93tudnd1ko3CE
+        4y+Pjlx19kKu+rsjX1VZ4sjzTJRF88SvyDKYKYwAP8tLmYA9hwD/AvZ8YoB6qajm3iyr/L1NdfnGtwb4
+        PV9YVj/Wi9ae04Y9OwNsrb1TfXfKRgPTP1pu1MT7Thv2IAbAmXeZ1/SPbp75leD/LwbAstHjnUM1Nbn4
+        XRXXD9TI9F5zXIPlxL2Pnn9WXUOVlro0QOfxi1VDn+fFALnDda7HJwr76kOtrm4+aTUPBu9vGL3tMq+5
+        dL1i6POcGKB7eKc5jjMfN89Xomdkx+jlunYh6ScKEF82CLNUOmj+7QpQ6xtODetI+mIAbJU8p4F5LKfx
+        w2Wlx66NmUuI623GksI6kr4Y4NXC8U2swZXAmcc9gRtbj7+O3cTcYzOWFNaR9MUA2Eaxz/O8jat3W7dR
+        nmdDUwOL6mL+eGkyGH84UDDqeV7SFwMAPKRcIWB+e+1tSx/XsCHJvKYr/9Wo5zlJ3xkA4Oxin8c6x40N
+        8BvLRnqAsaZkSEKql/RPDJAG1vQ15FsfAthgTV9DvvXOAF9W3qsrt7aNBgZzqIn3cY1kSEKql/SdAZ7N
+        rRjFNlAT7+N5NnTmu9DTl5+MYhuoiffxPBvCPu9+DiwY9Twv6ScO8GB+X33crTfAbz3uE8AX1pH0Q4AQ
+        wAHrSPohQGYCSPzXAdr9IPOFdSR9ZwC8JvQ6XiV6b2+pkserhC+sI+k7A6SFNW3GksI6kn4IYIM1bcaS
+        wjqSfghggzVtxpLCOpL++QqQRc7FZ9aZzH7ozlWmj77XhyMc6Y4o+gPxV9hAvodk0gAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
+  <metadata name="toolTip_botones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>106, 17</value>
+  </metadata>
   <data name="btn_alarma.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -141,9 +162,6 @@
         LDJmLuqhxihGedCT6Edd90j9Ze+8j89/gSD8AQ3iqafP8DBDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="toolTip_botones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>106, 17</value>
-  </metadata>
   <data name="btn_reportes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

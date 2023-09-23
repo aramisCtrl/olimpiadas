@@ -98,7 +98,6 @@ namespace Codigo_Azul
 			this.btn_aceptar.TabIndex = 0;
 			this.btn_aceptar.Text = "Aceptar";
 			this.btn_aceptar.UseVisualStyleBackColor = true;
-			this.btn_aceptar.Click += new System.EventHandler(this.Btn_aceptarClick);
 			// 
 			// panel2
 			// 
@@ -260,7 +259,6 @@ namespace Codigo_Azul
 			this.btnBuscarUsuario.TabIndex = 49;
 			this.btnBuscarUsuario.Text = "...";
 			this.btnBuscarUsuario.UseVisualStyleBackColor = true;
-			this.btnBuscarUsuario.Click += new System.EventHandler(this.BtnBuscarUsuarioClick);
 			// 
 			// txtUsuario
 			// 

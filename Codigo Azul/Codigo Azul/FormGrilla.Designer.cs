@@ -40,7 +40,7 @@ namespace Codigo_Azul
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGrilla));
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnSala = new System.Windows.Forms.Button();
 			this.btn_alarma = new System.Windows.Forms.Button();
 			this.btn_reportes = new System.Windows.Forms.Button();
 			this.btn_nueva_area = new System.Windows.Forms.Button();
@@ -73,7 +73,7 @@ namespace Codigo_Azul
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.button1);
+			this.panel1.Controls.Add(this.btnSala);
 			this.panel1.Controls.Add(this.btn_alarma);
 			this.panel1.Controls.Add(this.btn_reportes);
 			this.panel1.Controls.Add(this.btn_nueva_area);
@@ -84,15 +84,17 @@ namespace Codigo_Azul
 			this.panel1.Size = new System.Drawing.Size(1342, 71);
 			this.panel1.TabIndex = 7;
 			// 
-			// button1
+			// btnSala
 			// 
-			this.button1.Location = new System.Drawing.Point(489, 30);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 4;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.Button1Click);
+			this.btnSala.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnSala.Image = ((System.Drawing.Image)(resources.GetObject("btnSala.Image")));
+			this.btnSala.Location = new System.Drawing.Point(219, 3);
+			this.btnSala.Name = "btnSala";
+			this.btnSala.Size = new System.Drawing.Size(66, 64);
+			this.btnSala.TabIndex = 5;
+			this.toolTip_botones.SetToolTip(this.btnSala, "Nueva area");
+			this.btnSala.UseVisualStyleBackColor = true;
+			this.btnSala.Click += new System.EventHandler(this.BtnSalaClick);
 			// 
 			// btn_alarma
 			// 
@@ -312,7 +314,7 @@ namespace Codigo_Azul
 			((System.ComponentModel.ISupportInitialize)(this.dgv_sucesos)).EndInit();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnSala;
 		private System.Windows.Forms.Button btn_alarma;
 		private System.Windows.Forms.ToolTip toolTip_botones;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
@@ -333,16 +335,7 @@ namespace Codigo_Azul
 		private System.Windows.Forms.Button btn_nuevo_suceso;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Timer timer1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn obso_descripcion;
-		private System.Windows.Forms.DataGridViewTextBoxColumn paci_grupo_sanguineo;
-		private System.Windows.Forms.DataGridViewTextBoxColumn paci_dni;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+
 		private System.Windows.Forms.Button btn_nueva_area;
 		private System.Windows.Forms.DataGridView dgv_sucesos;
 	}
