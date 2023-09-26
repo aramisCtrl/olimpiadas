@@ -74,18 +74,17 @@
 			this.gridDatos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
 			this.gridDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-									this.Descripcion,
-									this.area_id,
-									this.SalaAtencion,
-									this.AlarmaTexto});
+			this.Descripcion,
+			this.area_id,
+			this.SalaAtencion,
+			this.AlarmaTexto});
 			this.gridDatos.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.gridDatos.Location = new System.Drawing.Point(0, 0);
 			this.gridDatos.Name = "gridDatos";
 			this.gridDatos.ReadOnly = true;
 			this.gridDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.gridDatos.Size = new System.Drawing.Size(584, 262);
-			this.gridDatos.TabIndex = 0;
-			this.gridDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridDatosCellContentClick);
+			this.gridDatos.TabIndex = 1;
 			this.gridDatos.SelectionChanged += new System.EventHandler(this.GridDatosSelectionChanged);
 			// 
 			// Descripcion
@@ -292,6 +291,7 @@
 			this.pnlTop.ResumeLayout(false);
 			this.pnlTop.PerformLayout();
 			this.ResumeLayout(false);
+
 		}
 		private System.Windows.Forms.DataGridViewTextBoxColumn area_id;
 		private System.Windows.Forms.DataGridViewTextBoxColumn AlarmaTexto;

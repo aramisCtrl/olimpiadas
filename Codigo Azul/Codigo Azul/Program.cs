@@ -24,7 +24,15 @@ namespace Codigo_Azul
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+			
+			var loginForm = new MainForm();
+			
+			if (loginForm.ShowDialog() == DialogResult.OK)
+			{				
+				Application.Run(new FormGrilla());
+			}
+			
+//			Application.Run(new MainForm());
 		}
 		
 	}

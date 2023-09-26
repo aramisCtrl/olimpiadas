@@ -34,8 +34,8 @@ namespace Codigo_Azul
 		{
 			Nombre = nombre;
 			Apellido = apellido;
-			Usuario = Usuario;
-			Contraseña = Contraseña;
+//			Usuario = Usuario;
+//			Contraseña = Contraseña;
 			
 		}
 	}

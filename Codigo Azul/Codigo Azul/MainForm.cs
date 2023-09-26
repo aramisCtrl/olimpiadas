@@ -11,20 +11,16 @@ namespace Codigo_Azul
 		public MainForm()
 		{
 			InitializeComponent();
-			btn_ingresar.TabStop = false;
-			btn_ingresar.FlatStyle = FlatStyle.Flat;
-			btn_ingresar.FlatAppearance.BorderSize = 0;
-			btn_ingresar.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
 		}
 		
-		private void Btn_ingresarClick(object sender, EventArgs e)
+		void Btn_ingresarClick(object sender, EventArgs e)
 		{
 			string nombreUsuario = txt_usuario.Text;
 			string contraseña = txt_contraseña.Text;
 			
 			// Validar el usuario en la base de datos
 			ClassConexionSQL conexionSQL = new ClassConexionSQL();
-			if (conexionSQL.CrearConexion("codigo_azul") && conexionSQL.ValidarUsuario(nombreUsuario, contraseña))
+			if (conexionSQL.CrearConexion() && conexionSQL.ValidarUsuario(nombreUsuario, contraseña))
 			{
 				FormGrilla form = new FormGrilla();
 				form.Show();
@@ -38,9 +34,26 @@ namespace Codigo_Azul
 		
 		void Button1Click(object sender, EventArgs e)
 		{
-			FormGrilla form = new FormGrilla();
-			form.Show();
-			this.Hide();
+			string nombreUsuario = txt_usuario.Text;
+			string contraseña = txt_contraseña.Text;
+			
+			// Validar el usuario en la base de datos
+			ClassConexionSQL conexionSQL = new ClassConexionSQL();
+			if (conexionSQL.CrearConexion() && conexionSQL.ValidarUsuario(nombreUsuario, contraseña))
+			{
+//				FormGrilla form = new FormGrilla();
+//				form.Show();
+//				this.Hide();
+				this.DialogResult = DialogResult.OK;
+				this.Close();
+			}
+			else
+			{
+				MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
+			}			
+//			FormGrilla form = new FormGrilla();
+//			form.Show();
+//			this.Hide();
 		}
 	}
 }

@@ -46,8 +46,16 @@ namespace Codigo_Azul
 			this.btnCancelar = new System.Windows.Forms.Button();
 			this.btnAceptar = new System.Windows.Forms.Button();
 			this.pnlData = new System.Windows.Forms.Panel();
+			this.txtUser = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
 			this.cbxArea = new System.Windows.Forms.ComboBox();
+			this.cbxRol = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.txtContraseña = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.txtApellido = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
 			this.txtNombre = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.pnlMid = new System.Windows.Forms.Panel();
@@ -59,14 +67,6 @@ namespace Codigo_Azul
 			this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.usua_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.usua_contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.cbxRol = new System.Windows.Forms.ComboBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.txtContraseña = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.txtUser = new System.Windows.Forms.TextBox();
-			this.label5 = new System.Windows.Forms.Label();
-			this.txtApellido = new System.Windows.Forms.TextBox();
-			this.label4 = new System.Windows.Forms.Label();
 			this.pnlTop.SuspendLayout();
 			this.btnButtons.SuspendLayout();
 			this.pnlData.SuspendLayout();
@@ -81,7 +81,7 @@ namespace Codigo_Azul
 			this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
 			this.pnlTop.Location = new System.Drawing.Point(0, 0);
 			this.pnlTop.Name = "pnlTop";
-			this.pnlTop.Size = new System.Drawing.Size(898, 46);
+			this.pnlTop.Size = new System.Drawing.Size(577, 46);
 			this.pnlTop.TabIndex = 2;
 			// 
 			// txtBuscar
@@ -110,7 +110,7 @@ namespace Codigo_Azul
 			this.btnButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.btnButtons.Location = new System.Drawing.Point(0, 544);
 			this.btnButtons.Name = "btnButtons";
-			this.btnButtons.Size = new System.Drawing.Size(898, 43);
+			this.btnButtons.Size = new System.Drawing.Size(577, 43);
 			this.btnButtons.TabIndex = 6;
 			// 
 			// btnNuevo
@@ -183,8 +183,23 @@ namespace Codigo_Azul
 			this.pnlData.Enabled = false;
 			this.pnlData.Location = new System.Drawing.Point(0, 345);
 			this.pnlData.Name = "pnlData";
-			this.pnlData.Size = new System.Drawing.Size(898, 199);
+			this.pnlData.Size = new System.Drawing.Size(577, 199);
 			this.pnlData.TabIndex = 7;
+			// 
+			// txtUser
+			// 
+			this.txtUser.Location = new System.Drawing.Point(132, 77);
+			this.txtUser.Name = "txtUser";
+			this.txtUser.Size = new System.Drawing.Size(238, 20);
+			this.txtUser.TabIndex = 2;
+			// 
+			// label5
+			// 
+			this.label5.Location = new System.Drawing.Point(26, 77);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(100, 23);
+			this.label5.TabIndex = 18;
+			this.label5.Text = "Usuario";
 			// 
 			// cbxArea
 			// 
@@ -195,6 +210,15 @@ namespace Codigo_Azul
 			this.cbxArea.Size = new System.Drawing.Size(238, 21);
 			this.cbxArea.TabIndex = 5;
 			// 
+			// cbxRol
+			// 
+			this.cbxRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxRol.FormattingEnabled = true;
+			this.cbxRol.Location = new System.Drawing.Point(132, 129);
+			this.cbxRol.Name = "cbxRol";
+			this.cbxRol.Size = new System.Drawing.Size(238, 21);
+			this.cbxRol.TabIndex = 4;
+			// 
 			// label9
 			// 
 			this.label9.Location = new System.Drawing.Point(26, 156);
@@ -202,6 +226,45 @@ namespace Codigo_Azul
 			this.label9.Size = new System.Drawing.Size(100, 23);
 			this.label9.TabIndex = 16;
 			this.label9.Text = "Área";
+			// 
+			// label8
+			// 
+			this.label8.Location = new System.Drawing.Point(26, 129);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(100, 23);
+			this.label8.TabIndex = 14;
+			this.label8.Text = "Rol";
+			// 
+			// txtContraseña
+			// 
+			this.txtContraseña.Location = new System.Drawing.Point(132, 103);
+			this.txtContraseña.Name = "txtContraseña";
+			this.txtContraseña.PasswordChar = '*';
+			this.txtContraseña.Size = new System.Drawing.Size(238, 20);
+			this.txtContraseña.TabIndex = 3;
+			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(26, 103);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(100, 23);
+			this.label2.TabIndex = 6;
+			this.label2.Text = "Contraseña";
+			// 
+			// txtApellido
+			// 
+			this.txtApellido.Location = new System.Drawing.Point(132, 48);
+			this.txtApellido.Name = "txtApellido";
+			this.txtApellido.Size = new System.Drawing.Size(238, 20);
+			this.txtApellido.TabIndex = 1;
+			// 
+			// label4
+			// 
+			this.label4.Location = new System.Drawing.Point(26, 48);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(100, 23);
+			this.label4.TabIndex = 4;
+			this.label4.Text = "Apellido";
 			// 
 			// txtNombre
 			// 
@@ -216,7 +279,7 @@ namespace Codigo_Azul
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(100, 23);
 			this.label3.TabIndex = 2;
-			this.label3.Text = "Descripción";
+			this.label3.Text = "Nombre";
 			// 
 			// pnlMid
 			// 
@@ -224,7 +287,7 @@ namespace Codigo_Azul
 			this.pnlMid.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlMid.Location = new System.Drawing.Point(0, 46);
 			this.pnlMid.Name = "pnlMid";
-			this.pnlMid.Size = new System.Drawing.Size(898, 299);
+			this.pnlMid.Size = new System.Drawing.Size(577, 299);
 			this.pnlMid.TabIndex = 8;
 			// 
 			// gridDatos
@@ -234,24 +297,26 @@ namespace Codigo_Azul
 			this.gridDatos.AllowUserToResizeRows = false;
 			this.gridDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-									this.Nombre,
-									this.Apellido,
-									this.User,
-									this.Rol,
-									this.Area,
-									this.usua_id,
-									this.usua_contraseña});
+			this.Nombre,
+			this.Apellido,
+			this.User,
+			this.Rol,
+			this.Area,
+			this.usua_id,
+			this.usua_contraseña});
 			this.gridDatos.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.gridDatos.Location = new System.Drawing.Point(0, 0);
 			this.gridDatos.Name = "gridDatos";
 			this.gridDatos.ReadOnly = true;
 			this.gridDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gridDatos.Size = new System.Drawing.Size(898, 299);
+			this.gridDatos.Size = new System.Drawing.Size(577, 299);
 			this.gridDatos.TabIndex = 0;
+			this.gridDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridDatosCellContentClick);
 			this.gridDatos.SelectionChanged += new System.EventHandler(this.GridDatosSelectionChanged);
 			// 
 			// Nombre
 			// 
+			this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.Nombre.DataPropertyName = "usua_nombre";
 			this.Nombre.HeaderText = "Nombre";
 			this.Nombre.Name = "Nombre";
@@ -301,73 +366,11 @@ namespace Codigo_Azul
 			this.usua_contraseña.ReadOnly = true;
 			this.usua_contraseña.Visible = false;
 			// 
-			// cbxRol
-			// 
-			this.cbxRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cbxRol.FormattingEnabled = true;
-			this.cbxRol.Location = new System.Drawing.Point(132, 129);
-			this.cbxRol.Name = "cbxRol";
-			this.cbxRol.Size = new System.Drawing.Size(238, 21);
-			this.cbxRol.TabIndex = 4;
-			// 
-			// label8
-			// 
-			this.label8.Location = new System.Drawing.Point(26, 129);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(100, 23);
-			this.label8.TabIndex = 14;
-			this.label8.Text = "Rol";
-			// 
-			// txtContraseña
-			// 
-			this.txtContraseña.Location = new System.Drawing.Point(132, 103);
-			this.txtContraseña.Name = "txtContraseña";
-			this.txtContraseña.Size = new System.Drawing.Size(176, 20);
-			this.txtContraseña.TabIndex = 3;
-			// 
-			// label2
-			// 
-			this.label2.Location = new System.Drawing.Point(26, 103);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(100, 23);
-			this.label2.TabIndex = 6;
-			this.label2.Text = "Contraseña";
-			// 
-			// txtUser
-			// 
-			this.txtUser.Location = new System.Drawing.Point(132, 77);
-			this.txtUser.Name = "txtUser";
-			this.txtUser.Size = new System.Drawing.Size(238, 20);
-			this.txtUser.TabIndex = 2;
-			// 
-			// label5
-			// 
-			this.label5.Location = new System.Drawing.Point(26, 77);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(100, 23);
-			this.label5.TabIndex = 18;
-			this.label5.Text = "Usuario";
-			// 
-			// txtApellido
-			// 
-			this.txtApellido.Location = new System.Drawing.Point(132, 48);
-			this.txtApellido.Name = "txtApellido";
-			this.txtApellido.Size = new System.Drawing.Size(311, 20);
-			this.txtApellido.TabIndex = 1;
-			// 
-			// label4
-			// 
-			this.label4.Location = new System.Drawing.Point(26, 48);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(100, 23);
-			this.label4.TabIndex = 4;
-			this.label4.Text = "Apellido";
-			// 
 			// FormUsuario
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(898, 587);
+			this.ClientSize = new System.Drawing.Size(577, 587);
 			this.Controls.Add(this.pnlMid);
 			this.Controls.Add(this.pnlData);
 			this.Controls.Add(this.btnButtons);
@@ -383,11 +386,11 @@ namespace Codigo_Azul
 			this.pnlMid.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridDatos)).EndInit();
 			this.ResumeLayout(false);
+
 		}
 		private System.Windows.Forms.DataGridViewTextBoxColumn Area;
 		private System.Windows.Forms.DataGridViewTextBoxColumn usua_contraseña;
 		private System.Windows.Forms.DataGridViewTextBoxColumn usua_id;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Área;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn User;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;

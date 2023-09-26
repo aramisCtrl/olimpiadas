@@ -220,6 +220,10 @@ namespace Codigo_Azul
 			IniciarNuevo();
 			Limpiar();
 		}
+		void GridDatosCellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+	
+		}
 		
 	}
 }

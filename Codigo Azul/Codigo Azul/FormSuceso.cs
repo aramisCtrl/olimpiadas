@@ -12,23 +12,34 @@ namespace Codigo_Azul
 		private Suceso oSuceso;
 		public ClassConexionSQL miconexion;
 		private Paciente pacienteSeleccionado;
+		private Usuario usuarioSeleccionado;
 
 		
 		public FormSuceso(Suceso FSuceso, ClassConexionSQL fconexion)
 		{
-		    oSuceso = FSuceso;
-		    miconexion = fconexion; // Asegúrate de asignar la instancia de ClassConexionSQL aquí
-		    InitializeComponent();
-		    
-		    cbxArea.SelectedIndexChanged += CbxArea_SelectedIndexChanged;
+			oSuceso = FSuceso;
+			miconexion = fconexion;
+			InitializeComponent();
+		}
+		
+		void Limpiar(){
+			cbxEstado.SelectedIndex = -1;
+			cbxOrigen.SelectedIndex = -1;
+			cbxSala.SelectedIndex 	= -1;
+			cbxTipo.SelectedIndex 	= -1;
+			cbxArea2.SelectedIndex 	= -1;
+			txtDescripcion.Text		= "";
+			txtPaciente.Text 		= "";
+			txtUsuario.Text 		= "";
 		}
 
 		
 		void FormSucesoLoad(object sender, EventArgs e)
 		{
+			usuarioSeleccionado = new Usuario();
 			DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM suceso_tipo");
-			
-			cargarComboEstado(); 
+			Limpiar();
+			cargarComboEstado();
 			cargarComboOrigen();
 			cargarComboArea();
 			cargarComboTipo();
@@ -36,35 +47,34 @@ namespace Codigo_Azul
 			
 			if (ds != null && ds.Tables.Count > 0)
 			{
-				if(Edicion==true)
+				if(Edicion)
 				{
-					lblNumero.Text="Suceso Nº"+oSuceso.Id;
+					lblNumero.Text	  = "Suceso Nº"+oSuceso.Id;
 					
-					dtp_fecha.Enabled=false; 
-					cbxEstado.Enabled=true;
-					cbxOrigen.Enabled=true;
+					dtp_fecha.Enabled       = false;
+					cbxEstado.Enabled       = false;
+					cbxOrigen.Enabled       = true;
+					
+					dtp_fecha.Value         = oSuceso.FechaInicio;
+					txtUsuario.Text			= oSuceso.Medico;
+					txtPaciente.Text		= oSuceso.Nombre +" "+ oSuceso.Apellido;
+					lbl_dni1.Text			= oSuceso.Dni.ToString();
+					lbl_obra_social1.Text	= oSuceso.ObraSocial;
+					lbl_grupo_sanguineo1.Text = oSuceso.GrupoSanguineo;
+					txtDescripcion.Text		= oSuceso.Descripcion;
+					
 
-				}
-				else if(Nuevo==true){
-					dtp_fecha.Enabled=false;
-					lblNumero.Text="Nuevo suceso";
-					dtp_fecha.Value=oSuceso.FechaInicio;
-					txtUsuario.Text=oSuceso.Medico;
-					txtPaciente.Text=oSuceso.Nombre +" "+ oSuceso.Apellido;
-					lbl_dni1.Text=oSuceso.Dni.ToString();
-					lbl_obra_social1.Text=oSuceso.ObraSocial;
-					lbl_grupo_sanguineo1.Text=oSuceso.GrupoSanguineo;
-					richTextBox1.Text=oSuceso.Descripcion;
 					
-					for (int i = 0; i < cbxArea.Items.Count; i++)
+					//carga combo area
+					for (int i = 0; i < cbxArea2.Items.Count; i++)
 					{
-						if (cbxArea.GetItemText(cbxArea.Items[i]) == oSuceso.SuceAreaDescripcion)
+						if (cbxArea2.GetItemText(cbxArea2.Items[i]) == oSuceso.SuceAreaDescripcion)
 						{
-							cbxArea.SelectedIndex = i;
+							cbxArea2.SelectedIndex = i;
 							break;
 						}
 					}
-					
+					//carga combo tipo
 					for (int i = 0; i < cbxTipo.Items.Count; i++)
 					{
 						if (cbxTipo.GetItemText(cbxTipo.Items[i]) == oSuceso.Tipo)
@@ -74,6 +84,7 @@ namespace Codigo_Azul
 						}
 					}
 					
+					//carga combo estado
 					for (int i = 0; i < cbxEstado.Items.Count; i++)
 					{
 						if (cbxEstado.GetItemText(cbxEstado.Items[i]) == oSuceso.Estado)
@@ -83,6 +94,7 @@ namespace Codigo_Azul
 						}
 					}
 					
+					//carga combo origen
 					for (int i = 0; i < cbxOrigen.Items.Count; i++)
 					{
 						if (cbxOrigen.GetItemText(cbxOrigen.Items[i]) == oSuceso.Origen)
@@ -91,7 +103,7 @@ namespace Codigo_Azul
 							break;
 						}
 					}
-					
+					//carga combo sala
 					for (int i = 0; i < cbxSala.Items.Count; i++)
 					{
 						if (cbxSala.GetItemText(cbxSala.Items[i]) == oSuceso.Sala)
@@ -100,11 +112,34 @@ namespace Codigo_Azul
 							break;
 						}
 					}
+
+				}
+				else if(Nuevo){
+					Limpiar();
+					oSuceso.SuceSuorId = 2;//manual
+					oSuceso.SuceSuesId = 1;//pendiente
+					oSuceso.SuceSutiId = 1;//normal
+					
+					cbxOrigen.SelectedValue	 = oSuceso.SuceSuorId;
+					cbxEstado.SelectedValue	 = oSuceso.SuceSuesId;
+					cbxTipo.SelectedValue	 = oSuceso.SuceSutiId;
+					
+					btnCancelar.Enabled   	= true;
+					btnAceptar.Enabled 	   	= true;
+					pnlDatos.Enabled 	   	= true;
+					
+					dtp_fecha.Enabled	   	= false;
+					lblNumero.Text			= "Nuevo suceso";
 					
 				}
+
+				
+				
 			}
 			
 		}
+
+		
 		void BtnBuscarPacienteClick(object sender, EventArgs e)
 		{
 			Paciente paciente = new Paciente(); // Crea una instancia de Pacientes
@@ -122,6 +157,7 @@ namespace Codigo_Azul
 				lbl_dni1.Text = pacienteSeleccionado.Dni;
 				lbl_grupo_sanguineo1.Text = pacienteSeleccionado.GrupoSanguineo;
 				lbl_obra_social1.Text = pacienteSeleccionado.ObraSocialDescripcion;
+				oSuceso.SucePaciId = pacienteSeleccionado.ID;
 
 			}
 		}
@@ -138,14 +174,16 @@ namespace Codigo_Azul
 		}
 		
 		void cargarComboArea(){
-			DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM Area order by area_descripcion");
+			DataSet ds = miconexion.EjecutarSentencia("SELECT area_id, area_descripcion FROM Area where area_id <> 0 order by area_descripcion ");
 			
 			if (ds != null && ds.Tables.Count > 0)
 			{
-				cbxArea.DataSource = ds.Tables[0];
-				cbxArea.DisplayMember = "area_descripcion";
-				cbxArea.ValueMember = "area_id";
+				cbxArea2.DataSource = ds.Tables[0];
+				cbxArea2.DisplayMember = "area_descripcion";
+				cbxArea2.ValueMember = "area_id";
 			}
+			cbxArea2.SelectedIndexChanged += CbxArea_SelectedIndexChanged;
+			cargarComboSala();
 		}
 		
 		void cargarComboOrigen(){
@@ -171,62 +209,92 @@ namespace Codigo_Azul
 		}
 		
 		void cargarComboSala(){
-			string i = cbxArea.SelectedValue.ToString();
-			DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM sala INNER JOIN area ON area_id = sala_area_id WHERE sala_area_id ="+i+" ORDER BY sala_descripcion");
-			
-			if (ds != null && ds.Tables.Count > 0)
-			{
-				cbxSala.DataSource = ds.Tables[0];
-				cbxSala.DisplayMember = "sala_descripcion";
-				cbxSala.ValueMember = "sala_id";
-			}
+			try{
+				string i = cbxArea2.SelectedValue.ToString();
+				
+				DataSet ds = miconexion.EjecutarSentencia("SELECT * FROM sala INNER JOIN area ON area_id = sala_area_id WHERE sala_area_id ="+i+" ORDER BY sala_descripcion");
+				
+				if (ds != null && ds.Tables.Count > 0)
+				{
+					cbxSala.DataSource = ds.Tables[0];
+					cbxSala.DisplayMember = "sala_descripcion";
+					cbxSala.ValueMember = "sala_id";
+				}
+			}catch{}
 		}
 		
-		private void GuardarSuceso()
+		bool GuardarSuceso()
 		{
-		    try
-		    {
-	            string query="";
-	            string parametros;
-	
-	            if (Nuevo)
-	            {
-	            	string fecha = dtp_fecha.Value.ToString("yyyyMMdd HH:mm:ss"); 
-	            	parametros = cbxArea.SelectedValue + ", " + cbxTipo.SelectedValue + ", " + cbxEstado.SelectedValue + ", " +
-	                	pacienteSeleccionado.ID + ", " + usuarioSeleccionado.ID + ", " + cbxOrigen.SelectedValue+ ", '" +
-	                    richTextBox1.Text + "', '" + fecha + "', " +
-	                    cbxSala.SelectedValue;
-	         
-	                query = "exec sp_InsertarSuceso " + parametros;
-	            }
-	            else if(Edicion)
-	            {
-//				string parametros = "'" +txtNombre.Text+"', '"+ txtApellido.Text + "', " + txtDni.Text +", '" + txtGrupoSanguineo.Text + "', " +
-//					Convert.ToInt32(cbxObraSocial.SelectedValue) + ", " + Convert.ToInt32(cbxciudad.SelectedValue) + ", " + Convert.ToInt32(cbxProvincia.SelectedValue) + ", '"
-//					+ txtTelefono.Text + "', '" + txtEmail.Text + "', '" + txtDireccion.Text + "', 1";
-//
-//				miConexion.EjecutarSentencia("exec sp_InsertarPaciente " + parametros);
-	            }
-	
-	            // Ejecuta la consulta utilizando el método EjecutarSentencia
-	            DataSet filasAfectadas = miconexion.EjecutarSentencia(query);
-		    }
-		    catch (Exception ex)
-		    {
-		        MessageBox.Show("Error al guardar el suceso: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-		    }
+			try
+			{
+				string query="";
+				string parametros;
+				
+				if (Nuevo)
+				{
+					parametros = cbxArea2.SelectedValue + ", " + cbxTipo.SelectedValue + ", " + cbxEstado.SelectedValue + ", " +
+						pacienteSeleccionado.ID + ", " + usuarioSeleccionado.ID + ", " + cbxOrigen.SelectedValue+ ", '" +
+						txtDescripcion.Text + "', "+ cbxSala.SelectedValue;
+					
+					query = "exec sp_InsertarSuceso " + parametros;
+				}
+				else if(Edicion)
+				{
+					
+					parametros = oSuceso.Id +", " + cbxArea2.SelectedValue + ", " + cbxTipo.SelectedValue + ", " + cbxEstado.SelectedValue + ", " +
+						oSuceso.SucePaciId + ", " + usuarioSeleccionado.ID + ", " + cbxOrigen.SelectedValue+ ", '" +
+						txtDescripcion.Text + "', " + cbxSala.SelectedValue + ", ''";
+					
+					query = "exec sp_ActualizarSuceso " + parametros;
+					
+				}
+				
+				// Ejecuta la consulta utilizando el método EjecutarSentencia
+				DataSet filasAfectadas = miconexion.EjecutarSentencia(query);
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error al guardar el suceso: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
 		}
 
 
-		private void CbxArea_SelectedIndexChanged(object sender, EventArgs e)
+		void CbxArea_SelectedIndexChanged(object sender, EventArgs e)
 		{
-		    cargarComboSala();
+			cargarComboSala();
 		}
-	
+		
 		void Btn_aceptarClick(object sender, EventArgs e)
 		{
 			GuardarSuceso();
 			this.Close();
+		}
+		void BtnBuscarUsuarioClick(object sender, EventArgs e)
+		{
+			FormUsuario frmUsuario = new FormUsuario(usuarioSeleccionado,miconexion);
+			frmUsuario.ShowDialog();
+			if (frmUsuario.DialogResult== DialogResult.OK){
+				txtUsuario.Text = usuarioSeleccionado.Nombre + ' ' + usuarioSeleccionado.Apellido;
+				oSuceso.SuceUsuaId = usuarioSeleccionado.ID;
+			}
+			
+		}
+		void BtnAceptarClick(object sender, EventArgs e)
+		{
+			//si el usuario o el paciente no fueron seleccionados no dejo continuar el guardado
+			if ( (oSuceso.SucePaciId == -1) || (oSuceso.SuceUsuaId ==-1) ){
+				MessageBox.Show("Debe seleccionar un usuario y un paciente válidos","Error");
+			}else{
+				GuardarSuceso();
+				this.DialogResult = DialogResult.Cancel;
+			}
+			
+		}
+		void BtnCancelarClick(object sender, EventArgs e)
+		{
+			this.DialogResult = DialogResult.Cancel;
 		}
 		
 	}

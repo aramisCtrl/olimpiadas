@@ -2,11 +2,17 @@
 using System.Data;
 using System.Windows.Forms;
 using System;
+using System.IO;
+using System.Xml;
+
+
 
 public class ClassConexionSQL
 {
 
 	public SqlConnection conexion;
+	public string AreaPuesto;
+	public string UrlMetabase;
 
 	public bool Conectar()
 	{
@@ -48,17 +54,58 @@ public class ClassConexionSQL
 		}
 	}
 
-	public bool CrearConexion(string BaseDatos)
+	public bool CrearConexionOLD(string BaseDatos)
 	{
 		try
 		{
 //			string strConexion = String.Format("Server=localhost;Database={0}; integrated security = true", BaseDatos);
-			string strConexion = String.Format("Data Source=192.168.1.103;Initial Catalog= codigo_azul; User id=sa;Password=123456", BaseDatos);
+			string strConexion = String.Format("Data Source=localhost;Initial Catalog= codigo_azul; User id=sa;Password=123456", BaseDatos);
 			conexion = new SqlConnection(strConexion);
 			return true;
 		}
 		catch
 		{
+			return false;
+		}
+	}
+	
+	public bool CrearConexion()
+	{
+		try
+		{
+			// Obtener el directorio actual de la aplicación
+			string directorioActual = AppDomain.CurrentDomain.BaseDirectory;
+
+			// Combinar la ruta del directorio actual con el nombre del archivo config.xml
+			string rutaConfigXml = Path.Combine(directorioActual, "config.xml");
+
+			// Verificar si el archivo config.xml existe
+			if (!File.Exists(rutaConfigXml))
+			{
+				MessageBox.Show("El archivo config.xml no se encontró en el directorio de la aplicación.");
+				return false;
+			}
+
+			// Cargar la configuración desde el archivo XML
+			XmlDocument xmlDoc = new XmlDocument();
+			xmlDoc.Load(rutaConfigXml);
+
+			string server = xmlDoc.SelectSingleNode("/Config/Server").InnerText;
+			string database = xmlDoc.SelectSingleNode("/Config/Database").InnerText;
+			string username = xmlDoc.SelectSingleNode("/Config/Username").InnerText;
+			string password = xmlDoc.SelectSingleNode("/Config/Password").InnerText;
+			AreaPuesto = xmlDoc.SelectSingleNode("/Config/AreaPuesto").InnerText;
+			UrlMetabase = xmlDoc.SelectSingleNode("/Config/Url").InnerText;			
+
+			// Construir la cadena de conexión
+			string strConexion = "Data Source=" + server + ";Initial Catalog=" + database + ";User ID=" + username + ";Password=" + password;
+
+			conexion = new SqlConnection(strConexion);
+			return true;
+		}
+		catch (Exception ex)
+		{
+			MessageBox.Show("Error al crear la conexión: " + ex.Message);
 			return false;
 		}
 	}
@@ -162,6 +209,8 @@ public class ClassConexionSQL
 			return false;
 		}
 	}
+	
+	
 	public DataSet EjecutarSentencia(string consulta)
 	{
 		try

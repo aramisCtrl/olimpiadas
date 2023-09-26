@@ -32,6 +32,7 @@ namespace Codigo_Azul
 			Nuevo 			       = false;
 			btnNuevo.Enabled	   = false;
 			pnlTop.Enabled 		   = false;
+			pnlMid.Enabled 		   = false;
 			btnEditar.Enabled      = false;
 			btnSeleccionar.Enabled = false;
 		}
@@ -44,6 +45,7 @@ namespace Codigo_Azul
 			Nuevo 			    = false;
 			btnNuevo.Enabled	= true;
 			pnlTop.Enabled 		= true;
+			pnlMid.Enabled 		   = true;
 			btnEditar.Enabled      = true;
 			btnSeleccionar.Enabled = true;
 		}
@@ -56,6 +58,7 @@ namespace Codigo_Azul
 			Edicion  		       = false;
 			btnNuevo.Enabled	   = false;
 			pnlTop.Enabled 		   = false;
+			pnlMid.Enabled 		   = false;
 			btnEditar.Enabled      = false;
 			btnSeleccionar.Enabled = false;
 		}

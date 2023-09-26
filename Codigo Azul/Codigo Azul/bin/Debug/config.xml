@@ -1,0 +1,8 @@
+<Config>
+  <Server>192.168.1.103</Server>
+  <Database>codigo_azul</Database>
+  <Username>sa</Username>
+  <Password>123456</Password>
+  <AreaPuesto>2</AreaPuesto>
+  <Url>http://192.168.1.103:3000/public/dashboard/af5d4d6d-6de8-4e8e-a859-e892714436c6</Url> 
+</Config>

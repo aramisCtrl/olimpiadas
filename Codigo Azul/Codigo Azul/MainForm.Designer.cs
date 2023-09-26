@@ -18,11 +18,11 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.txt_usuario = new System.Windows.Forms.TextBox();
 			this.txt_contraseña = new System.Windows.Forms.TextBox();
-			this.btn_ingresar = new System.Windows.Forms.Button();
 			this.lbl_usuario = new System.Windows.Forms.Label();
 			this.lbl_contraseña = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnIngresar = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -33,32 +33,15 @@
 			this.txt_usuario.Name = "txt_usuario";
 			this.txt_usuario.Size = new System.Drawing.Size(121, 20);
 			this.txt_usuario.TabIndex = 0;
-			this.txt_usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txt_contraseña
 			// 
 			this.txt_contraseña.ForeColor = System.Drawing.SystemColors.MenuText;
 			this.txt_contraseña.Location = new System.Drawing.Point(245, 294);
 			this.txt_contraseña.Name = "txt_contraseña";
+			this.txt_contraseña.PasswordChar = '*';
 			this.txt_contraseña.Size = new System.Drawing.Size(121, 20);
 			this.txt_contraseña.TabIndex = 1;
-			this.txt_contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// btn_ingresar
-			// 
-			this.btn_ingresar.BackColor = System.Drawing.Color.White;
-			this.btn_ingresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.btn_ingresar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_ingresar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-			this.btn_ingresar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_ingresar.ForeColor = System.Drawing.Color.SteelBlue;
-			this.btn_ingresar.Location = new System.Drawing.Point(240, 333);
-			this.btn_ingresar.Name = "btn_ingresar";
-			this.btn_ingresar.Size = new System.Drawing.Size(126, 33);
-			this.btn_ingresar.TabIndex = 2;
-			this.btn_ingresar.Text = "Aceptar";
-			this.btn_ingresar.UseVisualStyleBackColor = false;
-			this.btn_ingresar.Click += new System.EventHandler(this.Btn_ingresarClick);
 			// 
 			// lbl_usuario
 			// 
@@ -82,15 +65,19 @@
 			this.lbl_contraseña.Text = "Contraseña:";
 			this.lbl_contraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// button1
+			// btnIngresar
 			// 
-			this.button1.Location = new System.Drawing.Point(430, 453);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 9;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.Button1Click);
+			this.btnIngresar.BackColor = System.Drawing.SystemColors.Window;
+			this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnIngresar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnIngresar.ForeColor = System.Drawing.Color.SteelBlue;
+			this.btnIngresar.Location = new System.Drawing.Point(245, 335);
+			this.btnIngresar.Name = "btnIngresar";
+			this.btnIngresar.Size = new System.Drawing.Size(121, 33);
+			this.btnIngresar.TabIndex = 2;
+			this.btnIngresar.Text = "Aceptar";
+			this.btnIngresar.UseVisualStyleBackColor = false;
+			this.btnIngresar.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// pictureBox1
 			// 
@@ -102,6 +89,16 @@
 			this.pictureBox1.TabIndex = 10;
 			this.pictureBox1.TabStop = false;
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(430, 453);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 11;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Visible = false;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,8 +106,8 @@
 			this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(517, 488);
-			this.Controls.Add(this.btn_ingresar);
 			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnIngresar);
 			this.Controls.Add(this.lbl_contraseña);
 			this.Controls.Add(this.lbl_usuario);
 			this.Controls.Add(this.txt_usuario);
@@ -123,13 +120,14 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+
 		}
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label lbl_contraseña;
 		private System.Windows.Forms.Label lbl_usuario;
 		private System.Windows.Forms.TextBox txt_usuario;
 		private System.Windows.Forms.TextBox txt_contraseña;
-		private System.Windows.Forms.Button btn_ingresar;
+		private System.Windows.Forms.Button btnIngresar;
 		private System.Windows.Forms.Button button1;
 	}
 }
