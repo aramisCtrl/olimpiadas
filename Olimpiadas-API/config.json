@@ -1,0 +1,7 @@
+{
+    "Server": "192.168.1.103",
+	"UserID":"sa",
+	"Password":"123456",
+	"Database":"codigo_azul",
+	"Port":8081
+}

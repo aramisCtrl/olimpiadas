@@ -1,0 +1,43 @@
+{{define "boton"}}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- CSS personalizado -->
+    <style>
+      /* Estilos personalizados para centrar el botón */
+      .centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Esto asegura que el botón se centre verticalmente en la pantalla completa */
+      }
+
+      /* Estilos personalizados para hacer el botón grande */
+      .big-button {
+        padding: 20px 40px; /* Ajusta el padding para hacer el botón más grande */
+        font-size: 24px; /* Ajusta el tamaño de fuente para hacer el texto más grande */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="centered">
+      
+      <select id="areasCombo" class="form-control">
+        {{range .}}
+          <option value="{{.ID}}">{{.Descripcion}}</option>
+        {{end}}
+      </select>
+
+      <a name="" id="" class="btn btn-primary big-button" href="#" role="button">Activar Código Azul</a>
+    </div>
+  </body>
+</html>
+{{end}}

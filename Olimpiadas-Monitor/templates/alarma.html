@@ -1,0 +1,77 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="5">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de monitoreo Codigo Azul</title>
+    <style>
+        /* Aplica la imagen de fondo */
+        body {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/007/131/003/original/red-illustration-abstract-background-with-beautiful-gradients-free-photo.jpg'); /* Ruta de la imagen de fondo */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover; /* Ajusta la imagen al tamaño del viewport */           
+        }
+
+        /* Estilo para el texto centrado */
+         .centered-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: #dadee9; 
+        } 
+    </style>
+</head>
+<body>
+    <div class="centered-text">{{ .LatestData }}</div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="3">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de monitoreo Codigo Azul</title>
+    <style>
+        /* Define una animación de cambio de color para el fondo */
+        @keyframes changeColor {
+            0%, 100% {
+                background-color: #0074E4; /* Azul */
+            }
+            50% {
+                background-color: #fff; /* Blanco */
+            }
+        }
+
+        /* Aplica el fondo animado */
+        body {
+            animation: changeColor 1s linear infinite; /* La animación dura 5 segundos y se repite infinitamente */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo para el texto centrado */
+        .centered-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 90px;
+            color: #3200d5;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered-text">{{ .LatestData }}</div>
+</body>
+</html>
+

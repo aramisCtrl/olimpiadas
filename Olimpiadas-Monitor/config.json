@@ -1,0 +1,8 @@
+{
+    "server": "192.168.1.103",
+	"user":"sa",
+	"password":"123456",
+	"database":"codigo_azul",
+	"port":8082,
+    "area_id": "1"
+}
